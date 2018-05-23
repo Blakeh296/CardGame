@@ -32,7 +32,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddPlayer = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnPlay = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.lblAICount = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +56,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(93, 76);
+            this.label1.Location = new System.Drawing.Point(112, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 34);
+            this.label1.Size = new System.Drawing.Size(141, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "Make a Player :";
             // 
@@ -76,16 +76,6 @@
             this.btnAddPlayer.Text = "Add";
             this.btnAddPlayer.UseVisualStyleBackColor = false;
             this.btnAddPlayer.Click += new System.EventHandler(this.btnAddPlayer_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(284, 153);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(132, 64);
-            this.listBox1.TabIndex = 3;
             // 
             // btnPlay
             // 
@@ -104,11 +94,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(74, 166);
+            this.label2.Location = new System.Drawing.Point(94, 164);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(204, 34);
+            this.label2.Size = new System.Drawing.Size(159, 26);
             this.label2.TabIndex = 5;
             this.label2.Text = "Choose A Player :";
             // 
@@ -138,19 +128,21 @@
             // 
             // label5
             // 
+            this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(99, 223);
+            this.label5.Location = new System.Drawing.Point(125, 226);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(174, 34);
+            this.label5.Size = new System.Drawing.Size(128, 26);
             this.label5.TabIndex = 9;
             this.label5.Text = "Number of AI :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // trackBar1
             // 
             this.trackBar1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.trackBar1.Location = new System.Drawing.Point(99, 260);
+            this.trackBar1.Location = new System.Drawing.Point(259, 232);
             this.trackBar1.Minimum = 2;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(174, 45);
@@ -164,12 +156,20 @@
             this.lblAICount.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblAICount.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAICount.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblAICount.Location = new System.Drawing.Point(330, 232);
+            this.lblAICount.Location = new System.Drawing.Point(285, 193);
             this.lblAICount.Name = "lblAICount";
-            this.lblAICount.Size = new System.Drawing.Size(40, 34);
+            this.lblAICount.Size = new System.Drawing.Size(121, 36);
             this.lblAICount.TabIndex = 11;
             this.lblAICount.Text = "2";
             this.lblAICount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(284, 166);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 12;
             // 
             // NewPlayer
             // 
@@ -178,6 +178,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(488, 354);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblAICount);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.label5);
@@ -185,7 +186,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPlay);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnAddPlayer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -206,7 +206,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddPlayer;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -214,5 +213,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label lblAICount;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

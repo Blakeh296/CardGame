@@ -39,6 +39,8 @@
             this.lblPlayer8 = new System.Windows.Forms.Label();
             this.lblPlayer9 = new System.Windows.Forms.Label();
             this.lblPlayer10 = new System.Windows.Forms.Label();
+            this.pictureBoxCardStack = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPlayer1
@@ -141,6 +143,15 @@
             this.lblPlayer10.TabIndex = 9;
             this.lblPlayer10.Text = "label10";
             // 
+            // pictureBoxCardStack
+            // 
+            this.pictureBoxCardStack.Image = global::GutsCardGame.Properties.Resources.RedCard_stack;
+            this.pictureBoxCardStack.Location = new System.Drawing.Point(308, 261);
+            this.pictureBoxCardStack.Name = "pictureBoxCardStack";
+            this.pictureBoxCardStack.Size = new System.Drawing.Size(70, 68);
+            this.pictureBoxCardStack.TabIndex = 10;
+            this.pictureBoxCardStack.TabStop = false;
+            // 
             // GutsMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,6 +159,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(670, 398);
+            this.Controls.Add(this.pictureBoxCardStack);
             this.Controls.Add(this.lblPlayer10);
             this.Controls.Add(this.lblPlayer9);
             this.Controls.Add(this.lblPlayer8);
@@ -161,6 +173,7 @@
             this.Name = "GutsMainForm";
             this.Text = "GutsMainForm";
             this.Load += new System.EventHandler(this.GutsMainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +191,6 @@
         private System.Windows.Forms.Label lblPlayer8;
         private System.Windows.Forms.Label lblPlayer9;
         private System.Windows.Forms.Label lblPlayer10;
+        private System.Windows.Forms.PictureBox pictureBoxCardStack;
     }
 }

@@ -32,7 +32,8 @@ namespace GutsCardGame
 
                 string var = textBox1.Text;
 
-                listBox1.Items.Add(var);
+                comboBox1.Items.Add(var);
+
 
                 outputFile.WriteLine(var);
 
@@ -64,8 +65,8 @@ namespace GutsCardGame
                     // Get player name
                     players = inputFile.ReadLine();
 
-                    // Add the Player name to the listbox
-                    listBox1.Items.Add(players);
+                    // Add the player name to the combobox
+                    comboBox1.Items.Add(players);
                 }
 
                 // Close the file
@@ -80,7 +81,7 @@ namespace GutsCardGame
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            frmOne.player1 = listBox1.SelectedItem.ToString();
+            frmOne.player1 = comboBox1.SelectedItem.ToString();
 
             frmOne.aI = int.Parse(lblAICount.Text);
 

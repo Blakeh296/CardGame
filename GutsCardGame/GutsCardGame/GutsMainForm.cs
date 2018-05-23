@@ -20,8 +20,19 @@ namespace GutsCardGame
             InitializeComponent();
         }
 
+        public int opponentleftpos = 175;
+        public int opponenttoppos = 275;
+        public int leftpos = 50;
+        public int toppos = 450;
+        public int CardLocation = 0;
+        public int i = 0;
+        public int x = 0;
+
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
+
+            
+
             // forms first size 504, 392
 
             this.Size = new Size(504, 392);
