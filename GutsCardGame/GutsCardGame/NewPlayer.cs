@@ -18,6 +18,7 @@ namespace GutsCardGame
             InitializeComponent();
         }
 
+
         GutsMainForm frmOne = new GutsMainForm();
 
         
@@ -50,6 +51,8 @@ namespace GutsCardGame
 
                 // Close the file
                 inputFile.Close();
+
+                comboBox1.Text = "Newbie";
             }
             catch (Exception Ex)
             {
@@ -60,14 +63,14 @@ namespace GutsCardGame
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-
+            // Set the variable on the main form 
             frmOne.player1 = comboBox1.SelectedItem.ToString();
-
+            // gets the number of AI for game
             frmOne.aI = int.Parse(lblAICount.Text);
-
+            // Show main form
             frmOne.ShowDialog();
 
-            this.Close();
+
 
         }
 

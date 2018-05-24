@@ -12,8 +12,14 @@ namespace GutsCardGame
 {
     public partial class GutsMainForm : Form
     {
+        
+
         public int aI;
         public string player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
+
+        Player currentPlayer;
+
+        
 
         public GutsMainForm()
         {
@@ -31,7 +37,7 @@ namespace GutsCardGame
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
 
-            while (i < 26)
+            while (i < 2)
             {
                 Random rand = new Random(DateTime.Now.Millisecond);
                 int Cardpick = rand.Next(0, 51);
@@ -48,7 +54,7 @@ namespace GutsCardGame
 
 
 
-            while (x < 26)
+            while (x < 2)
             {
                 Random rand = new Random(DateTime.Now.Millisecond);
                 int Cardpick = rand.Next(0, 51);
@@ -65,8 +71,8 @@ namespace GutsCardGame
                 x++;
             }
 
-            // forms first size 504, 392
 
+            // forms first size 504, 392
             this.Size = new Size(504, 392);
 
             double startMoney = 5000;
@@ -79,6 +85,9 @@ namespace GutsCardGame
             lblPlayer8.Visible = false;
             lblPlayer9.Visible = false;
             lblPlayer10.Visible = false;
+
+            // Work in progress, coudnt get CurrentPlayer to display instead of player 1
+           // currentPlayer = new Player(player1);
 
             lblPlayer1.Text = player1 + " : " + startMoney.ToString("c");
             //lblPlayer2.Text = aI.ToString();
