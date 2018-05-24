@@ -265,6 +265,7 @@
             this.Controls.Add(this.tbNewPlayer);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NewPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

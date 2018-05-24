@@ -13,6 +13,9 @@ namespace GutsCardGame
 {
     public partial class NewPlayer : Form
     {
+        // Declare a array to hold the player names from the CSV file
+        public string[] PlayerNames = new string[20];
+
         public NewPlayer()
         {
             InitializeComponent();
@@ -30,6 +33,7 @@ namespace GutsCardGame
 
             this.Size = new Size(335, 112);
             string players;
+            int count = 0;
 
             try
             {
@@ -42,16 +46,22 @@ namespace GutsCardGame
                 // Read the files contents
                 while (!inputFile.EndOfStream)
                 {
-                    // Get player name
                     players = inputFile.ReadLine();
 
-                    // Add the player name to the combobox
-                    comboBox1.Items.Add(players);
+                    // Get player name
+                    PlayerNames[count] = players;
+
+                    // increment the counter
+                    count++;
                 }
 
                 // Close the file
                 inputFile.Close();
 
+                // Add the player names to the combobox
+                comboBox1.DataSource = PlayerNames;
+
+                // Set a default name if no name is picked
                 comboBox1.Text = "Newbie";
             }
             catch (Exception Ex)
@@ -64,7 +74,7 @@ namespace GutsCardGame
         private void btnPlay_Click(object sender, EventArgs e)
         {
             // Set the variable on the main form 
-            frmOne.player1 = comboBox1.SelectedItem.ToString();
+            frmOne.PlayerNames[0] = comboBox1.Text;
             // gets the number of AI for game
             frmOne.aI = int.Parse(lblAICount.Text);
             // Show main form
@@ -177,9 +187,9 @@ namespace GutsCardGame
             pictureBox1.Visible = true;
 
             // Move the two items to the appropriate location on form
-            tbNewPlayer.Location = new Point(53, 21);
-            btnAddPlayer.Location = new Point(195, 19);
-            pictureBox1.Location = new Point(12, 18);
+            tbNewPlayer.Location = new Point(53, 30);
+            btnAddPlayer.Location = new Point(195, 28);
+            pictureBox1.Location = new Point(12, 28);
 
             
         }
@@ -194,6 +204,7 @@ namespace GutsCardGame
             this.Size = new Size(290, 330);
 
             // Make Graphic labels visable
+            pictureBox1.Visible = true;
             lblLabel4.Visible = true;
             lblUnderline4.Visible = true;
             comboBox1.Visible = true;
@@ -209,9 +220,22 @@ namespace GutsCardGame
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            this.Size = new Size(335, 112);
+
             btnAddPlayer.Visible = false;
             tbNewPlayer.Visible = false;
             pictureBox1.Visible = false;
+
+            lblLabel4.Visible = false;
+            lblUnderline4.Visible = false;
+            comboBox1.Visible = false;
+            lblLabel3.Visible = false;
+            lblUnderline2.Visible = false;
+            lblAICount.Visible = false;
+            lblUnderline3.Visible = false;
+            trackBar1.Visible = false;
+            lblSlogan.Visible = false;
+            btnPlay.Visible = false;
 
             btnNewPlayer.Visible = true;
             btnReturningPlayer.Visible = true;

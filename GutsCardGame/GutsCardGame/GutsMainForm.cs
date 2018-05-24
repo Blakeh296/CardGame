@@ -13,7 +13,7 @@ namespace GutsCardGame
     public partial class GutsMainForm : Form
     {
         
-
+        public string[] PlayerNames = new string[20];
         public int aI;
         public string player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
 
@@ -89,7 +89,7 @@ namespace GutsCardGame
             // Work in progress, coudnt get CurrentPlayer to display instead of player 1
            // currentPlayer = new Player(player1);
 
-            lblPlayer1.Text = player1 + " : " + startMoney.ToString("c");
+            lblPlayer1.Text = PlayerNames[0] + " : " + startMoney.ToString("c");
             //lblPlayer2.Text = aI.ToString();
 
             if (aI == 2)
