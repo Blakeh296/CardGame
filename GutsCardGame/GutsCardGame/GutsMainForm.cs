@@ -31,7 +31,39 @@ namespace GutsCardGame
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
 
-            
+            while (i < 26)
+            {
+                Random rand = new Random(DateTime.Now.Millisecond);
+                int Cardpick = rand.Next(0, 51);
+                PictureBox newCard = new PictureBox();
+                newCard.Size = new Size(50, 70);
+
+                newCard.Location = new Point(opponentleftpos, opponenttoppos);
+                newCard.Image = imageList1.Images[Cardpick];
+                this.Controls.Add(newCard);
+                newCard.BringToFront();
+                opponentleftpos = (opponentleftpos + 10);
+                i++;
+            }
+
+
+
+            while (x < 26)
+            {
+                Random rand = new Random(DateTime.Now.Millisecond);
+                int Cardpick = rand.Next(0, 51);
+                PictureBox newCard = new PictureBox();
+                newCard.Size = new Size(50, 70);
+                newCard.BackgroundImage = imageList1.Images[Cardpick];
+                newCard.BackgroundImageLayout = ImageLayout.Stretch;
+                newCard.Location = new Point(leftpos, toppos);
+
+
+                this.Controls.Add(newCard);
+                newCard.BringToFront();
+                leftpos = (leftpos + 20);
+                x++;
+            }
 
             // forms first size 504, 392
 

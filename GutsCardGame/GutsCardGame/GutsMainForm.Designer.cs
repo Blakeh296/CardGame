@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GutsMainForm));
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.lblPlayer2 = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.lblPlayer9 = new System.Windows.Forms.Label();
             this.lblPlayer10 = new System.Windows.Forms.Label();
             this.pictureBoxCardStack = new System.Windows.Forms.PictureBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,11 +148,73 @@
             // pictureBoxCardStack
             // 
             this.pictureBoxCardStack.Image = global::GutsCardGame.Properties.Resources.RedCard_stack;
-            this.pictureBoxCardStack.Location = new System.Drawing.Point(308, 261);
+            this.pictureBoxCardStack.Location = new System.Drawing.Point(294, 172);
             this.pictureBoxCardStack.Name = "pictureBoxCardStack";
             this.pictureBoxCardStack.Size = new System.Drawing.Size(70, 68);
             this.pictureBoxCardStack.TabIndex = 10;
             this.pictureBoxCardStack.TabStop = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "2_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(1, "2_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(2, "2_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(3, "2_Spades.bmp");
+            this.imageList1.Images.SetKeyName(4, "3_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(5, "3_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(6, "3_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(7, "3_Spades.bmp");
+            this.imageList1.Images.SetKeyName(8, "4_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(9, "4_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(10, "4_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(11, "4_Spades.bmp");
+            this.imageList1.Images.SetKeyName(12, "5_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(13, "5_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(14, "5_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(15, "5_Spades.bmp");
+            this.imageList1.Images.SetKeyName(16, "6_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(17, "6_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(18, "6_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(19, "6_Spades.bmp");
+            this.imageList1.Images.SetKeyName(20, "7_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(21, "7_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(22, "7_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(23, "7_Spades.bmp");
+            this.imageList1.Images.SetKeyName(24, "8_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(25, "8_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(26, "8_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(27, "8_Spades.bmp");
+            this.imageList1.Images.SetKeyName(28, "9_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(29, "9_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(30, "9_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(31, "9_Spades.bmp");
+            this.imageList1.Images.SetKeyName(32, "10_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(33, "10_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(34, "10_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(35, "10_Spades.bmp");
+            this.imageList1.Images.SetKeyName(36, "Ace_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(37, "Ace_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(38, "Ace_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(39, "Ace_Spades.bmp");
+            this.imageList1.Images.SetKeyName(40, "Backface_Blue.bmp");
+            this.imageList1.Images.SetKeyName(41, "Backface_Red.bmp");
+            this.imageList1.Images.SetKeyName(42, "Jack_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(43, "Jack_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(44, "Jack_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(45, "Jack_Spades.bmp");
+            this.imageList1.Images.SetKeyName(46, "Joker_Black.bmp");
+            this.imageList1.Images.SetKeyName(47, "Joker_Red.bmp");
+            this.imageList1.Images.SetKeyName(48, "King_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(49, "King_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(50, "King_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(51, "King_Spades.bmp");
+            this.imageList1.Images.SetKeyName(52, "Queen_Clubs.bmp");
+            this.imageList1.Images.SetKeyName(53, "Queen_Diamonds.bmp");
+            this.imageList1.Images.SetKeyName(54, "Queen_Hearts.bmp");
+            this.imageList1.Images.SetKeyName(55, "Queen_Spades.bmp");
+            this.imageList1.Images.SetKeyName(56, "RedCard_stack.bmp");
             // 
             // GutsMainForm
             // 
@@ -171,6 +235,7 @@
             this.Controls.Add(this.lblPlayer2);
             this.Controls.Add(this.lblPlayer1);
             this.Name = "GutsMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GutsMainForm";
             this.Load += new System.EventHandler(this.GutsMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).EndInit();
@@ -192,5 +257,6 @@
         private System.Windows.Forms.Label lblPlayer9;
         private System.Windows.Forms.Label lblPlayer10;
         private System.Windows.Forms.PictureBox pictureBoxCardStack;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

@@ -34,8 +34,9 @@
             // 
             // btnChoosePlayer
             // 
-            this.btnChoosePlayer.BackColor = System.Drawing.Color.Snow;
+            this.btnChoosePlayer.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnChoosePlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChoosePlayer.ForeColor = System.Drawing.SystemColors.Control;
             this.btnChoosePlayer.Location = new System.Drawing.Point(106, 117);
             this.btnChoosePlayer.Name = "btnChoosePlayer";
             this.btnChoosePlayer.Size = new System.Drawing.Size(142, 32);
@@ -55,6 +56,7 @@
             this.Controls.Add(this.btnChoosePlayer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

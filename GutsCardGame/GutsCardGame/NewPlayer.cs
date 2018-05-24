@@ -20,35 +20,14 @@ namespace GutsCardGame
 
         GutsMainForm frmOne = new GutsMainForm();
 
-        private void btnAddPlayer_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                // Declare a Streamwriter variable
-                StreamWriter outputFile;
-
-                outputFile = File.AppendText("GutsPlayers.txt");
-
-                string var = textBox1.Text;
-
-                comboBox1.Items.Add(var);
-
-
-                outputFile.WriteLine(var);
-
-                // close file
-                outputFile.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
+        
 
         private void NewPlayer_Load(object sender, EventArgs e)
         {
+            //497, 338
+            //335, 112
+
+            this.Size = new Size(335, 112);
             string players;
 
             try
@@ -81,6 +60,7 @@ namespace GutsCardGame
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
+
             frmOne.player1 = comboBox1.SelectedItem.ToString();
 
             frmOne.aI = int.Parse(lblAICount.Text);
@@ -129,6 +109,109 @@ namespace GutsCardGame
             {
                 lblAICount.Text = "10";
             }
+        }
+
+        private void btnAddPlayer_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                // Get rid of the button and textbox
+                tbNewPlayer.Visible = false;
+                btnAddPlayer.Visible = false;
+                pictureBox1.Visible = false;
+
+                // Set the form size
+                this.Size = new Size(290, 330);
+
+                // Make Graphic labels visable
+                lblLabel4.Visible = true;
+                lblUnderline4.Visible = true;
+                comboBox1.Visible = true;
+                comboBox1.Location = new Point(25, 56);
+                lblLabel3.Visible = true;
+                lblUnderline2.Visible = true;
+                lblAICount.Visible = true;
+                lblUnderline3.Visible = true;
+                trackBar1.Visible = true;
+                lblSlogan.Visible = true;
+                btnPlay.Visible = true;
+
+
+                // Declare a Streamwriter variable
+                StreamWriter outputFile;
+
+                outputFile = File.AppendText("GutsPlayers.txt");
+
+                string var = tbNewPlayer.Text;
+
+                comboBox1.Items.Add(var);
+
+
+                outputFile.WriteLine(var);
+
+                // close file
+                outputFile.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btnNewPlayer_Click(object sender, EventArgs e)
+        {
+            
+
+            // Make first pair of buttons invisible
+            btnNewPlayer.Visible = false;
+            btnReturningPlayer.Visible = false;
+
+            // Make textbox and BtnAddPlayer visable
+            tbNewPlayer.Visible = true;
+            btnAddPlayer.Visible = true;
+            pictureBox1.Visible = true;
+
+            // Move the two items to the appropriate location on form
+            tbNewPlayer.Location = new Point(53, 21);
+            btnAddPlayer.Location = new Point(195, 19);
+            pictureBox1.Location = new Point(12, 18);
+
+            
+        }
+
+        private void btnReturningPlayer_Click(object sender, EventArgs e)
+        {
+            // Make first pair of buttons invisible
+            btnNewPlayer.Visible = false;
+            btnReturningPlayer.Visible = false;
+
+            // Set the form size
+            this.Size = new Size(290, 330);
+
+            // Make Graphic labels visable
+            lblLabel4.Visible = true;
+            lblUnderline4.Visible = true;
+            comboBox1.Visible = true;
+            comboBox1.Location = new Point(25, 56);
+            lblLabel3.Visible = true;
+            lblUnderline2.Visible = true;
+            lblAICount.Visible = true;
+            lblUnderline3.Visible = true;
+            trackBar1.Visible = true;
+            lblSlogan.Visible = true;
+            btnPlay.Visible = true;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            btnAddPlayer.Visible = false;
+            tbNewPlayer.Visible = false;
+            pictureBox1.Visible = false;
+
+            btnNewPlayer.Visible = true;
+            btnReturningPlayer.Visible = true;
         }
     }
 }
