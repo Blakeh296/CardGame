@@ -33,7 +33,6 @@ namespace GutsCardGame
 
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
-
             while (i < 2)
             {
                 Random rand = new Random(DateTime.Now.Millisecond);
@@ -48,8 +47,6 @@ namespace GutsCardGame
                 opponentleftpos = (opponentleftpos + 10);
                 i++;
             }
-
-
 
             while (x < 2)
             {
@@ -87,7 +84,6 @@ namespace GutsCardGame
 
             // Use the array to display the players name, along with money
             lblPlayer1.Text = PlayerNames[0] + " : " + startMoney.ToString("c");
-
 
             if (aI == 2)
             {
@@ -129,7 +125,6 @@ namespace GutsCardGame
                 lblPlayer5.Text = "AI 4 " + startMoney.ToString("c");
                 lblPlayer6.Text = "AI 5 " + startMoney.ToString("c");
             }
-
         }
         /*
         private int[] createNonRandomArray(int size, int startingNumber)

@@ -68,8 +68,6 @@ namespace GutsCardGame
             
         }
 
-
-
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
             if (trackBar1.Value == 2)
@@ -112,7 +110,6 @@ namespace GutsCardGame
 
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
-
             try
             {
                 // Get rid of the button and textbox
@@ -145,7 +142,6 @@ namespace GutsCardGame
 
                 comboBox1.Items.Add(var);
 
-
                 outputFile.WriteLine(var);
 
                 // close file
@@ -155,7 +151,6 @@ namespace GutsCardGame
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void btnNewPlayer_Click(object sender, EventArgs e)
