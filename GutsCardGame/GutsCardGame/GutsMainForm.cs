@@ -11,15 +11,12 @@ using System.Windows.Forms;
 namespace GutsCardGame
 {
     public partial class GutsMainForm : Form
-    {
-        
+    {      
         public string[] PlayerNames = new string[20];
         public int aI;
         public string player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
 
         Player currentPlayer;
-
-        
 
         public GutsMainForm()
         {
@@ -70,7 +67,6 @@ namespace GutsCardGame
                 leftpos = (leftpos + 20);
                 x++;
             }
-
 
             // forms first size 504, 392
             this.Size = new Size(504, 392);

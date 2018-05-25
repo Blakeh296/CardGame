@@ -21,10 +21,7 @@ namespace GutsCardGame
             InitializeComponent();
         }
 
-
         GutsMainForm frmOne = new GutsMainForm();
-
-        
 
         private void NewPlayer_Load(object sender, EventArgs e)
         {
@@ -71,18 +68,7 @@ namespace GutsCardGame
             
         }
 
-        private void btnPlay_Click(object sender, EventArgs e)
-        {
-            // Set the variable on the main form 
-            frmOne.PlayerNames[0] = comboBox1.Text;
-            // gets the number of AI for game
-            frmOne.aI = int.Parse(lblAICount.Text);
-            // Show main form
-            frmOne.ShowDialog();
 
-
-
-        }
 
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
@@ -150,7 +136,6 @@ namespace GutsCardGame
                 lblSlogan.Visible = true;
                 btnPlay.Visible = true;
 
-
                 // Declare a Streamwriter variable
                 StreamWriter outputFile;
 
@@ -175,8 +160,6 @@ namespace GutsCardGame
 
         private void btnNewPlayer_Click(object sender, EventArgs e)
         {
-            
-
             // Make first pair of buttons invisible
             btnNewPlayer.Visible = false;
             btnReturningPlayer.Visible = false;
@@ -190,8 +173,6 @@ namespace GutsCardGame
             tbNewPlayer.Location = new Point(53, 30);
             btnAddPlayer.Location = new Point(195, 28);
             pictureBox1.Location = new Point(12, 28);
-
-            
         }
 
         private void btnReturningPlayer_Click(object sender, EventArgs e)
@@ -216,6 +197,16 @@ namespace GutsCardGame
             trackBar1.Visible = true;
             lblSlogan.Visible = true;
             btnPlay.Visible = true;
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            // Set the variable on the main form 
+            frmOne.PlayerNames[0] = comboBox1.Text;
+            // gets the number of AI for game
+            frmOne.aI = int.Parse(lblAICount.Text);
+            // Show main form
+            frmOne.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
