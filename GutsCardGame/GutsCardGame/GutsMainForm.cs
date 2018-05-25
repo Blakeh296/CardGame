@@ -89,8 +89,9 @@ namespace GutsCardGame
             // Work in progress, coudnt get CurrentPlayer to display instead of player 1
            // currentPlayer = new Player(player1);
 
+            // Use the array to display the players name, along with money
             lblPlayer1.Text = PlayerNames[0] + " : " + startMoney.ToString("c");
-            //lblPlayer2.Text = aI.ToString();
+
 
             if (aI == 2)
             {
@@ -134,5 +135,83 @@ namespace GutsCardGame
             }
 
         }
+        /*
+        private int[] createNonRandomArray(int size, int startingNumber)
+        {
+            int[] array = new int[size];
+            for (int i = 0; i < size; i++)
+            {
+                array[i] = startingNumber;
+                startingNumber++;
+            }
+            return array;
+        }
+
+        private int[] fisherYatesShuffle(int[] array)
+        {
+            Random rnd = new Random();
+            for (int i = array.Length - 1; i >= 0; i--)
+            {
+                int r = rnd.Next(0, i + 1);
+
+                int tmp = array[i];
+                array[i] = array[r];
+                array[r] = tmp;
+            }
+            return array;
+
+        }
+
+        private bool isInOrder(int[] array)
+        {
+            int referance = 0;
+            foreach (int i in array)
+            {
+                if (!(i > referance))
+                {
+                    return false;
+                }
+                referance = i;
+            }
+            return true;
+        }
+        private void backgroundWorkerAlgorithm_DoWork(object sender, DoWorkEventArgs e)
+        {
+            int[] array = createNonRandomArray(5, 1);
+            int y = 0;
+            foreach (int i in array)
+            {
+                Console.WriteLine(i);
+            }
+            array = fisherYatesShuffle(array);
+            foreach (int i in array)
+            {
+                Console.WriteLine(i);
+            }
+
+            int numberofruns = 0;
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            while (true)
+            {
+                array = fisherYatesShuffle(array);
+
+                //array = shuffleArray(array);
+                if (isInOrder(array))
+                {
+                    break;
+                }
+                if (numberofruns % 10 == 0)
+                {
+                    Console.WriteLine(numberofruns);
+                }
+                numberofruns++;
+            }
+            sw.Stop();
+            Console.WriteLine("Time it took: " + sw.ElapsedMilliseconds + " -- " + sw.Elapsed);
+            Console.WriteLine("Number of runs: " + numberofruns);
+        }
+        */
     }
 }
