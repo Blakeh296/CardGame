@@ -57,7 +57,7 @@ namespace GutsCardGame
 
                     // Get player name
                     //PlayerNames[count] = Tokens[0];
-                    //Highscores[count] = int.Parse(Tokens[1]);
+                    //Highscores[count] = int.Parse(Tokenss[1]);
 
                     comboBox1.Items.Add(Tokenss[0]);
 
@@ -219,6 +219,7 @@ namespace GutsCardGame
             Score = label1.Text;
 
             frmOne.player1Score = Score;
+
             // Show main form
             frmOne.ShowDialog();
         }
@@ -226,6 +227,7 @@ namespace GutsCardGame
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             label1.Text = Tokenss[1];
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
