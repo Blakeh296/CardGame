@@ -14,8 +14,10 @@ namespace GutsCardGame
     public partial class NewPlayer : Form
     {
         // Declare a array to hold the player names from the CSV file
+        public string[] Tokenss = new string[40];
         public string[] PlayerNames = new string[20];
         public int[] Highscores = new int[20];
+        
 
         public NewPlayer()
         {
@@ -25,6 +27,7 @@ namespace GutsCardGame
         GutsMainForm frmOne = new GutsMainForm();
 
         // LOAD EVENT CURRENTLY BROKEN DUE TO TOKENIZING
+        // Name now displays on game form, still need to figure out highscore
         private void NewPlayer_Load(object sender, EventArgs e)
         {
             //497, 338
@@ -50,11 +53,13 @@ namespace GutsCardGame
                 {
                     players = inputFile.ReadLine();
 
-                    string[] Tokens = players.Split(delim);
+                    Tokenss = players.Split(delim);
 
                     // Get player name
-                    PlayerNames[count] = Tokens[0];
-                    Highscores[count] = int.Parse(Tokens[1]);
+                    //PlayerNames[count] = Tokens[0];
+                    //Highscores[count] = int.Parse(Tokens[1]);
+
+                    comboBox1.Items.Add(Tokenss[0]);
 
                     // increment the counter
                     count++;
@@ -64,7 +69,7 @@ namespace GutsCardGame
                 inputFile.Close();
 
                 // Add the player names to the combobox
-                comboBox1.DataSource = PlayerNames;
+                //comboBox1.DataSource = PlayerNames;
 
                 // Set a default name if no name is picked
                 comboBox1.Text = "Newbie";
@@ -204,14 +209,23 @@ namespace GutsCardGame
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
+            string Score;
+
             // Set the variable on the main form 
             frmOne.PlayerNames[0] = comboBox1.Text;
             // gets the number of AI for game
             frmOne.aI = int.Parse(lblAICount.Text);
 
-            frmOne.player1Score = Highscores[0];
+            Score = label1.Text;
+
+            frmOne.player1Score = Score;
             // Show main form
             frmOne.ShowDialog();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label1.Text = Tokenss[1];
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -236,5 +250,7 @@ namespace GutsCardGame
             btnNewPlayer.Visible = true;
             btnReturningPlayer.Visible = true;
         }
+
+       
     }
 }

@@ -14,9 +14,10 @@ namespace GutsCardGame
     {      
         public string[] PlayerNames = new string[20];
         public int aI;
-        public int player1Score;
+        public string player1Score;
         public string player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
 
+        
 
         public GutsMainForm()
         {
@@ -127,6 +128,12 @@ namespace GutsCardGame
                 lblPlayer6.Text = "AI 5 " + startMoney.ToString("c");
             }
         }
+
+        private void exitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         /*
         private int[] createNonRandomArray(int size, int startingNumber)
         {
