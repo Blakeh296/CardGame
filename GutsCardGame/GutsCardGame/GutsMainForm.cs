@@ -14,9 +14,9 @@ namespace GutsCardGame
     {      
         public string[] PlayerNames = new string[20];
         public int aI;
+        public int player1Score;
         public string player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
 
-        Player currentPlayer;
 
         public GutsMainForm()
         {
@@ -33,10 +33,11 @@ namespace GutsCardGame
 
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
+
             while (i < 2)
             {
                 Random rand = new Random(DateTime.Now.Millisecond);
-                int Cardpick = rand.Next(0, 51);
+                int Cardpick = rand.Next(0, imageList1.Images.Count);
                 PictureBox newCard = new PictureBox();
                 newCard.Size = new Size(50, 70);
 
@@ -51,7 +52,7 @@ namespace GutsCardGame
             while (x < 2)
             {
                 Random rand = new Random(DateTime.Now.Millisecond);
-                int Cardpick = rand.Next(0, 51);
+                int Cardpick = rand.Next(0, imageList1.Images.Count);
                 PictureBox newCard = new PictureBox();
                 newCard.Size = new Size(50, 70);
                 newCard.BackgroundImage = imageList1.Images[Cardpick];
@@ -83,7 +84,7 @@ namespace GutsCardGame
            // currentPlayer = new Player(player1);
 
             // Use the array to display the players name, along with money
-            lblPlayer1.Text = PlayerNames[0] + " : " + startMoney.ToString("c");
+            lblPlayer1.Text = PlayerNames[0] + " : " + player1Score;
 
             if (aI == 2)
             {

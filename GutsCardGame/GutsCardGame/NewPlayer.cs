@@ -15,6 +15,7 @@ namespace GutsCardGame
     {
         // Declare a array to hold the player names from the CSV file
         public string[] PlayerNames = new string[20];
+        public int[] Highscores = new int[20];
 
         public NewPlayer()
         {
@@ -23,6 +24,7 @@ namespace GutsCardGame
 
         GutsMainForm frmOne = new GutsMainForm();
 
+        // LOAD EVENT CURRENTLY BROKEN DUE TO TOKENIZING
         private void NewPlayer_Load(object sender, EventArgs e)
         {
             //497, 338
@@ -40,13 +42,19 @@ namespace GutsCardGame
                 //Open the file
                 inputFile = File.OpenText("GutsPlayers.txt");
 
+                //create a delimiter array
+                char[] delim = { ',' };
+
                 // Read the files contents
                 while (!inputFile.EndOfStream)
                 {
                     players = inputFile.ReadLine();
 
+                    string[] Tokens = players.Split(delim);
+
                     // Get player name
-                    PlayerNames[count] = players;
+                    PlayerNames[count] = Tokens[0];
+                    Highscores[count] = int.Parse(Tokens[1]);
 
                     // increment the counter
                     count++;
@@ -200,6 +208,8 @@ namespace GutsCardGame
             frmOne.PlayerNames[0] = comboBox1.Text;
             // gets the number of AI for game
             frmOne.aI = int.Parse(lblAICount.Text);
+
+            frmOne.player1Score = Highscores[0];
             // Show main form
             frmOne.ShowDialog();
         }
