@@ -13,15 +13,28 @@ namespace GutsCardGame
     public partial class GutsMainForm : Form
     {      
         public string[] PlayerNames = new string[20];
+        public string[] PlayerCards = new string[2];
+        public string[] OpponentCards = new string[2];
         public int aI;
+        public int gameCounter = 0;     // to count what round youre on
         public string player1Score;
         public string player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
 
-        
+        Player var = new Player("bill");
 
         public GutsMainForm()
         {
             InitializeComponent();
+        }
+
+        private void exitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void playerSelectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         public int opponentleftpos = 175;
@@ -34,6 +47,7 @@ namespace GutsCardGame
 
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
+            var.PlayerName = "fill";
 
             while (i < 2)
             {
@@ -47,6 +61,7 @@ namespace GutsCardGame
                 this.Controls.Add(newCard);
                 newCard.BringToFront();
                 opponentleftpos = (opponentleftpos + 10);
+
                 i++;
             }
 
@@ -60,10 +75,10 @@ namespace GutsCardGame
                 newCard.BackgroundImageLayout = ImageLayout.Stretch;
                 newCard.Location = new Point(leftpos, toppos);
 
-
                 this.Controls.Add(newCard);
                 newCard.BringToFront();
                 leftpos = (leftpos + 20);
+
                 x++;
             }
 
@@ -89,6 +104,8 @@ namespace GutsCardGame
 
             if (aI == 2)
             {
+
+
                 lblPlayer3.Visible = true;
 
                 lblPlayer2.Text = "AI 1 " + startMoney.ToString("c");
@@ -127,11 +144,6 @@ namespace GutsCardGame
                 lblPlayer5.Text = "AI 4 " + startMoney.ToString("c");
                 lblPlayer6.Text = "AI 5 " + startMoney.ToString("c");
             }
-        }
-
-        private void exitGameToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         /*

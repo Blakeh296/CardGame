@@ -216,7 +216,7 @@ namespace GutsCardGame
             // gets the number of AI for game
             frmOne.aI = int.Parse(lblAICount.Text);
 
-            Score = label1.Text;
+            Score = Tokenss[1].ToString();
 
             frmOne.player1Score = Score;
 
