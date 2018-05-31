@@ -11,6 +11,13 @@ using System.IO;
 
 namespace GutsCardGame
 {
+
+    /*  Current code issues
+     *  // 1. The score is now displaying on the main screen, however its only displaying a specific score, not the score
+     *  // Assosiated to the player picked -- Probably a tokenizing issue idk. 
+     *  // 2. dont know how to get the picture box values and store them
+     */
+
     public partial class NewPlayer : Form
     {
         // Declare a array to hold the player names from the CSV file
