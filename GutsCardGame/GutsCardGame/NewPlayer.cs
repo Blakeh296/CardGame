@@ -33,8 +33,8 @@ namespace GutsCardGame
 
         GutsMainForm frmOne = new GutsMainForm();
 
-        // LOAD EVENT CURRENTLY BROKEN DUE TO TOKENIZING
-        // Name now displays on game form, still need to figure out highscore
+        // Name now displays on game form, a highscore displays but not the right one 
+        // still dont understand classes
         private void NewPlayer_Load(object sender, EventArgs e)
         {
             //497, 338
@@ -227,14 +227,17 @@ namespace GutsCardGame
 
             frmOne.player1Score = Score;
 
-            // Show main form
-            frmOne.ShowDialog();
+            this.Hide();        // Hide this form
+            
+            frmOne.ShowDialog();    // Show next form
+
+            this.Close();       // Dispose of this form
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Set the text box equal to the players score
             label1.Text = Tokenss[1];
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

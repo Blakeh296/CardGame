@@ -19,9 +19,14 @@ namespace GutsCardGame
 
         private void btnChoosePlayer_Click(object sender, EventArgs e)
         {
-            NewPlayer var = new NewPlayer();
+            
+            NewPlayer var = new NewPlayer();        // Get the next form ready to open
 
-            var.ShowDialog();
+            this.Hide();                        // Hide this form
+
+            var.ShowDialog();                       // Display next form
+
+            this.Close();                       // Close this form
         }
     }
 }

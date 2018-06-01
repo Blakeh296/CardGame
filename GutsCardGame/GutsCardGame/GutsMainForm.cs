@@ -34,7 +34,11 @@ namespace GutsCardGame
 
         private void playerSelectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            // Create access to the new player form
+            NewPlayer SelectPlayer = new NewPlayer();
+            this.Hide();                    // Hide this form
+            SelectPlayer.ShowDialog();          // Show form
+            this.Close();                   // Dispose of current form
         }
 
         public int opponentleftpos = 175;

@@ -44,10 +44,10 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblPlayerCardPick = new System.Windows.Forms.Label();
             this.lblComputerCardPick = new System.Windows.Forms.Label();
-            this.playerSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -225,6 +225,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -242,10 +243,17 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.exitToolStripMenuItem.Text = "&Exit";
             // 
+            // playerSelectToolStripMenuItem
+            // 
+            this.playerSelectToolStripMenuItem.Name = "playerSelectToolStripMenuItem";
+            this.playerSelectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.playerSelectToolStripMenuItem.Text = "&Player Select";
+            this.playerSelectToolStripMenuItem.Click += new System.EventHandler(this.playerSelectToolStripMenuItem_Click);
+            // 
             // exitGameToolStripMenuItem
             // 
             this.exitGameToolStripMenuItem.Name = "exitGameToolStripMenuItem";
-            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitGameToolStripMenuItem.Text = "&Exit Game";
             this.exitGameToolStripMenuItem.Click += new System.EventHandler(this.exitGameToolStripMenuItem_Click);
             // 
@@ -266,13 +274,6 @@
             this.lblComputerCardPick.Size = new System.Drawing.Size(35, 13);
             this.lblComputerCardPick.TabIndex = 14;
             this.lblComputerCardPick.Text = "label1";
-            // 
-            // playerSelectToolStripMenuItem
-            // 
-            this.playerSelectToolStripMenuItem.Name = "playerSelectToolStripMenuItem";
-            this.playerSelectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.playerSelectToolStripMenuItem.Text = "&Player Select";
-            this.playerSelectToolStripMenuItem.Click += new System.EventHandler(this.playerSelectToolStripMenuItem_Click);
             // 
             // GutsMainForm
             // 
