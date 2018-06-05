@@ -48,6 +48,7 @@
             this.exitGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblPlayerCardPick = new System.Windows.Forms.Label();
             this.lblComputerCardPick = new System.Windows.Forms.Label();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -246,14 +247,14 @@
             // playerSelectToolStripMenuItem
             // 
             this.playerSelectToolStripMenuItem.Name = "playerSelectToolStripMenuItem";
-            this.playerSelectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.playerSelectToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.playerSelectToolStripMenuItem.Text = "&Player Select";
             this.playerSelectToolStripMenuItem.Click += new System.EventHandler(this.playerSelectToolStripMenuItem_Click);
             // 
             // exitGameToolStripMenuItem
             // 
             this.exitGameToolStripMenuItem.Name = "exitGameToolStripMenuItem";
-            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.exitGameToolStripMenuItem.Text = "&Exit Game";
             this.exitGameToolStripMenuItem.Click += new System.EventHandler(this.exitGameToolStripMenuItem_Click);
             // 
@@ -329,5 +330,6 @@
         private System.Windows.Forms.Label lblPlayerCardPick;
         private System.Windows.Forms.Label lblComputerCardPick;
         private System.Windows.Forms.ToolStripMenuItem playerSelectToolStripMenuItem;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }

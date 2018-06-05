@@ -88,46 +88,6 @@ namespace GutsCardGame
             
         }
 
-        private void trackBar1_ValueChanged(object sender, EventArgs e)
-        {
-            if (trackBar1.Value == 2)
-            {
-                lblAICount.Text = "2";
-            }
-            else if (trackBar1.Value == 3)
-            {
-                lblAICount.Text = "3";
-            }
-            else if (trackBar1.Value == 4)
-            {
-                lblAICount.Text = "4";
-            }
-            else if (trackBar1.Value == 5)
-            {
-                lblAICount.Text = "5";
-            }
-            else if (trackBar1.Value == 6)
-            {
-                lblAICount.Text = "6";
-            }
-            else if (trackBar1.Value == 7)
-            {
-                lblAICount.Text = "7";
-            }
-            else if (trackBar1.Value == 8)
-            {
-                lblAICount.Text = "8";
-            }
-            else if (trackBar1.Value == 9)
-            {
-                lblAICount.Text = "9";
-            }
-            else if (trackBar1.Value == 10)
-            {
-                lblAICount.Text = "10";
-            }
-        }
-
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
             try
@@ -173,6 +133,30 @@ namespace GutsCardGame
             }
         }
 
+        // Last button on the page before the game starts
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            string Score;
+
+            // Set the variable on the main form 
+            frmOne.PlayerNames[0] = comboBox1.Text;
+            // gets the number of AI for game
+            frmOne.aI = int.Parse(lblAICount.Text);
+
+            Score = Tokenss[1].ToString();
+
+            frmOne.player1Score = Score;
+
+            this.Hide();        // Hide this form
+
+            frmOne.ShowDialog();    // Show next form
+
+            this.Close();       // Dispose of this form
+        }
+
+
+        // Displays text box so the user can type in a name they want to play as,
+        // or a returning player can start fresh 
         private void btnNewPlayer_Click(object sender, EventArgs e)
         {
             // Make first pair of buttons invisible
@@ -190,6 +174,8 @@ namespace GutsCardGame
             pictureBox1.Location = new Point(12, 28);
         }
 
+
+        // Changes form size, and positions controls to allow player to pick a player
         private void btnReturningPlayer_Click(object sender, EventArgs e)
         {
             // Make first pair of buttons invisible
@@ -214,25 +200,7 @@ namespace GutsCardGame
             btnPlay.Visible = true;
         }
 
-        private void btnPlay_Click(object sender, EventArgs e)
-        {
-            string Score;
-
-            // Set the variable on the main form 
-            frmOne.PlayerNames[0] = comboBox1.Text;
-            // gets the number of AI for game
-            frmOne.aI = int.Parse(lblAICount.Text);
-
-            Score = Tokenss[1].ToString();
-
-            frmOne.player1Score = Score;
-
-            this.Hide();        // Hide this form
-            
-            frmOne.ShowDialog();    // Show next form
-
-            this.Close();       // Dispose of this form
-        }
+        
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -240,6 +208,48 @@ namespace GutsCardGame
             label1.Text = Tokenss[1];
         }
 
+        // IDK if im going to keep this but i am for now
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            if (trackBar1.Value == 2)
+            {
+                lblAICount.Text = "2";
+            }
+            else if (trackBar1.Value == 3)
+            {
+                lblAICount.Text = "3";
+            }
+            else if (trackBar1.Value == 4)
+            {
+                lblAICount.Text = "4";
+            }
+            else if (trackBar1.Value == 5)
+            {
+                lblAICount.Text = "5";
+            }
+            else if (trackBar1.Value == 6)
+            {
+                lblAICount.Text = "6";
+            }
+            else if (trackBar1.Value == 7)
+            {
+                lblAICount.Text = "7";
+            }
+            else if (trackBar1.Value == 8)
+            {
+                lblAICount.Text = "8";
+            }
+            else if (trackBar1.Value == 9)
+            {
+                lblAICount.Text = "9";
+            }
+            else if (trackBar1.Value == 10)
+            {
+                lblAICount.Text = "10";
+            }
+        }
+
+        // Picture box is a functioning back button for this form
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Size = new Size(335, 112);
