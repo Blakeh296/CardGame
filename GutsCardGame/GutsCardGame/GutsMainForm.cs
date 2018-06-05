@@ -14,6 +14,9 @@ namespace GutsCardGame
     {      
         public string[] PlayerNames = new string[20];
         public int[] PlayerCards = new int[2];
+        // TODO: PlayerCardValues is an extra array I added, to attempt to store card values
+        public int[] PlayerCardValues = new int[2];
+        // TODO: OpponentCards should be set up to hold card values, since I am going to display the back of cards on screen
         public int[] OpponentCards = new int[2];
         public int aI;
         public int gameCounter = 0;     // to count what round youre on
@@ -96,9 +99,9 @@ namespace GutsCardGame
             pbPlayer1Card1.Image = imageList1.Images[PlayerCards[0]];
             pbPlayer1Card2.Image = imageList1.Images[PlayerCards[1]];
 
-            // TODO: Display opponent cards away from the player
-            pbOpponent1Card1.Image = imageList1.Images[OpponentCards[0]];
-            pbOpponent1Card2.Image = imageList1.Images[OpponentCards[1]];
+            // TODO: Displays back of cards, need a way to get and keep card value
+            pbOpponent1Card1.Image = imageList1.Images[41];
+            pbOpponent1Card2.Image = imageList1.Images[41];
 
             // forms first size 504, 392
             this.Size = new Size(504, 392);
