@@ -13,8 +13,8 @@ namespace GutsCardGame
     public partial class GutsMainForm : Form
     {      
         public string[] PlayerNames = new string[20];
-        public string[] PlayerCards = new string[2];
-        public string[] OpponentCards = new string[2];
+        public int[] PlayerCards = new int[2];
+        public int[] OpponentCards = new int[2];
         public int aI;
         public int gameCounter = 0;     // to count what round youre on
         public string player1Score;
@@ -66,6 +66,8 @@ namespace GutsCardGame
                 newCard.BringToFront();
                 opponentleftpos = (opponentleftpos + 10);
 
+                OpponentCards[i] = Cardpick;
+
                 i++;
             }
 
@@ -79,12 +81,24 @@ namespace GutsCardGame
                 newCard.BackgroundImageLayout = ImageLayout.Stretch;
                 newCard.Location = new Point(leftpos, toppos);
 
+                PlayerCards[x] = Cardpick;
+
+                
+
                 this.Controls.Add(newCard);
                 newCard.BringToFront();
                 leftpos = (leftpos + 20);
 
                 x++;
             }
+
+            // Display clickable cards for the player
+            pbPlayer1Card1.Image = imageList1.Images[PlayerCards[0]];
+            pbPlayer1Card2.Image = imageList1.Images[PlayerCards[1]];
+
+            // TODO: Display opponent cards away from the player
+            pbOpponent1Card1.Image = imageList1.Images[OpponentCards[0]];
+            pbOpponent1Card2.Image = imageList1.Images[OpponentCards[1]];
 
             // forms first size 504, 392
             this.Size = new Size(504, 392);
@@ -100,11 +114,9 @@ namespace GutsCardGame
             lblPlayer9.Visible = false;
             lblPlayer10.Visible = false;
 
-            // Work in progress, coudnt get CurrentPlayer to display instead of player 1
-           // currentPlayer = new Player(player1);
 
             // Use the array to display the players name, along with money
-            lblPlayer1.Text = PlayerNames[0] + " : " + player1Score;
+            lblPlayer1.Text = PlayerNames[0] + " : " + player1Score.ToString();
 
             if (aI == 2)
             {

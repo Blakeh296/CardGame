@@ -23,7 +23,7 @@ namespace GutsCardGame
         // Declare a array to hold the player names from the CSV file
         public string[] Tokenss = new string[40];
         public string[] PlayerNames = new string[20];
-        public int[] Highscores = new int[20];
+        public int[] Highscores = new int[40];
         
 
         public NewPlayer()
@@ -63,8 +63,8 @@ namespace GutsCardGame
                     Tokenss = players.Split(delim);
 
                     // Get player name
-                    //PlayerNames[count] = Tokens[0];
-                    //Highscores[count] = int.Parse(Tokenss[1]);
+                    // PlayerNames[count] = Tokens[0];
+                    // TODO: Highscores[count] = int.Parse(Tokenss[1]);
 
                     comboBox1.Items.Add(Tokenss[0]);
 
@@ -75,10 +75,7 @@ namespace GutsCardGame
                 // Close the file
                 inputFile.Close();
 
-                // Add the player names to the combobox
-                //comboBox1.DataSource = PlayerNames;
-
-                // Set a default name if no name is picked
+                // Set a default name if no name is picked (Ensure code runs) lol
                 comboBox1.Text = "Newbie";
             }
             catch (Exception Ex)
@@ -86,6 +83,13 @@ namespace GutsCardGame
                 MessageBox.Show(Ex.Message);
             }
             
+        }
+
+        // When you pick a different name from avaliable characters
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Set the text box equal to the players score
+            label1.Text = Tokenss[1];
         }
 
         private void btnAddPlayer_Click(object sender, EventArgs e)
@@ -202,13 +206,9 @@ namespace GutsCardGame
 
         
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Set the text box equal to the players score
-            label1.Text = Tokenss[1];
-        }
 
-        // IDK if im going to keep this but i am for now
+
+        // TODO: Work on track bar
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
             if (trackBar1.Value == 2)

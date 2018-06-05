@@ -49,8 +49,18 @@
             this.lblPlayerCardPick = new System.Windows.Forms.Label();
             this.lblComputerCardPick = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbPlayer1Card1 = new System.Windows.Forms.PictureBox();
+            this.pbPlayer1Card2 = new System.Windows.Forms.PictureBox();
+            this.pbOpponent1Card1 = new System.Windows.Forms.PictureBox();
+            this.pbOpponent1Card2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Card1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Card2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPlayer1
@@ -276,6 +286,46 @@
             this.lblComputerCardPick.TabIndex = 14;
             this.lblComputerCardPick.Text = "label1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(-23, -45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbPlayer1Card1
+            // 
+            this.pbPlayer1Card1.Location = new System.Drawing.Point(263, 262);
+            this.pbPlayer1Card1.Name = "pbPlayer1Card1";
+            this.pbPlayer1Card1.Size = new System.Drawing.Size(50, 70);
+            this.pbPlayer1Card1.TabIndex = 16;
+            this.pbPlayer1Card1.TabStop = false;
+            // 
+            // pbPlayer1Card2
+            // 
+            this.pbPlayer1Card2.Location = new System.Drawing.Point(341, 262);
+            this.pbPlayer1Card2.Name = "pbPlayer1Card2";
+            this.pbPlayer1Card2.Size = new System.Drawing.Size(50, 70);
+            this.pbPlayer1Card2.TabIndex = 17;
+            this.pbPlayer1Card2.TabStop = false;
+            // 
+            // pbOpponent1Card1
+            // 
+            this.pbOpponent1Card1.Location = new System.Drawing.Point(462, 164);
+            this.pbOpponent1Card1.Name = "pbOpponent1Card1";
+            this.pbOpponent1Card1.Size = new System.Drawing.Size(50, 70);
+            this.pbOpponent1Card1.TabIndex = 18;
+            this.pbOpponent1Card1.TabStop = false;
+            // 
+            // pbOpponent1Card2
+            // 
+            this.pbOpponent1Card2.Location = new System.Drawing.Point(548, 164);
+            this.pbOpponent1Card2.Name = "pbOpponent1Card2";
+            this.pbOpponent1Card2.Size = new System.Drawing.Size(50, 70);
+            this.pbOpponent1Card2.TabIndex = 19;
+            this.pbOpponent1Card2.TabStop = false;
+            // 
             // GutsMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,6 +333,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(670, 398);
+            this.Controls.Add(this.pbOpponent1Card2);
+            this.Controls.Add(this.pbOpponent1Card1);
+            this.Controls.Add(this.pbPlayer1Card2);
+            this.Controls.Add(this.pbPlayer1Card1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblComputerCardPick);
             this.Controls.Add(this.lblPlayerCardPick);
             this.Controls.Add(this.pictureBoxCardStack);
@@ -305,6 +360,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Card1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Card2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,5 +391,10 @@
         private System.Windows.Forms.Label lblComputerCardPick;
         private System.Windows.Forms.ToolStripMenuItem playerSelectToolStripMenuItem;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbPlayer1Card1;
+        private System.Windows.Forms.PictureBox pbPlayer1Card2;
+        private System.Windows.Forms.PictureBox pbOpponent1Card1;
+        private System.Windows.Forms.PictureBox pbOpponent1Card2;
     }
 }
