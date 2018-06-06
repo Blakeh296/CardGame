@@ -31,6 +31,12 @@ namespace GutsCardGame
         // variables for the cards, and the while loop
         public int opponentleftpos = 175;
         public int opponenttoppos = 275;
+
+        private void lblClickToStart_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public int leftpos = 50;
         public int toppos = 450;
         public int CardLocation = 0;
@@ -102,9 +108,14 @@ namespace GutsCardGame
             pbPlayer1Card1.Image = imageList1.Images[PlayerCards[0]];
             pbPlayer1Card2.Image = imageList1.Images[PlayerCards[1]];
 
+            // Player 2 Opponent 1
             // TODO: Displays back of cards, need a way to get and keep card value
             pbOpponent1Card1.Image = imageList1.Images[41];
             pbOpponent1Card2.Image = imageList1.Images[41];
+
+            // Player 3 Opponent 2
+            pbOpponent2Card1.Image = imageList1.Images[41];
+            pbOpponent2Card2.Image = imageList1.Images[41];
 
             // TODO: First Attempt at getting card values
             //MessageBox.Show("Player Cards" + PlayerCards[0]);
@@ -113,7 +124,7 @@ namespace GutsCardGame
             //MessageBox.Show("Opposing cards" + OpponentCards[1].ToString());
 
             // forms first size 504, 392
-            this.Size = new Size(504, 392);
+            this.Size = new Size(873, 512);
 
             double startMoney = 5000;
 
@@ -128,7 +139,7 @@ namespace GutsCardGame
             lblPlayer10.Visible = false;
 
             // Use the array to display the players name, along with money
-            lblPlayer1.Text = PlayerNames[0] + " : " + player1Score.ToString();
+            lblPlayer1.Text = PlayerNames[0] + " : " + "$ " + player1Score.ToString();
 
             // TODO: AI If statement, idk if i want to keep this
             if (aI == 2)

@@ -61,6 +61,11 @@
             this.pbPlayer1Card2 = new System.Windows.Forms.PictureBox();
             this.pbOpponent1Card1 = new System.Windows.Forms.PictureBox();
             this.pbOpponent1Card2 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pbOpponent2Card1 = new System.Windows.Forms.PictureBox();
+            this.pbOpponent2Card2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,13 +73,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Card2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card2)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOpponent2Card1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOpponent2Card2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPlayer1
             // 
             this.lblPlayer1.AutoSize = true;
             this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayer1.Location = new System.Drawing.Point(37, 33);
+            this.lblPlayer1.Location = new System.Drawing.Point(57, 13);
             this.lblPlayer1.Name = "lblPlayer1";
             this.lblPlayer1.Size = new System.Drawing.Size(51, 20);
             this.lblPlayer1.TabIndex = 0;
@@ -84,7 +94,7 @@
             // 
             this.lblPlayer2.AutoSize = true;
             this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayer2.Location = new System.Drawing.Point(37, 69);
+            this.lblPlayer2.Location = new System.Drawing.Point(6, 16);
             this.lblPlayer2.Name = "lblPlayer2";
             this.lblPlayer2.Size = new System.Drawing.Size(51, 20);
             this.lblPlayer2.TabIndex = 1;
@@ -94,7 +104,7 @@
             // 
             this.lblPlayer3.AutoSize = true;
             this.lblPlayer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayer3.Location = new System.Drawing.Point(37, 104);
+            this.lblPlayer3.Location = new System.Drawing.Point(6, 15);
             this.lblPlayer3.Name = "lblPlayer3";
             this.lblPlayer3.Size = new System.Drawing.Size(51, 20);
             this.lblPlayer3.TabIndex = 2;
@@ -172,10 +182,13 @@
             // 
             // pictureBoxCardStack
             // 
+            this.pictureBoxCardStack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxCardStack.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxCardStack.Image = global::GutsCardGame.Properties.Resources.RedCard_stack;
-            this.pictureBoxCardStack.Location = new System.Drawing.Point(313, 155);
+            this.pictureBoxCardStack.Location = new System.Drawing.Point(661, 298);
             this.pictureBoxCardStack.Name = "pictureBoxCardStack";
-            this.pictureBoxCardStack.Size = new System.Drawing.Size(70, 68);
+            this.pictureBoxCardStack.Size = new System.Drawing.Size(72, 70);
+            this.pictureBoxCardStack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBoxCardStack.TabIndex = 10;
             this.pictureBoxCardStack.TabStop = false;
             // 
@@ -249,7 +262,7 @@
             this.exitToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(670, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(966, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -268,19 +281,19 @@
             this.yesRestartToolStripMenuItem,
             this.keepPlayingToolStripMenuItem});
             this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            this.restartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.restartToolStripMenuItem.Text = "&Restart";
             // 
             // yesRestartToolStripMenuItem
             // 
             this.yesRestartToolStripMenuItem.Name = "yesRestartToolStripMenuItem";
-            this.yesRestartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yesRestartToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.yesRestartToolStripMenuItem.Text = "&Confirm";
             // 
             // keepPlayingToolStripMenuItem
             // 
             this.keepPlayingToolStripMenuItem.Name = "keepPlayingToolStripMenuItem";
-            this.keepPlayingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.keepPlayingToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.keepPlayingToolStripMenuItem.Text = "&Keep Playing";
             // 
             // playerSelectToolStripMenuItem
@@ -288,13 +301,13 @@
             this.playerSelectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.playerSelectToolStripMenuItem1});
             this.playerSelectToolStripMenuItem.Name = "playerSelectToolStripMenuItem";
-            this.playerSelectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.playerSelectToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.playerSelectToolStripMenuItem.Text = "&Player Select";
             // 
             // playerSelectToolStripMenuItem1
             // 
             this.playerSelectToolStripMenuItem1.Name = "playerSelectToolStripMenuItem1";
-            this.playerSelectToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.playerSelectToolStripMenuItem1.Size = new System.Drawing.Size(89, 22);
             this.playerSelectToolStripMenuItem1.Text = "&Go";
             this.playerSelectToolStripMenuItem1.Click += new System.EventHandler(this.playerSelectToolStripMenuItem1_Click);
             // 
@@ -311,7 +324,7 @@
             this.exitAllToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.areYouSureToolStripMenuItem});
             this.exitAllToolStripMenuItem.Name = "exitAllToolStripMenuItem";
-            this.exitAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitAllToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.exitAllToolStripMenuItem.Text = "&Close All";
             // 
             // areYouSureToolStripMenuItem
@@ -319,13 +332,13 @@
             this.areYouSureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.yESToolStripMenuItem});
             this.areYouSureToolStripMenuItem.Name = "areYouSureToolStripMenuItem";
-            this.areYouSureToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.areYouSureToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.areYouSureToolStripMenuItem.Text = "Are you &Sure?";
             // 
             // yESToolStripMenuItem
             // 
             this.yESToolStripMenuItem.Name = "yESToolStripMenuItem";
-            this.yESToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yESToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.yESToolStripMenuItem.Text = "&YES";
             this.yESToolStripMenuItem.Click += new System.EventHandler(this.yESToolStripMenuItem_Click);
             // 
@@ -357,23 +370,25 @@
             // 
             // pbPlayer1Card1
             // 
-            this.pbPlayer1Card1.Location = new System.Drawing.Point(423, 249);
+            this.pbPlayer1Card1.Location = new System.Drawing.Point(254, 13);
             this.pbPlayer1Card1.Name = "pbPlayer1Card1";
-            this.pbPlayer1Card1.Size = new System.Drawing.Size(50, 70);
+            this.pbPlayer1Card1.Size = new System.Drawing.Size(64, 94);
+            this.pbPlayer1Card1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayer1Card1.TabIndex = 16;
             this.pbPlayer1Card1.TabStop = false;
             // 
             // pbPlayer1Card2
             // 
-            this.pbPlayer1Card2.Location = new System.Drawing.Point(501, 249);
+            this.pbPlayer1Card2.Location = new System.Drawing.Point(324, 13);
             this.pbPlayer1Card2.Name = "pbPlayer1Card2";
-            this.pbPlayer1Card2.Size = new System.Drawing.Size(50, 70);
+            this.pbPlayer1Card2.Size = new System.Drawing.Size(67, 94);
+            this.pbPlayer1Card2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayer1Card2.TabIndex = 17;
             this.pbPlayer1Card2.TabStop = false;
             // 
             // pbOpponent1Card1
             // 
-            this.pbOpponent1Card1.Location = new System.Drawing.Point(423, 159);
+            this.pbOpponent1Card1.Location = new System.Drawing.Point(22, 39);
             this.pbOpponent1Card1.Name = "pbOpponent1Card1";
             this.pbOpponent1Card1.Size = new System.Drawing.Size(50, 70);
             this.pbOpponent1Card1.TabIndex = 18;
@@ -381,11 +396,70 @@
             // 
             // pbOpponent1Card2
             // 
-            this.pbOpponent1Card2.Location = new System.Drawing.Point(501, 159);
+            this.pbOpponent1Card2.Location = new System.Drawing.Point(107, 39);
             this.pbOpponent1Card2.Name = "pbOpponent1Card2";
             this.pbOpponent1Card2.Size = new System.Drawing.Size(50, 70);
             this.pbOpponent1Card2.TabIndex = 19;
             this.pbOpponent1Card2.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Red;
+            this.groupBox1.BackgroundImage = global::GutsCardGame.Properties.Resources.cards_on_red_felt_poker_table_background;
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.lblPlayer1);
+            this.groupBox1.Controls.Add(this.pbPlayer1Card2);
+            this.groupBox1.Controls.Add(this.pbPlayer1Card1);
+            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox1.Location = new System.Drawing.Point(0, 355);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
+            this.groupBox1.Size = new System.Drawing.Size(966, 119);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.pbOpponent1Card1);
+            this.groupBox2.Controls.Add(this.pbOpponent1Card2);
+            this.groupBox2.Controls.Add(this.lblPlayer2);
+            this.groupBox2.Location = new System.Drawing.Point(458, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(175, 119);
+            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.pbOpponent2Card1);
+            this.groupBox3.Controls.Add(this.pbOpponent2Card2);
+            this.groupBox3.Controls.Add(this.lblPlayer3);
+            this.groupBox3.Location = new System.Drawing.Point(661, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(175, 119);
+            this.groupBox3.TabIndex = 22;
+            this.groupBox3.TabStop = false;
+            // 
+            // pbOpponent2Card1
+            // 
+            this.pbOpponent2Card1.Location = new System.Drawing.Point(22, 39);
+            this.pbOpponent2Card1.Name = "pbOpponent2Card1";
+            this.pbOpponent2Card1.Size = new System.Drawing.Size(50, 70);
+            this.pbOpponent2Card1.TabIndex = 18;
+            this.pbOpponent2Card1.TabStop = false;
+            // 
+            // pbOpponent2Card2
+            // 
+            this.pbOpponent2Card2.Location = new System.Drawing.Point(107, 39);
+            this.pbOpponent2Card2.Name = "pbOpponent2Card2";
+            this.pbOpponent2Card2.Size = new System.Drawing.Size(50, 70);
+            this.pbOpponent2Card2.TabIndex = 19;
+            this.pbOpponent2Card2.TabStop = false;
             // 
             // GutsMainForm
             // 
@@ -393,11 +467,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(670, 398);
-            this.Controls.Add(this.pbOpponent1Card2);
-            this.Controls.Add(this.pbOpponent1Card1);
-            this.Controls.Add(this.pbPlayer1Card2);
-            this.Controls.Add(this.pbPlayer1Card1);
+            this.ClientSize = new System.Drawing.Size(966, 474);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblComputerCardPick);
             this.Controls.Add(this.lblPlayerCardPick);
@@ -409,14 +480,12 @@
             this.Controls.Add(this.lblPlayer6);
             this.Controls.Add(this.lblPlayer5);
             this.Controls.Add(this.lblPlayer4);
-            this.Controls.Add(this.lblPlayer3);
-            this.Controls.Add(this.lblPlayer2);
-            this.Controls.Add(this.lblPlayer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "GutsMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GutsMainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GutsMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -426,6 +495,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Card2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOpponent2Card1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOpponent2Card2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,5 +541,10 @@
         private System.Windows.Forms.ToolStripMenuItem playerSelectToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem areYouSureToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yESToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox pbOpponent2Card1;
+        private System.Windows.Forms.PictureBox pbOpponent2Card2;
     }
 }

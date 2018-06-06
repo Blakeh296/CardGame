@@ -63,6 +63,26 @@ namespace GutsCardGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cards_on_red_felt_poker_table_background {
+            get {
+                object obj = ResourceManager.GetObject("cards-on-red-felt-poker-table-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PokerRed {
+            get {
+                object obj = ResourceManager.GetObject("PokerRed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RedCard_stack {
             get {
                 object obj = ResourceManager.GetObject("RedCard_stack", resourceCulture);
