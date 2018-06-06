@@ -12,6 +12,8 @@ namespace GutsCardGame
 {
     public partial class GutsMainForm : Form
     {      
+        // TODO: Look at Comeau's project, Look at Sam's project, Hunters Project
+
         public string[] PlayerNames = new string[20];
         public int[] PlayerCards = new int[2];
         // TODO: PlayerCardValues is an extra array I added, to attempt to store card values
@@ -23,16 +25,21 @@ namespace GutsCardGame
         public string player1Score;
         public string player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
 
+        // TODO: Set my player class  but is never used
         Player var = new Player("bill");
+
+        // variables for the cards, and the while loop
+        public int opponentleftpos = 175;
+        public int opponenttoppos = 275;
+        public int leftpos = 50;
+        public int toppos = 450;
+        public int CardLocation = 0;
+        public int i = 0;
+        public int x = 0;
 
         public GutsMainForm()
         {
             InitializeComponent();
-        }
-
-        private void yESToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void playerSelectToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -44,13 +51,10 @@ namespace GutsCardGame
             this.Close();                   // Dispose of current form
         }
 
-        public int opponentleftpos = 175;
-        public int opponenttoppos = 275;
-        public int leftpos = 50;
-        public int toppos = 450;
-        public int CardLocation = 0;
-        public int i = 0;
-        public int x = 0;
+        private void yESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
@@ -86,15 +90,14 @@ namespace GutsCardGame
 
                 PlayerCards[x] = Cardpick;
 
-                
-
                 this.Controls.Add(newCard);
                 newCard.BringToFront();
                 leftpos = (leftpos + 20);
 
+                OpponentCards[x] = Cardpick;
+
                 x++;
             }
-
             // Display clickable cards for the player
             pbPlayer1Card1.Image = imageList1.Images[PlayerCards[0]];
             pbPlayer1Card2.Image = imageList1.Images[PlayerCards[1]];
@@ -103,11 +106,18 @@ namespace GutsCardGame
             pbOpponent1Card1.Image = imageList1.Images[41];
             pbOpponent1Card2.Image = imageList1.Images[41];
 
+            // TODO: First Attempt at getting card values
+            //MessageBox.Show("Player Cards" + PlayerCards[0]);
+            // TODO: Second attempt at getting card values
+            //MessageBox.Show("Opposing cards" + OpponentCards[0].ToString());
+            //MessageBox.Show("Opposing cards" + OpponentCards[1].ToString());
+
             // forms first size 504, 392
             this.Size = new Size(504, 392);
 
             double startMoney = 5000;
 
+            // Initially set all AI labels to false visability
             lblPlayer3.Visible = false;
             lblPlayer4.Visible = false;
             lblPlayer5.Visible = false;
@@ -117,14 +127,12 @@ namespace GutsCardGame
             lblPlayer9.Visible = false;
             lblPlayer10.Visible = false;
 
-
             // Use the array to display the players name, along with money
             lblPlayer1.Text = PlayerNames[0] + " : " + player1Score.ToString();
 
+            // TODO: AI If statement, idk if i want to keep this
             if (aI == 2)
             {
-
-
                 lblPlayer3.Visible = true;
 
                 lblPlayer2.Text = "AI 1 " + startMoney.ToString("c");
@@ -165,7 +173,10 @@ namespace GutsCardGame
             }
         }
 
-        /*
+
+
+        // TODO: IDK what this is, multiple commented methods here
+        /* 
         private int[] createNonRandomArray(int size, int startingNumber)
         {
             int[] array = new int[size];
