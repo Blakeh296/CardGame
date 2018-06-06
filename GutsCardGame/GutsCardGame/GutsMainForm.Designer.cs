@@ -44,8 +44,15 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yesRestartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.keepPlayingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playerSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerSelectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.areYouSureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblPlayerCardPick = new System.Windows.Forms.Label();
             this.lblComputerCardPick = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
@@ -166,7 +173,7 @@
             // pictureBoxCardStack
             // 
             this.pictureBoxCardStack.Image = global::GutsCardGame.Properties.Resources.RedCard_stack;
-            this.pictureBoxCardStack.Location = new System.Drawing.Point(294, 172);
+            this.pictureBoxCardStack.Location = new System.Drawing.Point(313, 155);
             this.pictureBoxCardStack.Name = "pictureBoxCardStack";
             this.pictureBoxCardStack.Size = new System.Drawing.Size(70, 68);
             this.pictureBoxCardStack.TabIndex = 10;
@@ -238,7 +245,8 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.exitToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(670, 24);
@@ -248,25 +256,78 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.playerSelectToolStripMenuItem,
-            this.exitGameToolStripMenuItem});
+            this.restartToolStripMenuItem,
+            this.playerSelectToolStripMenuItem});
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.exitToolStripMenuItem.Text = "&Exit";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.exitToolStripMenuItem.Text = "&Options";
+            // 
+            // restartToolStripMenuItem
+            // 
+            this.restartToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yesRestartToolStripMenuItem,
+            this.keepPlayingToolStripMenuItem});
+            this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.restartToolStripMenuItem.Text = "&Restart";
+            // 
+            // yesRestartToolStripMenuItem
+            // 
+            this.yesRestartToolStripMenuItem.Name = "yesRestartToolStripMenuItem";
+            this.yesRestartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yesRestartToolStripMenuItem.Text = "&Confirm";
+            // 
+            // keepPlayingToolStripMenuItem
+            // 
+            this.keepPlayingToolStripMenuItem.Name = "keepPlayingToolStripMenuItem";
+            this.keepPlayingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.keepPlayingToolStripMenuItem.Text = "&Keep Playing";
             // 
             // playerSelectToolStripMenuItem
             // 
+            this.playerSelectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.playerSelectToolStripMenuItem1});
             this.playerSelectToolStripMenuItem.Name = "playerSelectToolStripMenuItem";
-            this.playerSelectToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.playerSelectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.playerSelectToolStripMenuItem.Text = "&Player Select";
-            this.playerSelectToolStripMenuItem.Click += new System.EventHandler(this.playerSelectToolStripMenuItem_Click);
             // 
-            // exitGameToolStripMenuItem
+            // playerSelectToolStripMenuItem1
             // 
-            this.exitGameToolStripMenuItem.Name = "exitGameToolStripMenuItem";
-            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.exitGameToolStripMenuItem.Text = "&Exit Game";
-            this.exitGameToolStripMenuItem.Click += new System.EventHandler(this.exitGameToolStripMenuItem_Click);
+            this.playerSelectToolStripMenuItem1.Name = "playerSelectToolStripMenuItem1";
+            this.playerSelectToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.playerSelectToolStripMenuItem1.Text = "&Go";
+            this.playerSelectToolStripMenuItem1.Click += new System.EventHandler(this.playerSelectToolStripMenuItem1_Click);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitAllToolStripMenuItem});
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.exitToolStripMenuItem1.Text = "&Exit";
+            // 
+            // exitAllToolStripMenuItem
+            // 
+            this.exitAllToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.areYouSureToolStripMenuItem});
+            this.exitAllToolStripMenuItem.Name = "exitAllToolStripMenuItem";
+            this.exitAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitAllToolStripMenuItem.Text = "&Close All";
+            // 
+            // areYouSureToolStripMenuItem
+            // 
+            this.areYouSureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yESToolStripMenuItem});
+            this.areYouSureToolStripMenuItem.Name = "areYouSureToolStripMenuItem";
+            this.areYouSureToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.areYouSureToolStripMenuItem.Text = "Are you &Sure?";
+            // 
+            // yESToolStripMenuItem
+            // 
+            this.yESToolStripMenuItem.Name = "yESToolStripMenuItem";
+            this.yESToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yESToolStripMenuItem.Text = "&YES";
+            this.yESToolStripMenuItem.Click += new System.EventHandler(this.yESToolStripMenuItem_Click);
             // 
             // lblPlayerCardPick
             // 
@@ -296,7 +357,7 @@
             // 
             // pbPlayer1Card1
             // 
-            this.pbPlayer1Card1.Location = new System.Drawing.Point(263, 262);
+            this.pbPlayer1Card1.Location = new System.Drawing.Point(423, 249);
             this.pbPlayer1Card1.Name = "pbPlayer1Card1";
             this.pbPlayer1Card1.Size = new System.Drawing.Size(50, 70);
             this.pbPlayer1Card1.TabIndex = 16;
@@ -304,7 +365,7 @@
             // 
             // pbPlayer1Card2
             // 
-            this.pbPlayer1Card2.Location = new System.Drawing.Point(341, 262);
+            this.pbPlayer1Card2.Location = new System.Drawing.Point(501, 249);
             this.pbPlayer1Card2.Name = "pbPlayer1Card2";
             this.pbPlayer1Card2.Size = new System.Drawing.Size(50, 70);
             this.pbPlayer1Card2.TabIndex = 17;
@@ -312,7 +373,7 @@
             // 
             // pbOpponent1Card1
             // 
-            this.pbOpponent1Card1.Location = new System.Drawing.Point(462, 164);
+            this.pbOpponent1Card1.Location = new System.Drawing.Point(423, 159);
             this.pbOpponent1Card1.Name = "pbOpponent1Card1";
             this.pbOpponent1Card1.Size = new System.Drawing.Size(50, 70);
             this.pbOpponent1Card1.TabIndex = 18;
@@ -320,7 +381,7 @@
             // 
             // pbOpponent1Card2
             // 
-            this.pbOpponent1Card2.Location = new System.Drawing.Point(548, 164);
+            this.pbOpponent1Card2.Location = new System.Drawing.Point(501, 159);
             this.pbOpponent1Card2.Name = "pbOpponent1Card2";
             this.pbOpponent1Card2.Size = new System.Drawing.Size(50, 70);
             this.pbOpponent1Card2.TabIndex = 19;
@@ -386,7 +447,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitGameToolStripMenuItem;
         private System.Windows.Forms.Label lblPlayerCardPick;
         private System.Windows.Forms.Label lblComputerCardPick;
         private System.Windows.Forms.ToolStripMenuItem playerSelectToolStripMenuItem;
@@ -396,5 +456,13 @@
         private System.Windows.Forms.PictureBox pbPlayer1Card2;
         private System.Windows.Forms.PictureBox pbOpponent1Card1;
         private System.Windows.Forms.PictureBox pbOpponent1Card2;
+        private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exitAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yesRestartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem keepPlayingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playerSelectToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem areYouSureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yESToolStripMenuItem;
     }
 }

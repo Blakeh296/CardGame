@@ -30,17 +30,17 @@ namespace GutsCardGame
             InitializeComponent();
         }
 
-        private void exitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        private void yESToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void playerSelectToolStripMenuItem_Click(object sender, EventArgs e)
+        private void playerSelectToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             // Create access to the new player form
-            NewPlayer SelectPlayer = new NewPlayer();
+            PlayerPicker thisForm = new PlayerPicker();
             this.Hide();                    // Hide this form
-            SelectPlayer.ShowDialog();          // Show form
+            thisForm.ShowDialog();          // Show form
             this.Close();                   // Dispose of current form
         }
 

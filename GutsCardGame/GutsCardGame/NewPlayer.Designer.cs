@@ -1,6 +1,6 @@
 ﻿namespace GutsCardGame
 {
-    partial class NewPlayer
+    partial class PlayerPicker
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewPlayer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerPicker));
             this.tbNewPlayer = new System.Windows.Forms.TextBox();
             this.btnAddPlayer = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
@@ -252,7 +252,7 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "label1";
             // 
-            // NewPlayer
+            // PlayerPicker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -279,7 +279,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "NewPlayer";
+            this.Name = "PlayerPicker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewPlayer";
             this.Load += new System.EventHandler(this.NewPlayer_Load);

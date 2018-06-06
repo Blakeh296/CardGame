@@ -18,7 +18,7 @@ namespace GutsCardGame
      *  // 2. dont know how to get the picture box values and store them
      */
 
-    public partial class NewPlayer : Form
+    public partial class PlayerPicker : Form
     {
         // Declare a array to hold the player names from the CSV file
         public string[] Tokenss = new string[40];
@@ -26,7 +26,7 @@ namespace GutsCardGame
         public int[] Highscores = new int[40];
         
 
-        public NewPlayer()
+        public PlayerPicker()
         {
             InitializeComponent();
         }

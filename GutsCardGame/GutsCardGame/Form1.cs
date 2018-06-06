@@ -20,7 +20,7 @@ namespace GutsCardGame
         private void btnChoosePlayer_Click(object sender, EventArgs e)
         {
             
-            NewPlayer var = new NewPlayer();        // Get the next form ready to open
+            PlayerPicker var = new PlayerPicker();        // Get the next form ready to open
 
             this.Hide();                        // Hide this form
 
