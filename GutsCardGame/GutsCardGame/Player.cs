@@ -8,7 +8,9 @@ namespace GutsCardGame
 {
     class Player
     {
-        private string _playerName;
+        private string _playerName; // Holds player name
+        private string pName; // Playername 
+      
 
         public string PlayerName
         {
@@ -20,5 +22,6 @@ namespace GutsCardGame
         {
             _playerName = PlayerName;
         }
+
     }
 }

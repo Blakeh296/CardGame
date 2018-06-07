@@ -52,7 +52,6 @@
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.areYouSureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblPlayerCardPick = new System.Windows.Forms.Label();
             this.lblComputerCardPick = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
@@ -62,17 +61,17 @@
             this.pbOpponent1Card1 = new System.Windows.Forms.PictureBox();
             this.pbOpponent1Card2 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.AntePrice = new System.Windows.Forms.DomainUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pbOpponent2Card1 = new System.Windows.Forms.PictureBox();
             this.pbOpponent2Card2 = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCardPick = new System.Windows.Forms.Button();
             this.pbPreviewPlayerCard1 = new System.Windows.Forms.PictureBox();
             this.pbPreviewPlayerCard2 = new System.Windows.Forms.PictureBox();
             this.pbPreviewOppCard1 = new System.Windows.Forms.PictureBox();
             this.pbPreviewOppCard2 = new System.Windows.Forms.PictureBox();
-            this.AntePrice = new System.Windows.Forms.DomainUpDown();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,10 +80,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card2)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent2Card1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent2Card2)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreviewPlayerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreviewPlayerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreviewOppCard1)).BeginInit();
@@ -298,14 +297,14 @@
             // yesRestartToolStripMenuItem
             // 
             this.yesRestartToolStripMenuItem.Name = "yesRestartToolStripMenuItem";
-            this.yesRestartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yesRestartToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.yesRestartToolStripMenuItem.Text = "&Confirm";
             this.yesRestartToolStripMenuItem.Click += new System.EventHandler(this.yesRestartToolStripMenuItem_Click);
             // 
             // keepPlayingToolStripMenuItem
             // 
             this.keepPlayingToolStripMenuItem.Name = "keepPlayingToolStripMenuItem";
-            this.keepPlayingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.keepPlayingToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.keepPlayingToolStripMenuItem.Text = "&Keep Playing";
             // 
             // playerSelectToolStripMenuItem
@@ -336,23 +335,15 @@
             this.exitAllToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.areYouSureToolStripMenuItem});
             this.exitAllToolStripMenuItem.Name = "exitAllToolStripMenuItem";
-            this.exitAllToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.exitAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitAllToolStripMenuItem.Text = "&Close All";
             // 
             // areYouSureToolStripMenuItem
             // 
-            this.areYouSureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yESToolStripMenuItem});
             this.areYouSureToolStripMenuItem.Name = "areYouSureToolStripMenuItem";
-            this.areYouSureToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.areYouSureToolStripMenuItem.Text = "Are you &Sure?";
-            // 
-            // yESToolStripMenuItem
-            // 
-            this.yESToolStripMenuItem.Name = "yESToolStripMenuItem";
-            this.yESToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-            this.yESToolStripMenuItem.Text = "&YES";
-            this.yESToolStripMenuItem.Click += new System.EventHandler(this.yESToolStripMenuItem_Click);
+            this.areYouSureToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.areYouSureToolStripMenuItem.Text = "&Yes";
+            this.areYouSureToolStripMenuItem.Click += new System.EventHandler(this.areYouSureToolStripMenuItem_Click);
             // 
             // lblPlayerCardPick
             // 
@@ -437,16 +428,55 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
-            // groupBox2
+            // label1
             // 
-            this.groupBox2.Controls.Add(this.pbOpponent1Card1);
-            this.groupBox2.Controls.Add(this.pbOpponent1Card2);
-            this.groupBox2.Controls.Add(this.lblPlayer2);
-            this.groupBox2.Location = new System.Drawing.Point(458, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(175, 119);
-            this.groupBox2.TabIndex = 21;
-            this.groupBox2.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 20);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Ante Up :";
+            // 
+            // AntePrice
+            // 
+            this.AntePrice.BackColor = System.Drawing.SystemColors.MenuText;
+            this.AntePrice.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.AntePrice.Items.Add("500");
+            this.AntePrice.Items.Add("450");
+            this.AntePrice.Items.Add("400");
+            this.AntePrice.Items.Add("350");
+            this.AntePrice.Items.Add("300");
+            this.AntePrice.Items.Add("250");
+            this.AntePrice.Items.Add("225");
+            this.AntePrice.Items.Add("200");
+            this.AntePrice.Items.Add("190");
+            this.AntePrice.Items.Add("180");
+            this.AntePrice.Items.Add("170");
+            this.AntePrice.Items.Add("160");
+            this.AntePrice.Items.Add("150");
+            this.AntePrice.Items.Add("140");
+            this.AntePrice.Items.Add("130");
+            this.AntePrice.Items.Add("120");
+            this.AntePrice.Items.Add("110");
+            this.AntePrice.Items.Add("100");
+            this.AntePrice.Items.Add("90");
+            this.AntePrice.Items.Add("80");
+            this.AntePrice.Items.Add("70");
+            this.AntePrice.Items.Add("60");
+            this.AntePrice.Items.Add("50");
+            this.AntePrice.Items.Add("40");
+            this.AntePrice.Items.Add("30");
+            this.AntePrice.Items.Add("20");
+            this.AntePrice.Items.Add("10");
+            this.AntePrice.Items.Add("5");
+            this.AntePrice.Location = new System.Drawing.Point(119, 39);
+            this.AntePrice.Name = "AntePrice";
+            this.AntePrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.AntePrice.Size = new System.Drawing.Size(120, 22);
+            this.AntePrice.TabIndex = 23;
+            this.AntePrice.Text = "5";
+            this.AntePrice.SelectedItemChanged += new System.EventHandler(this.AntePrice_SelectedItemChanged);
             // 
             // groupBox3
             // 
@@ -474,6 +504,17 @@
             this.pbOpponent2Card2.Size = new System.Drawing.Size(50, 70);
             this.pbOpponent2Card2.TabIndex = 19;
             this.pbOpponent2Card2.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.pbOpponent1Card1);
+            this.groupBox2.Controls.Add(this.pbOpponent1Card2);
+            this.groupBox2.Controls.Add(this.lblPlayer2);
+            this.groupBox2.Location = new System.Drawing.Point(458, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(175, 119);
+            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabStop = false;
             // 
             // btnCardPick
             // 
@@ -517,54 +558,6 @@
             this.pbPreviewOppCard2.TabIndex = 25;
             this.pbPreviewOppCard2.TabStop = false;
             // 
-            // AntePrice
-            // 
-            this.AntePrice.BackColor = System.Drawing.SystemColors.MenuText;
-            this.AntePrice.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.AntePrice.Items.Add("500");
-            this.AntePrice.Items.Add("450");
-            this.AntePrice.Items.Add("400");
-            this.AntePrice.Items.Add("350");
-            this.AntePrice.Items.Add("300");
-            this.AntePrice.Items.Add("250");
-            this.AntePrice.Items.Add("225");
-            this.AntePrice.Items.Add("200");
-            this.AntePrice.Items.Add("190");
-            this.AntePrice.Items.Add("180");
-            this.AntePrice.Items.Add("170");
-            this.AntePrice.Items.Add("160");
-            this.AntePrice.Items.Add("150");
-            this.AntePrice.Items.Add("140");
-            this.AntePrice.Items.Add("130");
-            this.AntePrice.Items.Add("120");
-            this.AntePrice.Items.Add("110");
-            this.AntePrice.Items.Add("100");
-            this.AntePrice.Items.Add("90");
-            this.AntePrice.Items.Add("80");
-            this.AntePrice.Items.Add("70");
-            this.AntePrice.Items.Add("60");
-            this.AntePrice.Items.Add("50");
-            this.AntePrice.Items.Add("40");
-            this.AntePrice.Items.Add("30");
-            this.AntePrice.Items.Add("20");
-            this.AntePrice.Items.Add("10");
-            this.AntePrice.Items.Add("5");
-            this.AntePrice.Location = new System.Drawing.Point(119, 39);
-            this.AntePrice.Name = "AntePrice";
-            this.AntePrice.Size = new System.Drawing.Size(120, 22);
-            this.AntePrice.TabIndex = 23;
-            this.AntePrice.SelectedItemChanged += new System.EventHandler(this.AntePrice_SelectedItemChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 20);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Ante Up :";
-            // 
             // GutsMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,12 +599,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent2Card1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent2Card2)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreviewPlayerCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreviewPlayerCard2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreviewOppCard1)).EndInit();
@@ -653,7 +646,6 @@
         private System.Windows.Forms.ToolStripMenuItem keepPlayingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playerSelectToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem areYouSureToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem yESToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
