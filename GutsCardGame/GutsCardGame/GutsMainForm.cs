@@ -88,74 +88,6 @@ namespace GutsCardGame
             // Set Playername Instance of the Player class to store the player name
             thePlayer.PlayerName = player1;
 
-            // PLAYER 1 CARD 1
-            //Create a random number between 0 and the number of cards in the deck
-            Random rand = new Random(DateTime.Now.Millisecond);
-            int Cardpick = rand.Next(0, imageList1.Images.Count);
-
-            // Rules out the potential of a backwards card, or displaying the card stack image
-            while (Cardpick == 40 || Cardpick == 41 || Cardpick == 56)
-            {
-                Cardpick = rand.Next(0, imageList1.Images.Count);
-            }
-
-            // PLAYER 1 CARD 2
-            Random rand2 = new Random(DateTime.Now.Millisecond);
-            int Cardpick2 = rand.Next(0, imageList1.Images.Count);
-
-            // Makes sure a valid card is being played, and makes sure previous CardPicks DO NOT MATCH
-            while (Cardpick2 == 40 || Cardpick2 == 41 || Cardpick2 == 56 || Cardpick2 == Cardpick)
-            {
-                // Pick a new random
-                Cardpick2 = rand.Next(0, imageList1.Images.Count);
-            }
-
-
-            // CARD PICK 1 FOR OPPONENT 1
-            //Create a random number between 0 and the number of cards in the deck
-            Random rand3 = new Random(DateTime.Now.Millisecond);
-            int Cardpick3 = rand.Next(0, imageList1.Images.Count);
-
-            // Rules out the potential of a backwards card, or displaying the card stack image
-            // Also ensures the opponent card doesnt match player cards
-            while (Cardpick3 == 40 || Cardpick3 == 41 || Cardpick3 == 56 || Cardpick3 == Cardpick || Cardpick3 == Cardpick2)
-            {
-                // Pick a new random
-                Cardpick3 = rand.Next(0, imageList1.Images.Count);
-            }
-
-            // CARD PICK 2 FOR OPPONENT 1
-            //Create a random number between 0 and the number of cards in the deck
-            Random rand4 = new Random(DateTime.Now.Millisecond);
-            int Cardpick4 = rand.Next(0, imageList1.Images.Count);
-
-            while (Cardpick4 == 40 || Cardpick4 == 41 || Cardpick4 == 56 || Cardpick4 == Cardpick3 || Cardpick4 == Cardpick2 || Cardpick4 == Cardpick)
-            {
-                // Pick a new random
-                Cardpick4 = rand.Next(0, imageList1.Images.Count);
-            }
-
-            // Display Player 1 cards FACE UP
-            pbPlayer1Card1.Image = imageList1.Images[Cardpick];
-            pbPlayer1Card2.Image = imageList1.Images[Cardpick2];
-
-            // Display Opponenct cards FACE UP
-            pbPreviewOppCard1.Image = imageList1.Images[Cardpick3];
-            pbPreviewOppCard2.Image = imageList1.Images[Cardpick4];
-
-            // Display clickable cards for the player
-            //pbPlayer1Card1.Image = imageList1.Images[PlayerCards[0]];
-            //pbPlayer1Card2.Image = imageList1.Images[PlayerCards[1]];
-
-            // Player 2 Opponent 1 Displays in GroupBox HUD, FACE DOWN
-            // TODO: Displays back of cards, need a way to get and keep card value
-            pbOpponent1Card1.Image = imageList1.Images[41];
-            pbOpponent1Card2.Image = imageList1.Images[41];
-
-            // Player 3 Opponent 2 Displays in GroupBox HUD, FACE DOWN
-            pbOpponent2Card1.Image = imageList1.Images[41];
-            pbOpponent2Card2.Image = imageList1.Images[41];
-
             // TODO: First Attempt at getting card values
             //MessageBox.Show("Player Cards" + PlayerCards[0]);
             // TODO: Second attempt at getting card values
@@ -171,24 +103,183 @@ namespace GutsCardGame
             // Initially set all AI labels to false, for the IF STATEMENT to decide which label display
             lblPlayer3.Visible = false;
             lblPlayer4.Visible = false;
-            lblPlayer5.Visible = false;
-            lblPlayer6.Visible = false;
-            lblPlayer7.Visible = false;
-            lblPlayer8.Visible = false;
-            lblPlayer9.Visible = false;
-            lblPlayer10.Visible = false;
 
             // TODO: AI If statement, idk if i want to keep this
-            if (aI == 1)
+
+            if (aI == 1)  // IF a 2 player game
             {
                 lblPlayer2.Text = "AI 1 " + startMoney.ToString("c");
+
+                // PLAYER 1 CARD 1
+                //Create a random number between 0 and the number of cards in the deck
+                Random rand = new Random(DateTime.Now.Millisecond);
+                int Cardpick = rand.Next(0, imageList1.Images.Count);
+
+                // Rules out the potential of a backwards card, or displaying the card stack image
+                while (Cardpick == 40 || Cardpick == 41 || Cardpick == 56)
+                {
+                    Cardpick = rand.Next(0, imageList1.Images.Count);
+                }
+
+                // PLAYER 1 CARD 2
+                Random rand2 = new Random(DateTime.Now.Millisecond);
+                int Cardpick2 = rand.Next(0, imageList1.Images.Count);
+
+                // Makes sure a valid card is being played, and makes sure previous CardPicks DO NOT MATCH
+                while (Cardpick2 == 40 || Cardpick2 == 41 || Cardpick2 == 56 || Cardpick2 == Cardpick)
+                {
+                    // Pick a new random
+                    Cardpick2 = rand.Next(0, imageList1.Images.Count);
+                }
+
+
+                // CARD PICK 1 FOR OPPONENT 1
+                //Create a random number between 0 and the number of cards in the deck
+                Random rand3 = new Random(DateTime.Now.Millisecond);
+                int Cardpick3 = rand.Next(0, imageList1.Images.Count);
+
+                // Rules out the potential of a backwards card, or displaying the card stack image
+                // Also ensures the opponent card doesnt match player cards
+                while (Cardpick3 == 40 || Cardpick3 == 41 || Cardpick3 == 56 || Cardpick3 == Cardpick || Cardpick3 == Cardpick2)
+                {
+                    // Pick a new random
+                    Cardpick3 = rand.Next(0, imageList1.Images.Count);
+                }
+
+                // CARD PICK 2 FOR OPPONENT 1
+                //Create a random number between 0 and the number of cards in the deck
+                Random rand4 = new Random(DateTime.Now.Millisecond);
+                int Cardpick4 = rand.Next(0, imageList1.Images.Count);
+
+                while (Cardpick4 == 40 || Cardpick4 == 41 || Cardpick4 == 56 || Cardpick4 == Cardpick3 || Cardpick4 == Cardpick2 || Cardpick4 == Cardpick)
+                {
+                    // Pick a new random
+                    Cardpick4 = rand.Next(0, imageList1.Images.Count);
+                }
+
+                // Display Player 1 cards * FACE UP *
+                pbPlayer1Card1.Image = imageList1.Images[Cardpick];
+                pbPlayer1Card2.Image = imageList1.Images[Cardpick2];
+
+                // Display Opponenct cards * FACE UP *
+                pbPreviewOppCard1.Image = imageList1.Images[Cardpick3];
+                pbPreviewOppCard2.Image = imageList1.Images[Cardpick4];
+
+                // Player 2 Opponent 1 Displays in * GroupBox HUD *, * FACE DOWN *
+                // TODO: Displays back of cards, need a way to get and keep card value
+                pbOpponent1Card1.Image = imageList1.Images[41];
+                pbOpponent1Card2.Image = imageList1.Images[41];
+
+                // Hide Preview image boxes containing starting cards
+                pbPreviewPlayer3Card1.Visible = false;
+                pbPreviewPlayer3Card2.Visible = false;
+                pbPreviewPlayer4Card1.Visible = false;
+                pbPreviewPlayer4Card2.Visible = false;
+
+                // Hide the GroupBoxes for more players
+                gbPlayer3.Visible = false;
+                gbPlayer4.Visible = false;
             }
-            else if (aI == 2)
+            else if (aI == 2)  // IF 3 Player Game
             {
                 lblPlayer3.Visible = true;
 
                 lblPlayer2.Text = "AI 1 " + startMoney.ToString("c");
                 lblPlayer3.Text = "AI 2 " + startMoney.ToString("c");
+
+                // PLAYER 1 CARD 1
+                //Create a random number between 0 and the number of cards in the deck
+                Random rand = new Random(DateTime.Now.Millisecond);
+                int Cardpick = rand.Next(0, imageList1.Images.Count);
+
+                // Rules out the potential of a backwards card, or displaying the card stack image
+                while (Cardpick == 40 || Cardpick == 41 || Cardpick == 56)
+                {
+                    Cardpick = rand.Next(0, imageList1.Images.Count);
+                }
+
+                // PLAYER 1 CARD 2
+                Random rand2 = new Random(DateTime.Now.Millisecond);
+                int Cardpick2 = rand.Next(0, imageList1.Images.Count);
+
+                // Makes sure a valid card is being played, and makes sure previous CardPicks DO NOT MATCH
+                while (Cardpick2 == 40 || Cardpick2 == 41 || Cardpick2 == 56 || Cardpick2 == Cardpick)
+                {
+                    // Pick a new random
+                    Cardpick2 = rand.Next(0, imageList1.Images.Count);
+                }
+
+
+                // CARD PICK 1 FOR OPPONENT 1
+                //Create a random number between 0 and the number of cards in the deck
+                Random rand3 = new Random(DateTime.Now.Millisecond);
+                int Cardpick3 = rand.Next(0, imageList1.Images.Count);
+
+                // Rules out the potential of a backwards card, or displaying the card stack image
+                // Also ensures the opponent card doesnt match player cards
+                while (Cardpick3 == 40 || Cardpick3 == 41 || Cardpick3 == 56 || Cardpick3 == Cardpick || Cardpick3 == Cardpick2)
+                {
+                    // Pick a new random
+                    Cardpick3 = rand.Next(0, imageList1.Images.Count);
+                }
+
+                // CARD PICK 2 FOR OPPONENT 1
+                //Create a random number between 0 and the number of cards in the deck
+                Random rand4 = new Random(DateTime.Now.Millisecond);
+                int Cardpick4 = rand.Next(0, imageList1.Images.Count);
+
+                while (Cardpick4 == 40 || Cardpick4 == 41 || Cardpick4 == 56 || Cardpick4 == Cardpick3 || Cardpick4 == Cardpick2 || Cardpick4 == Cardpick)
+                {
+                    // Pick a new random
+                    Cardpick4 = rand.Next(0, imageList1.Images.Count);
+                }
+
+                // OPPONENT 2 CARD PICK 1
+                Random rand5 = new Random(DateTime.Now.Millisecond);
+                int Cardpick5 = rand.Next(0, imageList1.Images.Count);
+
+                while (Cardpick5 == 40 || Cardpick5 == 41 || Cardpick5 == 56 || Cardpick5 == Cardpick4 || Cardpick5 == Cardpick3 || Cardpick5 == Cardpick2 || Cardpick5 == Cardpick)
+                {
+                    // Pick a new random
+                    Cardpick4 = rand.Next(0, imageList1.Images.Count);
+                }
+
+                Random rand6 = new Random(DateTime.Now.Millisecond);
+                int Cardpick6 = rand.Next(0, imageList1.Images.Count);
+
+                while (Cardpick6 == 40 || Cardpick6 == 41 || Cardpick6 == 56 || Cardpick6 == Cardpick5 || Cardpick6 == Cardpick4 || Cardpick6 == Cardpick3 || Cardpick6 == Cardpick2 || Cardpick6 == Cardpick)
+                {
+                    // Pick a new random
+                    Cardpick4 = rand.Next(0, imageList1.Images.Count);
+                }
+
+                // Display Player 1 cards * FACE UP *
+                pbPlayer1Card1.Image = imageList1.Images[Cardpick];
+                pbPlayer1Card2.Image = imageList1.Images[Cardpick2];
+
+                // Player 2 : Opponenct 1 cards * FACE UP *
+                pbPreviewOppCard1.Image = imageList1.Images[Cardpick3];
+                pbPreviewOppCard2.Image = imageList1.Images[Cardpick4];
+
+                // Player 2 : Opponent 1 Displays in * GroupBox HUD *, * FACE DOWN *
+                // TODO: Displays back of cards, need a way to get and keep card value
+                pbOpponent1Card1.Image = imageList1.Images[41];
+                pbOpponent1Card2.Image = imageList1.Images[41];
+
+                // Player 3 : Opponent 2 Cards * FACE UP *
+                pbPreviewPlayer3Card1.Image = imageList1.Images[Cardpick5];
+                pbPreviewPlayer3Card2.Image = imageList1.Images[Cardpick6];
+
+                // Player 3 : Opponent 2 Displays in * GroupBox HUD *, * FACE DOWN *
+                pbOpponent2Card1.Image = imageList1.Images[41];
+                pbOpponent2Card2.Image = imageList1.Images[41];
+
+                // Hide 4th Player PictureBox 
+                pbPreviewPlayer4Card1.Visible = false;
+                pbPreviewPlayer4Card2.Visible = false;
+
+                // Hide Player 4 GroupBox
+                gbPlayer4.Visible = false;
             }
             else if (aI == 3)
             {
@@ -198,6 +289,119 @@ namespace GutsCardGame
                 lblPlayer2.Text = "AI 1 " + startMoney.ToString("c");
                 lblPlayer3.Text = "AI 2 " + startMoney.ToString("c");
                 lblPlayer4.Text = "AI 3 " + startMoney.ToString("c");
+
+                // PLAYER 1 CARD 1
+                //Create a random number between 0 and the number of cards in the deck
+                Random rand = new Random(DateTime.Now.Millisecond);
+                int Cardpick = rand.Next(0, imageList1.Images.Count);
+
+                // Rules out the potential of a backwards card, or displaying the card stack image
+                while (Cardpick == 40 || Cardpick == 41 || Cardpick == 56)
+                {
+                    Cardpick = rand.Next(0, imageList1.Images.Count);
+                }
+
+                // PLAYER 1 CARD 2
+                Random rand2 = new Random(DateTime.Now.Millisecond);
+                int Cardpick2 = rand.Next(0, imageList1.Images.Count);
+
+                // Makes sure a valid card is being played, and makes sure previous CardPicks DO NOT MATCH
+                while (Cardpick2 == 40 || Cardpick2 == 41 || Cardpick2 == 56 || Cardpick2 == Cardpick)
+                {
+                    // Pick a new random
+                    Cardpick2 = rand.Next(0, imageList1.Images.Count);
+                }
+
+
+                // CARD PICK 1 FOR OPPONENT 1
+                //Create a random number between 0 and the number of cards in the deck
+                Random rand3 = new Random(DateTime.Now.Millisecond);
+                int Cardpick3 = rand.Next(0, imageList1.Images.Count);
+
+                // Rules out the potential of a backwards card, or displaying the card stack image
+                // Also ensures the opponent card doesnt match player cards
+                while (Cardpick3 == 40 || Cardpick3 == 41 || Cardpick3 == 56 || Cardpick3 == Cardpick || Cardpick3 == Cardpick2)
+                {
+                    // Pick a new random
+                    Cardpick3 = rand.Next(0, imageList1.Images.Count);
+                }
+
+                // CARD PICK 2 FOR OPPONENT 1
+                //Create a random number between 0 and the number of cards in the deck
+                Random rand4 = new Random(DateTime.Now.Millisecond);
+                int Cardpick4 = rand.Next(0, imageList1.Images.Count);
+
+                while (Cardpick4 == 40 || Cardpick4 == 41 || Cardpick4 == 56 || Cardpick4 == Cardpick3 || Cardpick4 == Cardpick2 || Cardpick4 == Cardpick)
+                {
+                    // Pick a new random
+                    Cardpick4 = rand.Next(0, imageList1.Images.Count);
+                }
+
+                // OPPONENT 2 CARD PICK 1
+                Random rand5 = new Random(DateTime.Now.Millisecond);
+                int Cardpick5 = rand.Next(0, imageList1.Images.Count);
+
+                while (Cardpick5 == 40 || Cardpick5 == 41 || Cardpick5 == 56 || Cardpick5 == Cardpick4 || Cardpick5 == Cardpick3 || Cardpick5 == Cardpick2 || Cardpick5 == Cardpick)
+                {
+                    // Pick a new random
+                    Cardpick4 = rand.Next(0, imageList1.Images.Count);
+                }
+
+                Random rand6 = new Random(DateTime.Now.Millisecond);
+                int Cardpick6 = rand.Next(0, imageList1.Images.Count);
+
+                while (Cardpick6 == 40 || Cardpick6 == 41 || Cardpick6 == 56 || Cardpick6 == Cardpick5 || Cardpick6 == Cardpick4 || Cardpick6 == Cardpick3 || Cardpick6 == Cardpick2 || Cardpick6 == Cardpick)
+                {
+                    // Pick a new random
+                    Cardpick4 = rand.Next(0, imageList1.Images.Count);
+                }
+
+                Random rand7 = new Random(DateTime.Now.Millisecond);
+                int Cardpick7 = rand.Next(0, imageList1.Images.Count);
+
+                while (Cardpick7 == 40 || Cardpick7 == 41 || Cardpick7 == 56 || Cardpick7 == Cardpick6 || Cardpick7 == Cardpick5 || Cardpick7 == Cardpick4 || Cardpick7 == Cardpick3 || Cardpick7 == Cardpick2 || Cardpick7 == Cardpick)
+                {
+                    // Pick a new random
+                    Cardpick4 = rand.Next(0, imageList1.Images.Count);
+                }
+
+                Random rand8 = new Random(DateTime.Now.Millisecond);
+                int Cardpick8 = rand.Next(0, imageList1.Images.Count);
+
+                while (Cardpick8 == 40 || Cardpick8 == 41 || Cardpick8 == 56 || Cardpick8 == Cardpick7 || Cardpick8 == Cardpick6 || Cardpick8 == Cardpick5 || Cardpick8 == Cardpick4 || Cardpick8 == Cardpick3 || Cardpick8 == Cardpick2 || Cardpick8 == Cardpick)
+                {
+                    // Pick a new random
+                    Cardpick4 = rand.Next(0, imageList1.Images.Count);
+                }
+
+                // Display Player 1 cards * FACE UP *
+                pbPlayer1Card1.Image = imageList1.Images[Cardpick];
+                pbPlayer1Card2.Image = imageList1.Images[Cardpick2];
+
+                // Player 2 : Opponenct 1 cards * FACE UP *
+                pbPreviewOppCard1.Image = imageList1.Images[Cardpick3];
+                pbPreviewOppCard2.Image = imageList1.Images[Cardpick4];
+
+                // Player 2 : Opponent 1 Displays in * GroupBox HUD *, * FACE DOWN *
+                // TODO: Displays back of cards, need a way to get and keep card value
+                pbOpponent1Card1.Image = imageList1.Images[41];
+                pbOpponent1Card2.Image = imageList1.Images[41];
+
+                // Player 3 : Opponent 2 Cards * FACE UP *
+                pbPreviewPlayer3Card1.Image = imageList1.Images[Cardpick5];
+                pbPreviewPlayer3Card2.Image = imageList1.Images[Cardpick6];
+
+                // Player 3 : Opponent 2 Displays in * GroupBox HUD *, * FACE DOWN *
+                pbOpponent2Card1.Image = imageList1.Images[41];
+                pbOpponent2Card2.Image = imageList1.Images[41];
+
+                // Player 4 : Opponent 3 Cards * FACE UP *
+                pbPreviewPlayer4Card1.Image = imageList1.Images[Cardpick7];
+                pbPreviewPlayer4Card2.Image = imageList1.Images[Cardpick8];
+
+                // Player 4 : Opponent 3 Cards * IN HUD *, * FACE DOWN *
+                pbOpponent3Card1.Image = imageList1.Images[41];
+                pbOpponent3Card2.Image = imageList1.Images[41];
             }
         }
     }
