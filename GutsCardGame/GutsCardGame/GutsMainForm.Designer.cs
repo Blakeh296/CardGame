@@ -71,6 +71,8 @@
             this.pbPreviewPlayerCard2 = new System.Windows.Forms.PictureBox();
             this.pbPreviewOppCard1 = new System.Windows.Forms.PictureBox();
             this.pbPreviewOppCard2 = new System.Windows.Forms.PictureBox();
+            this.AntePrice = new System.Windows.Forms.DomainUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -303,7 +305,7 @@
             // keepPlayingToolStripMenuItem
             // 
             this.keepPlayingToolStripMenuItem.Name = "keepPlayingToolStripMenuItem";
-            this.keepPlayingToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.keepPlayingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.keepPlayingToolStripMenuItem.Text = "&Keep Playing";
             // 
             // playerSelectToolStripMenuItem
@@ -311,7 +313,7 @@
             this.playerSelectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.playerSelectToolStripMenuItem1});
             this.playerSelectToolStripMenuItem.Name = "playerSelectToolStripMenuItem";
-            this.playerSelectToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.playerSelectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.playerSelectToolStripMenuItem.Text = "&Player Select";
             // 
             // playerSelectToolStripMenuItem1
@@ -416,6 +418,8 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Red;
             this.groupBox1.BackgroundImage = global::GutsCardGame.Properties.Resources.cards_on_red_felt_poker_table_background;
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.AntePrice);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.lblPlayer1);
@@ -512,6 +516,54 @@
             this.pbPreviewOppCard2.Size = new System.Drawing.Size(50, 70);
             this.pbPreviewOppCard2.TabIndex = 25;
             this.pbPreviewOppCard2.TabStop = false;
+            // 
+            // AntePrice
+            // 
+            this.AntePrice.BackColor = System.Drawing.SystemColors.MenuText;
+            this.AntePrice.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.AntePrice.Items.Add("500");
+            this.AntePrice.Items.Add("450");
+            this.AntePrice.Items.Add("400");
+            this.AntePrice.Items.Add("350");
+            this.AntePrice.Items.Add("300");
+            this.AntePrice.Items.Add("250");
+            this.AntePrice.Items.Add("225");
+            this.AntePrice.Items.Add("200");
+            this.AntePrice.Items.Add("190");
+            this.AntePrice.Items.Add("180");
+            this.AntePrice.Items.Add("170");
+            this.AntePrice.Items.Add("160");
+            this.AntePrice.Items.Add("150");
+            this.AntePrice.Items.Add("140");
+            this.AntePrice.Items.Add("130");
+            this.AntePrice.Items.Add("120");
+            this.AntePrice.Items.Add("110");
+            this.AntePrice.Items.Add("100");
+            this.AntePrice.Items.Add("90");
+            this.AntePrice.Items.Add("80");
+            this.AntePrice.Items.Add("70");
+            this.AntePrice.Items.Add("60");
+            this.AntePrice.Items.Add("50");
+            this.AntePrice.Items.Add("40");
+            this.AntePrice.Items.Add("30");
+            this.AntePrice.Items.Add("20");
+            this.AntePrice.Items.Add("10");
+            this.AntePrice.Items.Add("5");
+            this.AntePrice.Location = new System.Drawing.Point(119, 39);
+            this.AntePrice.Name = "AntePrice";
+            this.AntePrice.Size = new System.Drawing.Size(120, 22);
+            this.AntePrice.TabIndex = 23;
+            this.AntePrice.SelectedItemChanged += new System.EventHandler(this.AntePrice_SelectedItemChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 20);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Ante Up :";
             // 
             // GutsMainForm
             // 
@@ -612,5 +664,7 @@
         private System.Windows.Forms.PictureBox pbPreviewPlayerCard2;
         private System.Windows.Forms.PictureBox pbPreviewOppCard1;
         private System.Windows.Forms.PictureBox pbPreviewOppCard2;
+        private System.Windows.Forms.DomainUpDown AntePrice;
+        private System.Windows.Forms.Label label1;
     }
 }

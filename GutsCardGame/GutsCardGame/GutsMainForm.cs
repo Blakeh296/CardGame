@@ -50,6 +50,15 @@ namespace GutsCardGame
             this.Close();
         }
 
+        // TODO: AntePrice_SelectedItemChanged Get this do display with dollar sign
+        private void AntePrice_SelectedItemChanged(object sender, EventArgs e)
+        {
+            // Neither of these work
+
+            //AntePrice.SelectedItem = AntePrice.Text.ToString("c");
+            //AntePrice.Text = AntePrice.ToString("c");
+        }
+
         public int leftpos = 50;
         public int toppos = 450;
         public int CardLocation = 0;
