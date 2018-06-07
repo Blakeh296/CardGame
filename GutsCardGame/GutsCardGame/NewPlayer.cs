@@ -233,47 +233,23 @@ namespace GutsCardGame
 
 
 
-        // TODO: Work on track bar
+        // TODO: Work on track bar, Limited game to 4 players
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
             try
             {
-                if (trackBar1.Value == 2)
+                if (trackBar1.Value == 1)
+                {
+                    lblAICount.Text = "1";
+                }
+                else if (trackBar1.Value == 2)
                 {
                     lblAICount.Text = "2";
                 }
                 else if (trackBar1.Value == 3)
                 {
                     lblAICount.Text = "3";
-                }
-                else if (trackBar1.Value == 4)
-                {
-                    lblAICount.Text = "4";
-                }
-                else if (trackBar1.Value == 5)
-                {
-                    lblAICount.Text = "5";
-                }
-                else if (trackBar1.Value == 6)
-                {
-                    lblAICount.Text = "6";
-                }
-                else if (trackBar1.Value == 7)
-                {
-                    lblAICount.Text = "7";
-                }
-                else if (trackBar1.Value == 8)
-                {
-                    lblAICount.Text = "8";
-                }
-                else if (trackBar1.Value == 9)
-                {
-                    lblAICount.Text = "9";
-                }
-                else if (trackBar1.Value == 10)
-                {
-                    lblAICount.Text = "10";
-                }
+                }    
             }
             catch (Exception ex)
             {

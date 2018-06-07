@@ -15,6 +15,8 @@ namespace GutsCardGame
         // TODO: Look at Comeau's project, Look at Sam's project, Hunters Project
         // TODO: Get card values for game, took picture of Sam's code
 
+        /* BEGIN Variables declared at class level */
+
         public string[] PlayerNames = new string[20];
         public int[] PlayerCards = new int[2];
         // TODO: PlayerCardValues is an extra array I added, to attempt to store card values
@@ -26,6 +28,12 @@ namespace GutsCardGame
         public string player1Score;
         public string player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
 
+        /* End Variables declared at class level */
+
+        public GutsMainForm()
+        {
+            InitializeComponent();
+        }
 
         // For testing purposes
         private void btnCardPick_Click(object sender, EventArgs e)
@@ -34,6 +42,7 @@ namespace GutsCardGame
             int Cardpick = rand.Next(0, 26);
             MessageBox.Show(imageList1.Images.Keys[Cardpick].ToString());
         }
+
         // TODO: yesRestartToolStripMenuItem_Click Restarts the game, but doesnt pull player info with it
         private void yesRestartToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -58,12 +67,6 @@ namespace GutsCardGame
             //AntePrice.Text = AntePrice.ToString("c");
         }
 
-
-        public GutsMainForm()
-        {
-            InitializeComponent();
-        }
-
         private void playerSelectToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             // Create access to the new player form
@@ -76,7 +79,6 @@ namespace GutsCardGame
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
 
-
             // Sets playerone to the player name from the array
             player1 = PlayerNames[0];
             
@@ -86,9 +88,7 @@ namespace GutsCardGame
             // Set Playername Instance of the Player class to store the player name
             thePlayer.PlayerName = player1;
 
-  
-
-            // PLAYER CARD ONE
+            // PLAYER 1 CARD 1
             //Create a random number between 0 and the number of cards in the deck
             Random rand = new Random(DateTime.Now.Millisecond);
             int Cardpick = rand.Next(0, imageList1.Images.Count);
@@ -99,7 +99,7 @@ namespace GutsCardGame
                 Cardpick = rand.Next(0, imageList1.Images.Count);
             }
 
-            // PLAYER CARD 2
+            // PLAYER 1 CARD 2
             Random rand2 = new Random(DateTime.Now.Millisecond);
             int Cardpick2 = rand.Next(0, imageList1.Images.Count);
 
@@ -110,12 +110,8 @@ namespace GutsCardGame
                 Cardpick2 = rand.Next(0, imageList1.Images.Count);
             }
 
-            // Dispplay the player cards together
-            pbPlayer1Card1.Image = imageList1.Images[Cardpick];
-            pbPlayer1Card2.Image = imageList1.Images[Cardpick2];
 
-
-            // CARD PICK ONE FOR OPPONENT ONE
+            // CARD PICK 1 FOR OPPONENT 1
             //Create a random number between 0 and the number of cards in the deck
             Random rand3 = new Random(DateTime.Now.Millisecond);
             int Cardpick3 = rand.Next(0, imageList1.Images.Count);
@@ -139,48 +135,24 @@ namespace GutsCardGame
                 Cardpick4 = rand.Next(0, imageList1.Images.Count);
             }
 
-            // Display the cards together 
+            // Display Player 1 cards FACE UP
+            pbPlayer1Card1.Image = imageList1.Images[Cardpick];
+            pbPlayer1Card2.Image = imageList1.Images[Cardpick2];
+
+            // Display Opponenct cards FACE UP
             pbPreviewOppCard1.Image = imageList1.Images[Cardpick3];
             pbPreviewOppCard2.Image = imageList1.Images[Cardpick4];
 
-            /*
-            while (x < 2)
-            {
-                Random rand3 = new Random(DateTime.Now.Millisecond);
-                int Cardpick3 = rand.Next(0, imageList1.Images.Count);
-
-                // Rules out the potential of a backwards card, or displaying the card stack image
-                if (Cardpick3 == 40 || Cardpick3 == 41 || Cardpick3 == 56)
-                {
-                    Cardpick3 = rand.Next(0, imageList1.Images.Count);
-                }
-
-                PictureBox newCard = new PictureBox();
-                newCard.Size = new Size(50, 70);
-                newCard.BackgroundImage = imageList1.Images[Cardpick3];
-                newCard.BackgroundImageLayout = ImageLayout.Stretch;
-                newCard.Location = new Point(leftpos, toppos);
-
-                PlayerCards[x] = Cardpick3;
-
-                this.Controls.Add(newCard);
-                newCard.BringToFront();
-                leftpos = (leftpos + 20);
-
-                OpponentCards[x] = Cardpick;
-
-                x++;
-            } */
             // Display clickable cards for the player
             //pbPlayer1Card1.Image = imageList1.Images[PlayerCards[0]];
             //pbPlayer1Card2.Image = imageList1.Images[PlayerCards[1]];
 
-            // Player 2 Opponent 1
+            // Player 2 Opponent 1 Displays in GroupBox HUD, FACE DOWN
             // TODO: Displays back of cards, need a way to get and keep card value
             pbOpponent1Card1.Image = imageList1.Images[41];
             pbOpponent1Card2.Image = imageList1.Images[41];
 
-            // Player 3 Opponent 2
+            // Player 3 Opponent 2 Displays in GroupBox HUD, FACE DOWN
             pbOpponent2Card1.Image = imageList1.Images[41];
             pbOpponent2Card2.Image = imageList1.Images[41];
 
@@ -192,8 +164,11 @@ namespace GutsCardGame
 
             // Starting money for AI
             double startMoney = 5000;
+ 
+            // Use the array to display the players name from the Playerclass, along with money
+            lblPlayer1.Text = thePlayer.PlayerName + " : " + "$ " + player1Score.ToString();
 
-            // Initially set all AI labels to false visability
+            // Initially set all AI labels to false, for the IF STATEMENT to decide which label display
             lblPlayer3.Visible = false;
             lblPlayer4.Visible = false;
             lblPlayer5.Visible = false;
@@ -203,12 +178,12 @@ namespace GutsCardGame
             lblPlayer9.Visible = false;
             lblPlayer10.Visible = false;
 
- 
-            // Use the array to display the players name from the Playerclass, along with money
-            lblPlayer1.Text = thePlayer.PlayerName + " : " + "$ " + player1Score.ToString();
-
             // TODO: AI If statement, idk if i want to keep this
-            if (aI == 2)
+            if (aI == 1)
+            {
+                lblPlayer2.Text = "AI 1 " + startMoney.ToString("c");
+            }
+            else if (aI == 2)
             {
                 lblPlayer3.Visible = true;
 
@@ -224,112 +199,6 @@ namespace GutsCardGame
                 lblPlayer3.Text = "AI 2 " + startMoney.ToString("c");
                 lblPlayer4.Text = "AI 3 " + startMoney.ToString("c");
             }
-            else if (aI == 4)
-            {
-                lblPlayer3.Visible = true;
-                lblPlayer4.Visible = true;
-                lblPlayer5.Visible = true;
-
-                lblPlayer2.Text = "AI 1 " + startMoney.ToString("c");
-                lblPlayer3.Text = "AI 2 " + startMoney.ToString("c");
-                lblPlayer4.Text = "AI 3 " + startMoney.ToString("c");
-                lblPlayer5.Text = "AI 4 " + startMoney.ToString("c");
-            }
-            else if (aI == 5)
-            {
-                lblPlayer3.Visible = true;
-                lblPlayer4.Visible = true;
-                lblPlayer5.Visible = true;
-                lblPlayer6.Visible = true;
-
-                lblPlayer2.Text = "AI 1 " + startMoney.ToString("c");
-                lblPlayer3.Text = "AI 2 " + startMoney.ToString("c");
-                lblPlayer4.Text = "AI 3 " + startMoney.ToString("c");
-                lblPlayer5.Text = "AI 4 " + startMoney.ToString("c");
-                lblPlayer6.Text = "AI 5 " + startMoney.ToString("c");
-            }
         }
-
-
-
-        // TODO: IDK what this is, multiple commented methods here
-        /* 
-        private int[] createNonRandomArray(int size, int startingNumber)
-        {
-            int[] array = new int[size];
-            for (int i = 0; i < size; i++)
-            {
-                array[i] = startingNumber;
-                startingNumber++;
-            }
-            return array;
-        }
-
-        private int[] fisherYatesShuffle(int[] array)
-        {
-            Random rnd = new Random();
-            for (int i = array.Length - 1; i >= 0; i--)
-            {
-                int r = rnd.Next(0, i + 1);
-
-                int tmp = array[i];
-                array[i] = array[r];
-                array[r] = tmp;
-            }
-            return array;
-
-        }
-
-        private bool isInOrder(int[] array)
-        {
-            int referance = 0;
-            foreach (int i in array)
-            {
-                if (!(i > referance))
-                {
-                    return false;
-                }
-                referance = i;
-            }
-            return true;
-        }
-        private void backgroundWorkerAlgorithm_DoWork(object sender, DoWorkEventArgs e)
-        {
-            int[] array = createNonRandomArray(5, 1);
-            int y = 0;
-            foreach (int i in array)
-            {
-                Console.WriteLine(i);
-            }
-            array = fisherYatesShuffle(array);
-            foreach (int i in array)
-            {
-                Console.WriteLine(i);
-            }
-
-            int numberofruns = 0;
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-
-            while (true)
-            {
-                array = fisherYatesShuffle(array);
-
-                //array = shuffleArray(array);
-                if (isInOrder(array))
-                {
-                    break;
-                }
-                if (numberofruns % 10 == 0)
-                {
-                    Console.WriteLine(numberofruns);
-                }
-                numberofruns++;
-            }
-            sw.Stop();
-            Console.WriteLine("Time it took: " + sw.ElapsedMilliseconds + " -- " + sw.Elapsed);
-            Console.WriteLine("Number of runs: " + numberofruns);
-        }
-        */
     }
 }
