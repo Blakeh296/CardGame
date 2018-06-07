@@ -11,8 +11,9 @@ using System.Windows.Forms;
 namespace GutsCardGame
 {
     public partial class GutsMainForm : Form
-    {      
+    {
         // TODO: Look at Comeau's project, Look at Sam's project, Hunters Project
+        // TODO: Get card values for game, took picture of Sam's code
 
         public string[] PlayerNames = new string[20];
         public int[] PlayerCards = new int[2];
@@ -32,9 +33,21 @@ namespace GutsCardGame
         public int opponentleftpos = 175;
         public int opponenttoppos = 275;
 
-        private void lblClickToStart_Click(object sender, EventArgs e)
+        // For testing purposes
+        private void btnCardPick_Click(object sender, EventArgs e)
         {
-
+            Random rand = new Random(DateTime.Now.Millisecond);
+            int Cardpick = rand.Next(0, 26);
+            MessageBox.Show(imageList1.Images.Keys[Cardpick].ToString());
+        }
+        // TODO: yesRestartToolStripMenuItem_Click Restarts the game, but doesnt pull player info with it
+        private void yesRestartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GutsMainForm NewGame = new GutsMainForm();
+            NewGame.PlayerNames[0] = lblPlayer1.Text;
+            this.Hide();
+            NewGame.ShowDialog();
+            this.Close();
         }
 
         public int leftpos = 50;
@@ -64,37 +77,80 @@ namespace GutsCardGame
 
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
-            var.PlayerName = "fill";
+            // PLAYER CARD ONE
+            //Create a random number between 0 and the number of cards in the deck
+            Random rand = new Random(DateTime.Now.Millisecond);
+            int Cardpick = rand.Next(0, imageList1.Images.Count);
 
-            while (i < 2)
+            // Rules out the potential of a backwards card, or displaying the card stack image
+            while (Cardpick == 40 || Cardpick == 41 || Cardpick == 56)
             {
-                Random rand = new Random(DateTime.Now.Millisecond);
-                int Cardpick = rand.Next(0, imageList1.Images.Count);
-                PictureBox newCard = new PictureBox();
-                newCard.Size = new Size(50, 70);
-
-                newCard.Location = new Point(opponentleftpos, opponenttoppos);
-                newCard.Image = imageList1.Images[Cardpick];
-                this.Controls.Add(newCard);
-                newCard.BringToFront();
-                opponentleftpos = (opponentleftpos + 10);
-
-                OpponentCards[i] = Cardpick;
-
-                i++;
+                Cardpick = rand.Next(0, imageList1.Images.Count);
             }
 
+            // PLAYER CARD 2
+            Random rand2 = new Random(DateTime.Now.Millisecond);
+            int Cardpick2 = rand.Next(0, imageList1.Images.Count);
+
+            // Makes sure a valid card is being played, and makes sure previous CardPicks DO NOT MATCH
+            while (Cardpick2 == 40 || Cardpick2 == 41 || Cardpick2 == 56 || Cardpick2 == Cardpick)
+            {
+                // Pick a new random
+                Cardpick2 = rand.Next(0, imageList1.Images.Count);
+            }
+
+            // Dispplay the player cards together
+            pbPlayer1Card1.Image = imageList1.Images[Cardpick];
+            pbPlayer1Card2.Image = imageList1.Images[Cardpick2];
+
+
+            // CARD PICK ONE FOR OPPONENT ONE
+            //Create a random number between 0 and the number of cards in the deck
+            Random rand3 = new Random(DateTime.Now.Millisecond);
+            int Cardpick3 = rand.Next(0, imageList1.Images.Count);
+
+            // Rules out the potential of a backwards card, or displaying the card stack image
+            // Also ensures the opponent card doesnt match player cards
+            while (Cardpick3 == 40 || Cardpick3 == 41 || Cardpick3 == 56 || Cardpick3 == Cardpick || Cardpick3 == Cardpick2)
+            {
+                // Pick a new random
+                Cardpick3 = rand.Next(0, imageList1.Images.Count);
+            }
+
+            // CARD PICK 2 FOR OPPONENT 1
+            //Create a random number between 0 and the number of cards in the deck
+            Random rand4 = new Random(DateTime.Now.Millisecond);
+            int Cardpick4 = rand.Next(0, imageList1.Images.Count);
+
+            while (Cardpick4 == 40 || Cardpick4 == 41 || Cardpick4 == 56 || Cardpick4 == Cardpick3 || Cardpick4 == Cardpick2 || Cardpick4 == Cardpick)
+            {
+                // Pick a new random
+                Cardpick4 = rand.Next(0, imageList1.Images.Count);
+            }
+
+            // Display the cards together 
+            pbPreviewOppCard1.Image = imageList1.Images[Cardpick3];
+            pbPreviewOppCard2.Image = imageList1.Images[Cardpick4];
+
+            /*
             while (x < 2)
             {
-                Random rand = new Random(DateTime.Now.Millisecond);
-                int Cardpick = rand.Next(0, imageList1.Images.Count);
+                Random rand3 = new Random(DateTime.Now.Millisecond);
+                int Cardpick3 = rand.Next(0, imageList1.Images.Count);
+
+                // Rules out the potential of a backwards card, or displaying the card stack image
+                if (Cardpick3 == 40 || Cardpick3 == 41 || Cardpick3 == 56)
+                {
+                    Cardpick3 = rand.Next(0, imageList1.Images.Count);
+                }
+
                 PictureBox newCard = new PictureBox();
                 newCard.Size = new Size(50, 70);
-                newCard.BackgroundImage = imageList1.Images[Cardpick];
+                newCard.BackgroundImage = imageList1.Images[Cardpick3];
                 newCard.BackgroundImageLayout = ImageLayout.Stretch;
                 newCard.Location = new Point(leftpos, toppos);
 
-                PlayerCards[x] = Cardpick;
+                PlayerCards[x] = Cardpick3;
 
                 this.Controls.Add(newCard);
                 newCard.BringToFront();
@@ -103,10 +159,10 @@ namespace GutsCardGame
                 OpponentCards[x] = Cardpick;
 
                 x++;
-            }
+            } */
             // Display clickable cards for the player
-            pbPlayer1Card1.Image = imageList1.Images[PlayerCards[0]];
-            pbPlayer1Card2.Image = imageList1.Images[PlayerCards[1]];
+            //pbPlayer1Card1.Image = imageList1.Images[PlayerCards[0]];
+            //pbPlayer1Card2.Image = imageList1.Images[PlayerCards[1]];
 
             // Player 2 Opponent 1
             // TODO: Displays back of cards, need a way to get and keep card value

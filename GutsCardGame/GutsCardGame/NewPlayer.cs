@@ -142,66 +142,90 @@ namespace GutsCardGame
         {
             string Score;
 
-            // Set the variable on the main form 
-            frmOne.PlayerNames[0] = comboBox1.Text;
-            // gets the number of AI for game
-            frmOne.aI = int.Parse(lblAICount.Text);
+            try
+            {
+                // Set the variable on the main form 
+                frmOne.PlayerNames[0] = comboBox1.Text;
+                // gets the number of AI for game
+                frmOne.aI = int.Parse(lblAICount.Text);
 
-            Score = Tokenss[1].ToString();
+                // TODO: Score = Tokenss[1].ToString(); is pulling the last known score, not the selected player score
+                Score = Tokenss[1].ToString();
 
-            frmOne.player1Score = Score;
+                frmOne.player1Score = Score;
 
-            this.Hide();        // Hide this form
+                this.Hide();        // Hide this form
 
-            frmOne.ShowDialog();    // Show next form
+                frmOne.ShowDialog();    // Show next form
 
-            this.Close();       // Dispose of this form
+                this.Close();       // Dispose of this form
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " A player might need assosiated with a score");
+            }
+            
         }
-
 
         // Displays text box so the user can type in a name they want to play as,
         // or a returning player can start fresh 
         private void btnNewPlayer_Click(object sender, EventArgs e)
         {
-            // Make first pair of buttons invisible
-            btnNewPlayer.Visible = false;
-            btnReturningPlayer.Visible = false;
+            try
+            {
+                // Make first pair of buttons invisible
+                btnNewPlayer.Visible = false;
+                btnReturningPlayer.Visible = false;
 
-            // Make textbox and BtnAddPlayer visable
-            tbNewPlayer.Visible = true;
-            btnAddPlayer.Visible = true;
-            pictureBox1.Visible = true;
+                // Make textbox and BtnAddPlayer visable
+                tbNewPlayer.Visible = true;
+                btnAddPlayer.Visible = true;
+                pictureBox1.Visible = true;
 
-            // Move the two items to the appropriate location on form
-            tbNewPlayer.Location = new Point(53, 30);
-            btnAddPlayer.Location = new Point(195, 28);
-            pictureBox1.Location = new Point(12, 28);
+                // Move the two items to the appropriate location on form
+                tbNewPlayer.Location = new Point(53, 30);
+                btnAddPlayer.Location = new Point(195, 28);
+                pictureBox1.Location = new Point(12, 28);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
 
         // Changes form size, and positions controls to allow player to pick a player
         private void btnReturningPlayer_Click(object sender, EventArgs e)
         {
-            // Make first pair of buttons invisible
-            btnNewPlayer.Visible = false;
-            btnReturningPlayer.Visible = false;
+            try
+            {
+                // Make first pair of buttons invisible
+                btnNewPlayer.Visible = false;
+                btnReturningPlayer.Visible = false;
 
-            // Set the form size
-            this.Size = new Size(290, 330);
+                // Set the form size
+                this.Size = new Size(290, 330);
 
-            // Make Graphic labels visable
-            pictureBox1.Visible = true;
-            lblLabel4.Visible = true;
-            lblUnderline4.Visible = true;
-            comboBox1.Visible = true;
-            comboBox1.Location = new Point(25, 56);
-            lblLabel3.Visible = true;
-            lblUnderline2.Visible = true;
-            lblAICount.Visible = true;
-            lblUnderline3.Visible = true;
-            trackBar1.Visible = true;
-            lblSlogan.Visible = true;
-            btnPlay.Visible = true;
+                // Make Graphic labels visable
+                pictureBox1.Visible = true;
+                lblLabel4.Visible = true;
+                lblUnderline4.Visible = true;
+                comboBox1.Visible = true;
+                comboBox1.Location = new Point(25, 56);
+                lblLabel3.Visible = true;
+                lblUnderline2.Visible = true;
+                lblAICount.Visible = true;
+                lblUnderline3.Visible = true;
+                trackBar1.Visible = true;
+                lblSlogan.Visible = true;
+                btnPlay.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         
@@ -211,66 +235,86 @@ namespace GutsCardGame
         // TODO: Work on track bar
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
-            if (trackBar1.Value == 2)
+            try
             {
-                lblAICount.Text = "2";
+                if (trackBar1.Value == 2)
+                {
+                    lblAICount.Text = "2";
+                }
+                else if (trackBar1.Value == 3)
+                {
+                    lblAICount.Text = "3";
+                }
+                else if (trackBar1.Value == 4)
+                {
+                    lblAICount.Text = "4";
+                }
+                else if (trackBar1.Value == 5)
+                {
+                    lblAICount.Text = "5";
+                }
+                else if (trackBar1.Value == 6)
+                {
+                    lblAICount.Text = "6";
+                }
+                else if (trackBar1.Value == 7)
+                {
+                    lblAICount.Text = "7";
+                }
+                else if (trackBar1.Value == 8)
+                {
+                    lblAICount.Text = "8";
+                }
+                else if (trackBar1.Value == 9)
+                {
+                    lblAICount.Text = "9";
+                }
+                else if (trackBar1.Value == 10)
+                {
+                    lblAICount.Text = "10";
+                }
             }
-            else if (trackBar1.Value == 3)
+            catch (Exception ex)
             {
-                lblAICount.Text = "3";
+                MessageBox.Show(ex.Message);
             }
-            else if (trackBar1.Value == 4)
-            {
-                lblAICount.Text = "4";
-            }
-            else if (trackBar1.Value == 5)
-            {
-                lblAICount.Text = "5";
-            }
-            else if (trackBar1.Value == 6)
-            {
-                lblAICount.Text = "6";
-            }
-            else if (trackBar1.Value == 7)
-            {
-                lblAICount.Text = "7";
-            }
-            else if (trackBar1.Value == 8)
-            {
-                lblAICount.Text = "8";
-            }
-            else if (trackBar1.Value == 9)
-            {
-                lblAICount.Text = "9";
-            }
-            else if (trackBar1.Value == 10)
-            {
-                lblAICount.Text = "10";
-            }
+            
         }
 
-        // Picture box is a functioning back button for this form
+        // Picture box is functioning back button on this form
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(335, 112);
+            try
+            {
+                // Shrink form
+                this.Size = new Size(335, 112);
 
-            btnAddPlayer.Visible = false;
-            tbNewPlayer.Visible = false;
-            pictureBox1.Visible = false;
+                // Get rid of un needed buttons
+                btnAddPlayer.Visible = false;
+                tbNewPlayer.Visible = false;
+                pictureBox1.Visible = false;
 
-            lblLabel4.Visible = false;
-            lblUnderline4.Visible = false;
-            comboBox1.Visible = false;
-            lblLabel3.Visible = false;
-            lblUnderline2.Visible = false;
-            lblAICount.Visible = false;
-            lblUnderline3.Visible = false;
-            trackBar1.Visible = false;
-            lblSlogan.Visible = false;
-            btnPlay.Visible = false;
+                // Get rid of everything not needed to add a player to the game
+                lblLabel4.Visible = false;
+                lblUnderline4.Visible = false;
+                comboBox1.Visible = false;
+                lblLabel3.Visible = false;
+                lblUnderline2.Visible = false;
+                lblAICount.Visible = false;
+                lblUnderline3.Visible = false;
+                trackBar1.Visible = false;
+                lblSlogan.Visible = false;
+                btnPlay.Visible = false;
 
-            btnNewPlayer.Visible = true;
-            btnReturningPlayer.Visible = true;
+                // Display only whats needed to the player
+                btnNewPlayer.Visible = true;
+                btnReturningPlayer.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
        
