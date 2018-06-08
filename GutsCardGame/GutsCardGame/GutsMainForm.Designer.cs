@@ -79,6 +79,7 @@
             this.lblPlayer3Card2 = new System.Windows.Forms.Label();
             this.lblPlayer4Card1 = new System.Windows.Forms.Label();
             this.lblPlayer4Card2 = new System.Windows.Forms.Label();
+            this.btnShuffle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -625,6 +626,16 @@
             this.lblPlayer4Card2.TabIndex = 34;
             this.lblPlayer4Card2.Text = "label1";
             // 
+            // btnShuffle
+            // 
+            this.btnShuffle.Location = new System.Drawing.Point(254, 473);
+            this.btnShuffle.Name = "btnShuffle";
+            this.btnShuffle.Size = new System.Drawing.Size(137, 23);
+            this.btnShuffle.TabIndex = 35;
+            this.btnShuffle.Text = "New Cards";
+            this.btnShuffle.UseVisualStyleBackColor = true;
+            this.btnShuffle.Click += new System.EventHandler(this.btnShuffle_Click);
+            // 
             // GutsMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,6 +643,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1085, 697);
+            this.Controls.Add(this.btnShuffle);
             this.Controls.Add(this.lblPlayer4Card2);
             this.Controls.Add(this.lblPlayer4Card1);
             this.Controls.Add(this.lblPlayer3Card2);
@@ -740,5 +752,6 @@
         private System.Windows.Forms.Label lblPlayer3Card2;
         private System.Windows.Forms.Label lblPlayer4Card1;
         private System.Windows.Forms.Label lblPlayer4Card2;
+        private System.Windows.Forms.Button btnShuffle;
     }
 }
