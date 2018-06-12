@@ -33,19 +33,12 @@
             this.btnAddPlayer = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.lblSlogan = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblUnderline3 = new System.Windows.Forms.Label();
-            this.lblAICount = new System.Windows.Forms.Label();
-            this.lblUnderline2 = new System.Windows.Forms.Label();
-            this.lblLabel3 = new System.Windows.Forms.Label();
             this.lblUnderline4 = new System.Windows.Forms.Label();
             this.lblLabel4 = new System.Windows.Forms.Label();
             this.btnNewPlayer = new System.Windows.Forms.Button();
             this.btnReturningPlayer = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,20 +95,6 @@
             this.lblSlogan.Text = "No guts, no glory.";
             this.lblSlogan.Visible = false;
             // 
-            // trackBar1
-            // 
-            this.trackBar1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.trackBar1.Location = new System.Drawing.Point(25, 148);
-            this.trackBar1.Maximum = 3;
-            this.trackBar1.Minimum = 1;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(225, 45);
-            this.trackBar1.TabIndex = 10;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBar1.Value = 2;
-            this.trackBar1.Visible = false;
-            this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
-            // 
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.SystemColors.MenuText;
@@ -128,57 +107,6 @@
             this.comboBox1.Size = new System.Drawing.Size(225, 39);
             this.comboBox1.TabIndex = 12;
             this.comboBox1.Visible = false;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // lblUnderline3
-            // 
-            this.lblUnderline3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUnderline3.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnderline3.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUnderline3.Location = new System.Drawing.Point(221, 110);
-            this.lblUnderline3.Name = "lblUnderline3";
-            this.lblUnderline3.Size = new System.Drawing.Size(29, 31);
-            this.lblUnderline3.TabIndex = 13;
-            this.lblUnderline3.Visible = false;
-            // 
-            // lblAICount
-            // 
-            this.lblAICount.AutoSize = true;
-            this.lblAICount.BackColor = System.Drawing.Color.Transparent;
-            this.lblAICount.Font = new System.Drawing.Font("Impact", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAICount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblAICount.Location = new System.Drawing.Point(220, 99);
-            this.lblAICount.Name = "lblAICount";
-            this.lblAICount.Size = new System.Drawing.Size(30, 36);
-            this.lblAICount.TabIndex = 14;
-            this.lblAICount.Text = "2";
-            this.lblAICount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAICount.Visible = false;
-            // 
-            // lblUnderline2
-            // 
-            this.lblUnderline2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUnderline2.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnderline2.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUnderline2.Location = new System.Drawing.Point(64, 110);
-            this.lblUnderline2.Name = "lblUnderline2";
-            this.lblUnderline2.Size = new System.Drawing.Size(146, 25);
-            this.lblUnderline2.TabIndex = 15;
-            this.lblUnderline2.Visible = false;
-            // 
-            // lblLabel3
-            // 
-            this.lblLabel3.AutoSize = true;
-            this.lblLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.lblLabel3.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblLabel3.Location = new System.Drawing.Point(64, 98);
-            this.lblLabel3.Name = "lblLabel3";
-            this.lblLabel3.Size = new System.Drawing.Size(146, 29);
-            this.lblLabel3.TabIndex = 16;
-            this.lblLabel3.Text = "Number of AI :";
-            this.lblLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLabel3.Visible = false;
             // 
             // lblUnderline4
             // 
@@ -244,15 +172,6 @@
             this.pictureBox1.Visible = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 263);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "label1";
-            // 
             // PlayerPicker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -260,18 +179,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(405, 297);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnReturningPlayer);
             this.Controls.Add(this.btnNewPlayer);
             this.Controls.Add(this.lblLabel4);
             this.Controls.Add(this.lblUnderline4);
-            this.Controls.Add(this.lblLabel3);
-            this.Controls.Add(this.lblUnderline2);
-            this.Controls.Add(this.lblAICount);
-            this.Controls.Add(this.lblUnderline3);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.lblSlogan);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.btnAddPlayer);
@@ -284,7 +197,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewPlayer";
             this.Load += new System.EventHandler(this.NewPlayer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -297,17 +209,11 @@
         private System.Windows.Forms.Button btnAddPlayer;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Label lblSlogan;
-        private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lblUnderline3;
-        private System.Windows.Forms.Label lblAICount;
-        private System.Windows.Forms.Label lblUnderline2;
-        private System.Windows.Forms.Label lblLabel3;
         private System.Windows.Forms.Label lblUnderline4;
         private System.Windows.Forms.Label lblLabel4;
         private System.Windows.Forms.Button btnNewPlayer;
         private System.Windows.Forms.Button btnReturningPlayer;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
     }
 }

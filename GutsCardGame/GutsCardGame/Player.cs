@@ -9,8 +9,8 @@ namespace GutsCardGame
     class Player
     {
         private string _playerName; // Holds player name
-        private string pName; // Playername 
-      
+        private double pbank;
+        private double cbank;
 
         public string PlayerName
         {
@@ -18,9 +18,16 @@ namespace GutsCardGame
             set { _playerName = value; }
         }
 
-        public Player(string PlayerName)
+        public double BankAmount
+        {
+            get { return cbank; }
+            set { cbank = value; }
+        }
+
+        public Player(string PlayerName, double BankAmount)
         {
             _playerName = PlayerName;
+            pbank = BankAmount;
         }
 
     }

@@ -90,13 +90,6 @@ namespace GutsCardGame
             
         }
 
-        // When you pick a different name from avaliable characters
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Set the text box equal to the players score
-            label1.Text = Tokenss[1];
-        }
-
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
             try
@@ -119,11 +112,7 @@ namespace GutsCardGame
                 lblUnderline4.Visible = true;
                 comboBox1.Visible = true;
                 comboBox1.Location = new Point(25, 56);
-                lblLabel3.Visible = true;
-                lblUnderline2.Visible = true;
-                lblAICount.Visible = true;
-                lblUnderline3.Visible = true;
-                trackBar1.Visible = true;
+
                 lblSlogan.Visible = true;
                 btnPlay.Visible = true;
 
@@ -156,13 +145,6 @@ namespace GutsCardGame
             {
                 // Set the variable on the main form 
                 frmOne.PlayerNames[0] = comboBox1.Text;
-                // gets the number of AI for game
-                frmOne.aI = int.Parse(lblAICount.Text);
-
-                // TODO: Score = Tokenss[1].ToString(); is pulling the last known score, not the selected player score
-                Score = Tokenss[1].ToString();
-
-                frmOne.player1Score = Score;
 
                 this.Hide();        // Hide this form
 
@@ -223,42 +205,9 @@ namespace GutsCardGame
                 lblUnderline4.Visible = true;
                 comboBox1.Visible = true;
                 comboBox1.Location = new Point(25, 56);
-                lblLabel3.Visible = true;
-                lblUnderline2.Visible = true;
-                lblAICount.Visible = true;
-                lblUnderline3.Visible = true;
-                trackBar1.Visible = true;
+
                 lblSlogan.Visible = true;
                 btnPlay.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
-        }
-
-        
-
-
-
-        // TODO: Work on track bar, Limited game to 4 players
-        private void trackBar1_ValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (trackBar1.Value == 1)
-                {
-                    lblAICount.Text = "1";
-                }
-                else if (trackBar1.Value == 2)
-                {
-                    lblAICount.Text = "2";
-                }
-                else if (trackBar1.Value == 3)
-                {
-                    lblAICount.Text = "3";
-                }    
             }
             catch (Exception ex)
             {
@@ -287,11 +236,6 @@ namespace GutsCardGame
                 lblLabel4.Visible = false;
                 lblUnderline4.Visible = false;
                 comboBox1.Visible = false;
-                lblLabel3.Visible = false;
-                lblUnderline2.Visible = false;
-                lblAICount.Visible = false;
-                lblUnderline3.Visible = false;
-                trackBar1.Visible = false;
                 lblSlogan.Visible = false;
                 btnPlay.Visible = false;
 

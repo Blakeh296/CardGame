@@ -49,7 +49,6 @@
             this.lblPlayerCardPick1 = new System.Windows.Forms.Label();
             this.lblPlayerCardPick2 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbPlayer1Card1 = new System.Windows.Forms.PictureBox();
             this.pbPlayer1Card2 = new System.Windows.Forms.PictureBox();
             this.pbOpponent1Card1 = new System.Windows.Forms.PictureBox();
@@ -82,7 +81,6 @@
             this.btnShuffle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Card1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Card2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card1)).BeginInit();
@@ -314,14 +312,6 @@
             this.lblPlayerCardPick2.Size = new System.Drawing.Size(51, 20);
             this.lblPlayerCardPick2.TabIndex = 14;
             this.lblPlayerCardPick2.Text = "label1";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(-23, -45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
             // 
             // pbPlayer1Card1
             // 
@@ -640,7 +630,7 @@
             this.btnShuffle.Name = "btnShuffle";
             this.btnShuffle.Size = new System.Drawing.Size(137, 23);
             this.btnShuffle.TabIndex = 35;
-            this.btnShuffle.Text = "New Cards";
+            this.btnShuffle.Text = "Shuffle";
             this.btnShuffle.UseVisualStyleBackColor = true;
             this.btnShuffle.Click += new System.EventHandler(this.btnShuffle_Click);
             // 
@@ -648,7 +638,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1085, 697);
             this.Controls.Add(this.btnShuffle);
@@ -667,7 +657,6 @@
             this.Controls.Add(this.pbPreviewPlayer3Card1);
             this.Controls.Add(this.btnCardPick);
             this.Controls.Add(this.gbPlayer1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblPlayerCardPick2);
             this.Controls.Add(this.lblPlayerCardPick1);
             this.Controls.Add(this.pictureBoxCardStack);
@@ -681,7 +670,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Card1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Card2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpponent1Card1)).EndInit();
@@ -722,7 +710,6 @@
         private System.Windows.Forms.Label lblPlayerCardPick2;
         private System.Windows.Forms.ToolStripMenuItem playerSelectToolStripMenuItem;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pbPlayer1Card1;
         private System.Windows.Forms.PictureBox pbPlayer1Card2;
         private System.Windows.Forms.PictureBox pbOpponent1Card1;
