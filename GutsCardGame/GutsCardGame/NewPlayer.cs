@@ -79,9 +79,13 @@ namespace GutsCardGame
                 // Set a default name if no name is picked (Ensure code runs) lol
                 comboBox1.Text = "Newbie";
             }
-            catch (Exception Ex)
+            catch
             {
-                MessageBox.Show(Ex.Message);
+                MessageBox.Show("Select 'New Player' to begin");
+
+                btnReturningPlayer.Visible = false;
+
+                btnNewPlayer.Location = new Point(98, 24);
             }
             
         }
@@ -97,6 +101,11 @@ namespace GutsCardGame
         {
             try
             {
+                
+
+                //create a delimiter array
+                char[] delim = { ',' };
+
                 // Get rid of the button and textbox
                 tbNewPlayer.Visible = false;
                 btnAddPlayer.Visible = false;
@@ -141,7 +150,7 @@ namespace GutsCardGame
         // Last button on the page before the game starts
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            string Score;
+            string Score = "0";
 
             try
             {
@@ -265,6 +274,9 @@ namespace GutsCardGame
             {
                 // Shrink form
                 this.Size = new Size(335, 112);
+
+                // Make sure button is positioned correctly
+                btnNewPlayer.Location = new Point(12, 26);
 
                 // Get rid of un needed buttons
                 btnAddPlayer.Visible = false;
