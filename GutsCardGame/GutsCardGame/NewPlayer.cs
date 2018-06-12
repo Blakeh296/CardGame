@@ -65,7 +65,7 @@ namespace GutsCardGame
 
                     // Get player name
                     // PlayerNames[count] = Tokens[0];
-                    // TODO: Highscores[count] = int.Parse(Tokenss[1]);
+                    // TODO: In Load Event : Highscores[count] = int.Parse(Tokenss[1]);
 
                     comboBox1.Items.Add(Tokenss[0]);
 
@@ -170,9 +170,9 @@ namespace GutsCardGame
 
                 this.Close();       // Dispose of this form
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message + " A player might need assosiated with a score");
+                MessageBox.Show(" A player might need assosiated with a score");
             }
             
         }
