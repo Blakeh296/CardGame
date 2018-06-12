@@ -12,13 +12,14 @@ namespace GutsCardGame
 {
     public partial class GutsMainForm : Form
     {
-        // TODO: Look at Comeau's project, Look at Sam's project, Hunters Project
-        // TODO: Program is freezing alot
+        // TODO: URGENT Look at Comeau's project, Look at Sam's project, Hunters Project
+        // TODO: URGENT Program is freezing alot, Infinate loop occurs in the while loops with more players and variables
+
         /* BEGIN Variables declared at class level */
 
         public string[] PlayerNames = new string[20];
         public int[] PlayerCards = new int[2];
-        // TODO: PlayerCardValues is an extra array I added, to attempt to store card values
+        // TODO: URGENT is this used? PlayerCardValues is an extra array I added, to attempt to store card values
         public string[] PlayerCardValues = new string[2];
         // TODO: OpponentCards should be set up to hold card values, since I am going to display the back of cards on screen
         public string[] OpponentCardValues = new string[6];
@@ -606,7 +607,7 @@ namespace GutsCardGame
 
         }
 
-        // TODO: Force Crashes at times
+        // TODO: Force Crashes at times, gets stuck in infinate loop
         private void btnShuffle_Click(object sender, EventArgs e)
         {
             if (aI == 1)  // IF a 2 player game

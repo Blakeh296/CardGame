@@ -65,7 +65,7 @@ namespace GutsCardGame
 
                     // Get player name
                     // PlayerNames[count] = Tokens[0];
-                    // TODO: In Load Event : Highscores[count] = int.Parse(Tokenss[1]);
+                    // TODO: URGANT In Load Event : Highscores[count] = int.Parse(Tokenss[1]);
 
                     comboBox1.Items.Add(Tokenss[0]);
 

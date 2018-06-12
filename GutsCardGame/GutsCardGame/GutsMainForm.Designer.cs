@@ -298,18 +298,20 @@
             // lblPlayerCardPick1
             // 
             this.lblPlayerCardPick1.AutoSize = true;
+            this.lblPlayerCardPick1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerCardPick1.Location = new System.Drawing.Point(268, 516);
             this.lblPlayerCardPick1.Name = "lblPlayerCardPick1";
-            this.lblPlayerCardPick1.Size = new System.Drawing.Size(35, 13);
+            this.lblPlayerCardPick1.Size = new System.Drawing.Size(51, 20);
             this.lblPlayerCardPick1.TabIndex = 12;
             this.lblPlayerCardPick1.Text = "label1";
             // 
             // lblPlayerCardPick2
             // 
             this.lblPlayerCardPick2.AutoSize = true;
+            this.lblPlayerCardPick2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerCardPick2.Location = new System.Drawing.Point(341, 516);
             this.lblPlayerCardPick2.Name = "lblPlayerCardPick2";
-            this.lblPlayerCardPick2.Size = new System.Drawing.Size(35, 13);
+            this.lblPlayerCardPick2.Size = new System.Drawing.Size(51, 20);
             this.lblPlayerCardPick2.TabIndex = 14;
             this.lblPlayerCardPick2.Text = "label1";
             // 
@@ -575,54 +577,60 @@
             // lblPlayer2Card1
             // 
             this.lblPlayer2Card1.AutoSize = true;
+            this.lblPlayer2Card1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer2Card1.Location = new System.Drawing.Point(477, 456);
             this.lblPlayer2Card1.Name = "lblPlayer2Card1";
-            this.lblPlayer2Card1.Size = new System.Drawing.Size(35, 13);
+            this.lblPlayer2Card1.Size = new System.Drawing.Size(51, 20);
             this.lblPlayer2Card1.TabIndex = 29;
             this.lblPlayer2Card1.Text = "label1";
             // 
             // lblPlayer2Card2
             // 
             this.lblPlayer2Card2.AutoSize = true;
+            this.lblPlayer2Card2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer2Card2.Location = new System.Drawing.Point(580, 456);
             this.lblPlayer2Card2.Name = "lblPlayer2Card2";
-            this.lblPlayer2Card2.Size = new System.Drawing.Size(35, 13);
+            this.lblPlayer2Card2.Size = new System.Drawing.Size(51, 20);
             this.lblPlayer2Card2.TabIndex = 30;
             this.lblPlayer2Card2.Text = "label1";
             // 
             // lblPlayer3Card1
             // 
             this.lblPlayer3Card1.AutoSize = true;
+            this.lblPlayer3Card1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer3Card1.Location = new System.Drawing.Point(693, 456);
             this.lblPlayer3Card1.Name = "lblPlayer3Card1";
-            this.lblPlayer3Card1.Size = new System.Drawing.Size(35, 13);
+            this.lblPlayer3Card1.Size = new System.Drawing.Size(51, 20);
             this.lblPlayer3Card1.TabIndex = 31;
             this.lblPlayer3Card1.Text = "label1";
             // 
             // lblPlayer3Card2
             // 
             this.lblPlayer3Card2.AutoSize = true;
+            this.lblPlayer3Card2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer3Card2.Location = new System.Drawing.Point(765, 456);
             this.lblPlayer3Card2.Name = "lblPlayer3Card2";
-            this.lblPlayer3Card2.Size = new System.Drawing.Size(35, 13);
+            this.lblPlayer3Card2.Size = new System.Drawing.Size(51, 20);
             this.lblPlayer3Card2.TabIndex = 32;
             this.lblPlayer3Card2.Text = "label1";
             // 
             // lblPlayer4Card1
             // 
             this.lblPlayer4Card1.AutoSize = true;
+            this.lblPlayer4Card1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer4Card1.Location = new System.Drawing.Point(884, 456);
             this.lblPlayer4Card1.Name = "lblPlayer4Card1";
-            this.lblPlayer4Card1.Size = new System.Drawing.Size(35, 13);
+            this.lblPlayer4Card1.Size = new System.Drawing.Size(51, 20);
             this.lblPlayer4Card1.TabIndex = 33;
             this.lblPlayer4Card1.Text = "label1";
             // 
             // lblPlayer4Card2
             // 
             this.lblPlayer4Card2.AutoSize = true;
+            this.lblPlayer4Card2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer4Card2.Location = new System.Drawing.Point(987, 456);
             this.lblPlayer4Card2.Name = "lblPlayer4Card2";
-            this.lblPlayer4Card2.Size = new System.Drawing.Size(35, 13);
+            this.lblPlayer4Card2.Size = new System.Drawing.Size(51, 20);
             this.lblPlayer4Card2.TabIndex = 34;
             this.lblPlayer4Card2.Text = "label1";
             // 
