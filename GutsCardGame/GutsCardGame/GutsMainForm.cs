@@ -29,6 +29,7 @@ namespace GutsCardGame
         public string player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
 
         // USED IN THE LOAD EVENT TO DRAW FIRST CARDS, AND CARRY VARIABLES THROUGHOUT THE FORM
+        Deck deckClass = new Deck();
         int Cardpick;
         int Cardpick2;
         int Cardpick3;
@@ -50,9 +51,14 @@ namespace GutsCardGame
         // For testing purposes
         private void btnCardPick_Click(object sender, EventArgs e)
         {
+
+            
             Random rand = new Random(DateTime.Now.Millisecond);
             int Cardpick = rand.Next(0, 26);
-            MessageBox.Show(imageList1.Images.Keys[Cardpick].ToString());
+
+            deckClass.CardPick = Cardpick;
+
+            MessageBox.Show(imageList1.Images.Keys[deckClass.CardPick].ToString());
         }
 
         private void areYouSureToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,10 +124,14 @@ namespace GutsCardGame
                 Random rand = new Random(DateTime.Now.Millisecond);
                 Cardpick = rand.Next(0, imageList1.Images.Count);
 
+                // Use my class to save card pick
+                deckClass.CardPick = Cardpick;
+
                 // Rules out the potential of a backwards card, or displaying the card stack image
-                while (Cardpick == 40 || Cardpick == 41 || Cardpick == 56)
+                while (deckClass.CardPick == 40 || deckClass.CardPick == 41 || deckClass.CardPick == 56)
                 {
-                    Cardpick = rand.Next(0, imageList1.Images.Count);
+                    // Giving a new random to the class variable
+                    deckClass.CardPick = rand.Next(0, imageList1.Images.Count);
                 }
 
                 // PLAYER 1 CARD 2

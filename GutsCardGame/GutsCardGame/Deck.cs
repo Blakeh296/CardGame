@@ -39,6 +39,6 @@ namespace GutsCardGame
             set { cardPick4 = value; }
         }
 
-        public CardPicks (int Cardpick)
+        // public CardPicks (int Cardpick)
     }
 }
