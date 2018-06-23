@@ -176,8 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackgroundImage = global::GutsCardGame.Properties.Resources.cards_on_red_felt_poker_table_background;
             this.ClientSize = new System.Drawing.Size(405, 297);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnReturningPlayer);
@@ -195,7 +194,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PlayerPicker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewPlayer";
+            this.Text = "Pick a player";
             this.Load += new System.EventHandler(this.NewPlayer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
