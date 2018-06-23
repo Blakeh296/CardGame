@@ -28,8 +28,22 @@ namespace GutsCardGame
         public string player1Score;
         public string player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
 
+        private void goToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Create access to the new player form
+            PlayerPicker thisForm = new PlayerPicker();
+            this.Hide();                    // Hide this form
+            thisForm.ShowDialog();          // Show form
+            this.Close();                   // Dispose of current form
+        }
+
+
+
+
         // Create a new instance of the deck class to use throughout this form, declared at class level
         Deck deckClass = new Deck();
+
+
 
         /* End Variables declared at class level */
 
@@ -72,20 +86,9 @@ namespace GutsCardGame
             //AntePrice.Text = AntePrice.ToString("c");
         }
 
-        private void playerSelectToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            // Create access to the new player form
-            PlayerPicker thisForm = new PlayerPicker();
-            this.Hide();                    // Hide this form
-            thisForm.ShowDialog();          // Show form
-            this.Close();                   // Dispose of current form
-        }
 
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
-            // Starting money
-            double startMoney = 5000;
-
             // Sets playerone to the player name from the array
             player1 = PlayerNames[0];
             
@@ -93,11 +96,14 @@ namespace GutsCardGame
             Player thePlayer = new Player(player1, 1000);
 
             // Set Playername Instance of the Player class to store the player name
-            thePlayer.PlayerName = player1;
+            if (player1 != null)
+            { thePlayer.PlayerName = player1; }
+            // Player name is set to guest if no player is picked
+            else { thePlayer.PlayerName = "Guest"; } 
+
+            // Start money set in the player class
             thePlayer.BankAmount = 1000;
 
-            
- 
             // Use the array to display the players name from the Playerclass, along with money
             lblPlayer1.Text = thePlayer.PlayerName + " : " + thePlayer.BankAmount.ToString("c");
 
