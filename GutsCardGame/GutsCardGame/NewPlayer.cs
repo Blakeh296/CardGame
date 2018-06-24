@@ -38,10 +38,7 @@ namespace GutsCardGame
         // still dont understand classes
         private void NewPlayer_Load(object sender, EventArgs e)
         {
-            //497, 338
-            //335, 112
-
-            this.Size = new Size(335, 112);
+            
             string players;
             int count = 0;
 
@@ -77,15 +74,14 @@ namespace GutsCardGame
                 inputFile.Close();
 
                 // Set a default name if no name is picked (Ensure code runs) lol
-                comboBox1.Text = "Newbie";
+                comboBox1.Text = "Noob";
+
+                
+
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Select 'New Player' to begin");
-
-                btnReturningPlayer.Visible = false;
-
-                btnNewPlayer.Location = new Point(98, 24);
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -94,27 +90,10 @@ namespace GutsCardGame
         {
             try
             {
-                
+
 
                 //create a delimiter array
                 char[] delim = { ',' };
-
-                // Get rid of the button and textbox
-                tbNewPlayer.Visible = false;
-                btnAddPlayer.Visible = false;
-                pictureBox1.Visible = false;
-
-                // Set the form size
-                this.Size = new Size(290, 330);
-
-                // Make Graphic labels visable
-                lblLabel4.Visible = true;
-                lblUnderline4.Visible = true;
-                comboBox1.Visible = true;
-                comboBox1.Location = new Point(25, 56);
-
-                lblSlogan.Visible = true;
-                btnPlay.Visible = true;
 
                 // Declare a Streamwriter variable
                 StreamWriter outputFile;
@@ -123,12 +102,15 @@ namespace GutsCardGame
 
                 string var = tbNewPlayer.Text;
 
-                comboBox1.Items.Add(var);
+                comboBox2.Items.Add(var);
 
                 outputFile.WriteLine(var);
 
                 // close file
                 outputFile.Close();
+
+                MessageBox.Show("Player Added");
+
             }
             catch (Exception ex)
             {
@@ -139,8 +121,6 @@ namespace GutsCardGame
         // Last button on the page before the game starts
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            string Score = "0";
-
             try
             {
                 // Set the variable on the main form 
@@ -156,100 +136,45 @@ namespace GutsCardGame
             {
                 MessageBox.Show(" A player might need assosiated with a score");
             }
-            
         }
 
-        // Displays text box so the user can type in a name they want to play as,
-        // or a returning player can start fresh 
-        private void btnNewPlayer_Click(object sender, EventArgs e)
+        private void yesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void clickMeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                // Make first pair of buttons invisible
-                btnNewPlayer.Visible = false;
-                btnReturningPlayer.Visible = false;
+                // Stream reader variable
+                string text = "";
 
-                // Make textbox and BtnAddPlayer visable
-                tbNewPlayer.Visible = true;
-                btnAddPlayer.Visible = true;
-                pictureBox1.Visible = true;
+                // Declare a Stream Reader
+                StreamReader inputFile;
 
-                // Move the two items to the appropriate location on form
-                tbNewPlayer.Location = new Point(53, 30);
-                btnAddPlayer.Location = new Point(195, 28);
-                pictureBox1.Location = new Point(12, 28);
+                //Open the file
+                inputFile = File.OpenText("");
+
+                //create a delimiter array
+                char[] delim = { ',' };
+
+                // Read the files contents
+                while (!inputFile.EndOfStream)
+                {
+                    text =  inputFile.ReadLine();
+                }
+
+                // Close the file
+                inputFile.Close();
+
+                // Display help information for the user 
+                MessageBox.Show(text.ToString());
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+
             }
-            
-        }
-
-
-        // Changes form size, and positions controls to allow player to pick a player
-        private void btnReturningPlayer_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Make first pair of buttons invisible
-                btnNewPlayer.Visible = false;
-                btnReturningPlayer.Visible = false;
-
-                // Set the form size
-                this.Size = new Size(290, 330);
-
-                // Make Graphic labels visable
-                pictureBox1.Visible = true;
-                lblLabel4.Visible = true;
-                lblUnderline4.Visible = true;
-                comboBox1.Visible = true;
-                comboBox1.Location = new Point(25, 56);
-
-                lblSlogan.Visible = true;
-                btnPlay.Visible = true;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
-        }
-
-        // Picture box is functioning back button on this form
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Shrink form
-                this.Size = new Size(335, 112);
-
-                // Make sure button is positioned correctly
-                btnNewPlayer.Location = new Point(12, 26);
-
-                // Get rid of un needed buttons
-                btnAddPlayer.Visible = false;
-                tbNewPlayer.Visible = false;
-                pictureBox1.Visible = false;
-
-                // Get rid of everything not needed to add a player to the game
-                lblLabel4.Visible = false;
-                lblUnderline4.Visible = false;
-                comboBox1.Visible = false;
-                lblSlogan.Visible = false;
-                btnPlay.Visible = false;
-
-                // Display only whats needed to the player
-                btnNewPlayer.Visible = true;
-                btnReturningPlayer.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
-        }
-
-       
     }
 }
