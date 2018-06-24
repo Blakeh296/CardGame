@@ -53,7 +53,6 @@
             this.pbOpponent1Card2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.AntePrice = new System.Windows.Forms.DomainUpDown();
-            this.btnCardPick = new System.Windows.Forms.Button();
             this.pbPreviewOppCard1 = new System.Windows.Forms.PictureBox();
             this.pbPreviewOppCard2 = new System.Windows.Forms.PictureBox();
             this.lblPlayer2Card1 = new System.Windows.Forms.Label();
@@ -92,7 +91,7 @@
             this.pictureBoxCardStack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBoxCardStack.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxCardStack.Image = global::GutsCardGame.Properties.Resources.RedCard_stack;
-            this.pictureBoxCardStack.Location = new System.Drawing.Point(608, 332);
+            this.pictureBoxCardStack.Location = new System.Drawing.Point(655, 558);
             this.pictureBoxCardStack.Name = "pictureBoxCardStack";
             this.pictureBoxCardStack.Size = new System.Drawing.Size(72, 70);
             this.pictureBoxCardStack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -350,17 +349,6 @@
             this.AntePrice.Size = new System.Drawing.Size(120, 31);
             this.AntePrice.TabIndex = 23;
             this.AntePrice.Text = "5";
-            this.AntePrice.SelectedItemChanged += new System.EventHandler(this.AntePrice_SelectedItemChanged);
-            // 
-            // btnCardPick
-            // 
-            this.btnCardPick.Location = new System.Drawing.Point(582, 408);
-            this.btnCardPick.Name = "btnCardPick";
-            this.btnCardPick.Size = new System.Drawing.Size(125, 23);
-            this.btnCardPick.TabIndex = 21;
-            this.btnCardPick.Text = "Pick Card Test";
-            this.btnCardPick.UseVisualStyleBackColor = true;
-            this.btnCardPick.Click += new System.EventHandler(this.btnCardPick_Click);
             // 
             // pbPreviewOppCard1
             // 
@@ -402,7 +390,7 @@
             // 
             this.btnShuffle.AutoSize = true;
             this.btnShuffle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShuffle.Location = new System.Drawing.Point(324, 257);
+            this.btnShuffle.Location = new System.Drawing.Point(497, 575);
             this.btnShuffle.Name = "btnShuffle";
             this.btnShuffle.Size = new System.Drawing.Size(137, 36);
             this.btnShuffle.TabIndex = 35;
@@ -470,7 +458,7 @@
             // 
             this.btnAnteUp.AutoSize = true;
             this.btnAnteUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnteUp.Location = new System.Drawing.Point(467, 257);
+            this.btnAnteUp.Location = new System.Drawing.Point(265, 269);
             this.btnAnteUp.Name = "btnAnteUp";
             this.btnAnteUp.Size = new System.Drawing.Size(137, 36);
             this.btnAnteUp.TabIndex = 39;
@@ -489,7 +477,6 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnShuffle);
-            this.Controls.Add(this.btnCardPick);
             this.Controls.Add(this.pictureBoxCardStack);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -537,7 +524,6 @@
         private System.Windows.Forms.ToolStripMenuItem yesRestartToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keepPlayingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem areYouSureToolStripMenuItem;
-        private System.Windows.Forms.Button btnCardPick;
         private System.Windows.Forms.PictureBox pbPreviewOppCard1;
         private System.Windows.Forms.PictureBox pbPreviewOppCard2;
         private System.Windows.Forms.DomainUpDown AntePrice;

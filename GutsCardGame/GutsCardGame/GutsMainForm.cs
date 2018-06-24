@@ -12,6 +12,11 @@ namespace GutsCardGame
 {
     public partial class GutsMainForm : Form
     {
+        public GutsMainForm()
+        {
+            InitializeComponent();
+        }
+
         // TODO: URGENT Look at Comeau's project, Look at Sam's project, Hunters Project
         // TODO: URGENT Program is freezing alot, Infinate loop occurs in the while loops with more players and variables
 
@@ -26,7 +31,17 @@ namespace GutsCardGame
         public int aI = 1;
         public int gameCounter = 0;     // to count what round youre on
         public string player1Score;
-        public string player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
+        public string player1 = "", player2, player3, player4, player5, player6, player7, player8, player9, player10;
+
+        // Create a new instance of the deck class to use throughout this form, declared at class level
+        Deck deckClass = new Deck();
+
+        // Declaration of the Player Class
+        Player thePlayer = new Player("Guest",1000);
+
+
+
+        /* End Variables declared at class level */
 
         private void goToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -39,6 +54,12 @@ namespace GutsCardGame
 
         private void btnAnteUp_Click(object sender, EventArgs e)
         {
+            double bet;
+            double losses;
+            double gains;
+
+            bet = double.Parse(AntePrice.Text);
+
             if (aI == 1)
             {
                 // SET PLAYER 1 CARD 1
@@ -76,60 +97,37 @@ namespace GutsCardGame
                 // DISPLAY PLAYER CARDS
                 lblPlayerCardPick1.Text = PlayerCardValues[0].ToString();
                 lblPlayerCardPick2.Text = PlayerCardValues[1].ToString();
+                
 
                 // DISPLAY PLAYER 2 : OPPONENT 1 CARDS
                 lblPlayer2Card1.Text = OpponentCardValues[0].ToString();
                 lblPlayer2Card2.Text = OpponentCardValues[1].ToString();
+                pbOpponent1Card1.Image = imageList1.Images[deckClass.CardPick3];
+                pbOpponent1Card2.Image = imageList1.Images[deckClass.CardPick4];
             }
             btnShuffle.Visible = true;
             btnAnteUp.Visible = false;
+
+            if (deckClass.CardPick + deckClass.CardPick2 > deckClass.CardPick3 + deckClass.CardPick4)
+            {
+                gains = bet * 2;
+
+                thePlayer.BankAmount = thePlayer.BankAmount + gains;
+
+                lblWinLabel.Text = "You won $" + gains + " that round!";
+            }
         }
 
-        // Create a new instance of the deck class to use throughout this form, declared at class level
-        Deck deckClass = new Deck();
+   
 
 
 
-        /* End Variables declared at class level */
-
-
-
-        public GutsMainForm()
-        {
-            InitializeComponent();
-        }
-
-        // For testing purposes
-        private void btnCardPick_Click(object sender, EventArgs e)
-        {
-
-            
-            Random rand = new Random(DateTime.Now.Millisecond);
-            int Cardpick = rand.Next(0, 26);
-
-            deckClass.CardPick = Cardpick;
-
-            MessageBox.Show(imageList1.Images.Keys[deckClass.CardPick].ToString());
-        }
 
         private void areYouSureToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        // TODO: AntePrice_SelectedItemChanged Get this do display with dollar sign
-        private void AntePrice_SelectedItemChanged(object sender, EventArgs e)
-        {
-            // Neither of these work
-            
-            /* string selectedItem;
-
-            selectedItem = AntePrice.Text;
-            AntePrice.Text = selectedItem.ToString("c"); */
-
-            //AntePrice.SelectedItem = AntePrice.Text.ToString("c");
-            //AntePrice.Text = AntePrice.ToString("c");
-        }
 
 
         private void GutsMainForm_Load(object sender, EventArgs e)
@@ -139,8 +137,7 @@ namespace GutsCardGame
             // Sets playerone to the player name from the array
             player1 = PlayerNames[0];
             
-            // Declaration of the Player Class
-            Player thePlayer = new Player(player1, 1000);
+
 
             // Set Playername Instance of the Player class to store the player name
             if (player1 != null)
@@ -154,84 +151,8 @@ namespace GutsCardGame
             // Use the array to display the players name from the Playerclass, along with money
             lblPlayer1.Text = thePlayer.PlayerName + " : " + thePlayer.BankAmount.ToString("c");
 
-
-
-            // TODO: AI If statement, idk if i want to keep this
-
             if (aI == 1)  // IF a 2 player game
-            {
                 lblPlayer2.Text = "Computer 1" + thePlayer.BankAmount.ToString("c");
-
-                // PLAYER 1 CARD 1
-                //Create a random number between 0 and the number of cards in the deck
-                Random rand = new Random(DateTime.Now.Millisecond);
-
-                // Giving a new random to the class variable
-                deckClass.CardPick = rand.Next(0, imageList1.Images.Count);
-
-                // Rules out the potential of a backwards card, or displaying the card stack image
-                while (deckClass.CardPick == 40 || deckClass.CardPick == 41 || deckClass.CardPick == 56)
-                {
-                    // Giving a new random to the class variable
-                    deckClass.CardPick = rand.Next(0, imageList1.Images.Count);
-                }
-
-                // PLAYER 1 CARD 2
-                Random rand2 = new Random(DateTime.Now.Millisecond);
-
-                // Giving a new random to the class variable
-                deckClass.CardPick2 = rand.Next(0, imageList1.Images.Count);
-
-                // Makes sure a valid card is being played, and makes sure previous CardPicks DO NOT MATCH
-                while (deckClass.CardPick2 == 40 || deckClass.CardPick2 == 41 || deckClass.CardPick2 == 56 || deckClass.CardPick2 == deckClass.CardPick)
-                {
-                    // Pick a new random
-                    deckClass.CardPick2 = rand.Next(0, imageList1.Images.Count);
-                }
-
-                // CARD PICK 1 FOR OPPONENT 1
-                //Create a random number between 0 and the number of cards in the deck
-                Random rand3 = new Random(DateTime.Now.Millisecond);
-
-                // Giving a new random to the class variable
-                deckClass.CardPick3 = rand.Next(0, imageList1.Images.Count);
-
-                // Rules out the potential of a backwards card, or displaying the card stack image
-                // Also ensures the opponent card doesnt match player cards
-                while (deckClass.CardPick3 == 40 || deckClass.CardPick3 == 41 || deckClass.CardPick3 == 56
-                    || deckClass.CardPick3 == deckClass.CardPick || deckClass.CardPick3 == deckClass.CardPick2)
-                {
-                    // Pick a new random
-                    deckClass.CardPick3 = rand.Next(0, imageList1.Images.Count);
-                }
-
-                // CARD PICK 2 FOR OPPONENT 1
-                //Create a random number between 0 and the number of cards in the deck
-                Random rand4 = new Random(DateTime.Now.Millisecond);
-
-                // Giving a new random to the class variable
-                deckClass.CardPick4 = rand.Next(0, imageList1.Images.Count);
-
-                while (deckClass.CardPick4 == 40 || deckClass.CardPick4 == 41 || deckClass.CardPick4 == 56
-                    || deckClass.CardPick4 == deckClass.CardPick3 || deckClass.CardPick4 == deckClass.CardPick2 || deckClass.CardPick4 == deckClass.CardPick)
-                {
-                    // Pick a new random
-                    deckClass.CardPick4 = rand.Next(0, imageList1.Images.Count);
-                }
-
-                // Display Player 1 cards * FACE UP *
-                pbPlayer1Card1.Image = imageList1.Images[deckClass.CardPick];
-                pbPlayer1Card2.Image = imageList1.Images[deckClass.CardPick2];
-
-                // Display Opponenct cards * FACE UP *
-                pbPreviewOppCard1.Image = imageList1.Images[deckClass.CardPick3];
-                pbPreviewOppCard2.Image = imageList1.Images[deckClass.CardPick3];
-
-                // Player 2 Opponent 1 Displays in * GroupBox HUD *, * FACE DOWN *
-                pbOpponent1Card1.Image = imageList1.Images[41];
-                pbOpponent1Card2.Image = imageList1.Images[41];
-            }
-            
         }
 
 
@@ -296,13 +217,10 @@ namespace GutsCardGame
                 pbPlayer1Card1.Image = imageList1.Images[deckClass.CardPick];
                 pbPlayer1Card2.Image = imageList1.Images[deckClass.CardPick2];
 
-                // Display Opponenct cards * FACE UP *
-                pbPreviewOppCard1.Image = imageList1.Images[deckClass.CardPick3];
-                pbPreviewOppCard2.Image = imageList1.Images[deckClass.CardPick4];
 
-                // Player 2 Opponent 1 Displays in * GroupBox HUD *, * FACE DOWN *
+                // Player 2 Opponent, Show 1 card face up, 1 card face down
                 pbOpponent1Card1.Image = imageList1.Images[41];
-                pbOpponent1Card2.Image = imageList1.Images[41];
+                pbOpponent1Card2.Image = imageList1.Images[deckClass.CardPick4];
 
                 btnAnteUp.Visible = true;
                 btnShuffle.Visible = false;
