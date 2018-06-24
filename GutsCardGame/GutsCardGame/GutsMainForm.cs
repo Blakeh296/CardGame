@@ -37,8 +37,53 @@ namespace GutsCardGame
             this.Close();                   // Dispose of current form
         }
 
+        private void btnAnteUp_Click(object sender, EventArgs e)
+        {
+            if (aI == 1)
+            {
+                // SET PLAYER 1 CARD 1
+                PlayerCardValues[0] = imageList1.Images.Keys[deckClass.CardPick].Substring(0, 1);
+                if (imageList1.Images.Keys[deckClass.CardPick].Substring(0, 2) == "10") { PlayerCardValues[0] = "10"; }
+                if (PlayerCardValues[0] == "A") { PlayerCardValues[0] = "14"; }
+                if (PlayerCardValues[0] == "J") { PlayerCardValues[0] = "11"; }
+                if (PlayerCardValues[0] == "K") { PlayerCardValues[0] = "12"; }
+                if (PlayerCardValues[0] == "Q") { PlayerCardValues[0] = "13"; }
 
+                // SET PLAYER 1 CARD 2
+                PlayerCardValues[1] = imageList1.Images.Keys[deckClass.CardPick2].Substring(0, 1);
+                if (imageList1.Images.Keys[deckClass.CardPick2].Substring(0, 2) == "10") { PlayerCardValues[1] = "10"; }
+                if (PlayerCardValues[1] == "A") { PlayerCardValues[1] = "14"; }
+                if (PlayerCardValues[1] == "J") { PlayerCardValues[1] = "11"; }
+                if (PlayerCardValues[1] == "K") { PlayerCardValues[1] = "12"; }
+                if (PlayerCardValues[1] == "Q") { PlayerCardValues[1] = "13"; }
 
+                // SET PLAYER 2 : OPPONENT 1 CARD 1
+                OpponentCardValues[0] = imageList1.Images.Keys[deckClass.CardPick3].Substring(0, 1);
+                if (imageList1.Images.Keys[deckClass.CardPick3].Substring(0, 2) == "10") { OpponentCardValues[0] = "10"; }
+                if (OpponentCardValues[0] == "A") { OpponentCardValues[0] = "14"; }
+                if (OpponentCardValues[0] == "J") { OpponentCardValues[0] = "11"; }
+                if (OpponentCardValues[0] == "K") { OpponentCardValues[0] = "12"; }
+                if (OpponentCardValues[0] == "Q") { OpponentCardValues[0] = "13"; }
+
+                // SET PLAYER 2 : OPPONENT 1 CARD 2
+                OpponentCardValues[1] = imageList1.Images.Keys[deckClass.CardPick4].Substring(0, 1);
+                if (imageList1.Images.Keys[deckClass.CardPick4].Substring(0, 2) == "10") { OpponentCardValues[1] = "10"; }
+                if (OpponentCardValues[1] == "A") { OpponentCardValues[1] = "14"; }
+                if (OpponentCardValues[1] == "J") { OpponentCardValues[1] = "11"; }
+                if (OpponentCardValues[1] == "K") { OpponentCardValues[1] = "12"; }
+                if (OpponentCardValues[1] == "Q") { OpponentCardValues[1] = "13"; }
+
+                // DISPLAY PLAYER CARDS
+                lblPlayerCardPick1.Text = PlayerCardValues[0].ToString();
+                lblPlayerCardPick2.Text = PlayerCardValues[1].ToString();
+
+                // DISPLAY PLAYER 2 : OPPONENT 1 CARDS
+                lblPlayer2Card1.Text = OpponentCardValues[0].ToString();
+                lblPlayer2Card2.Text = OpponentCardValues[1].ToString();
+            }
+            btnShuffle.Visible = true;
+            btnAnteUp.Visible = false;
+        }
 
         // Create a new instance of the deck class to use throughout this form, declared at class level
         Deck deckClass = new Deck();
@@ -89,6 +134,8 @@ namespace GutsCardGame
 
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
+            btnAnteUp.Visible = false;
+
             // Sets playerone to the player name from the array
             player1 = PlayerNames[0];
             
@@ -107,9 +154,7 @@ namespace GutsCardGame
             // Use the array to display the players name from the Playerclass, along with money
             lblPlayer1.Text = thePlayer.PlayerName + " : " + thePlayer.BankAmount.ToString("c");
 
-            // Initially set all AI labels to false, for the IF STATEMENT to decide which label display
-            lblPlayer3.Visible = false;
-            lblPlayer4.Visible = false;
+
 
             // TODO: AI If statement, idk if i want to keep this
 
@@ -185,65 +230,11 @@ namespace GutsCardGame
                 // Player 2 Opponent 1 Displays in * GroupBox HUD *, * FACE DOWN *
                 pbOpponent1Card1.Image = imageList1.Images[41];
                 pbOpponent1Card2.Image = imageList1.Images[41];
-
-                // Hide Preview image boxes containing starting cards
-                pbPreviewPlayer3Card1.Visible = false;
-                pbPreviewPlayer3Card2.Visible = false;
-                pbPreviewPlayer4Card1.Visible = false;
-                pbPreviewPlayer4Card2.Visible = false;
-
-                // Hide the GroupBoxes for more players
-                gbPlayer3.Visible = false;
-                gbPlayer4.Visible = false;
             }
             
         }
 
-        private void btnGetValuesTest_Click(object sender, EventArgs e)
-        {
-            if (aI == 1)
-            {
-                // SET PLAYER 1 CARD 1
-                PlayerCardValues[0] = imageList1.Images.Keys[deckClass.CardPick].Substring(0, 1);
-                if (imageList1.Images.Keys[deckClass.CardPick].Substring(0, 2) == "10") { PlayerCardValues[0] = "10"; }
-                if (PlayerCardValues[0] == "A") { PlayerCardValues[0] = "14"; }
-                if (PlayerCardValues[0] == "J") { PlayerCardValues[0] = "11"; }
-                if (PlayerCardValues[0] == "K") { PlayerCardValues[0] = "12"; }
-                if (PlayerCardValues[0] == "Q") { PlayerCardValues[0] = "13"; }
 
-                // SET PLAYER 1 CARD 2
-                PlayerCardValues[1] = imageList1.Images.Keys[deckClass.CardPick2].Substring(0, 1);
-                if (imageList1.Images.Keys[deckClass.CardPick2].Substring(0, 2) == "10") { PlayerCardValues[1] = "10"; }
-                if (PlayerCardValues[1] == "A") { PlayerCardValues[1] = "14"; }
-                if (PlayerCardValues[1] == "J") { PlayerCardValues[1] = "11"; }
-                if (PlayerCardValues[1] == "K") { PlayerCardValues[1] = "12"; }
-                if (PlayerCardValues[1] == "Q") { PlayerCardValues[1] = "13"; }
-
-                // SET PLAYER 2 : OPPONENT 1 CARD 1
-                OpponentCardValues[0] = imageList1.Images.Keys[deckClass.CardPick3].Substring(0, 1);
-                if (imageList1.Images.Keys[deckClass.CardPick3].Substring(0, 2) == "10") { OpponentCardValues[0] = "10"; }
-                if (OpponentCardValues[0] == "A") { OpponentCardValues[0] = "14"; }
-                if (OpponentCardValues[0] == "J") { OpponentCardValues[0] = "11"; }
-                if (OpponentCardValues[0] == "K") { OpponentCardValues[0] = "12"; }
-                if (OpponentCardValues[0] == "Q") { OpponentCardValues[0] = "13"; }
-
-                // SET PLAYER 2 : OPPONENT 1 CARD 2
-                OpponentCardValues[1] = imageList1.Images.Keys[deckClass.CardPick4].Substring(0, 1);
-                if (imageList1.Images.Keys[deckClass.CardPick4].Substring(0, 2) == "10") { OpponentCardValues[1] = "10"; }
-                if (OpponentCardValues[1] == "A") { OpponentCardValues[1] = "14"; }
-                if (OpponentCardValues[1] == "J") { OpponentCardValues[1] = "11"; }
-                if (OpponentCardValues[1] == "K") { OpponentCardValues[1] = "12"; }
-                if (OpponentCardValues[1] == "Q") { OpponentCardValues[1] = "13"; }
-
-                // DISPLAY PLAYER CARDS
-                lblPlayerCardPick1.Text = PlayerCardValues[0].ToString();
-                lblPlayerCardPick2.Text = PlayerCardValues[1].ToString();
-
-                // DISPLAY PLAYER 2 : OPPONENT 1 CARDS
-                lblPlayer2Card1.Text = OpponentCardValues[0].ToString();
-                lblPlayer2Card2.Text = OpponentCardValues[1].ToString();
-            }
-        }
 
         // TODO: Force Crashes at times, gets stuck in infinate loop
         private void btnShuffle_Click(object sender, EventArgs e)
@@ -313,15 +304,8 @@ namespace GutsCardGame
                 pbOpponent1Card1.Image = imageList1.Images[41];
                 pbOpponent1Card2.Image = imageList1.Images[41];
 
-                // Hide Preview image boxes containing starting cards
-                pbPreviewPlayer3Card1.Visible = false;
-                pbPreviewPlayer3Card2.Visible = false;
-                pbPreviewPlayer4Card1.Visible = false;
-                pbPreviewPlayer4Card2.Visible = false;
-
-                // Hide the GroupBoxes for more players
-                gbPlayer3.Visible = false;
-                gbPlayer4.Visible = false;
+                btnAnteUp.Visible = true;
+                btnShuffle.Visible = false;
             }
            
         }
@@ -401,16 +385,6 @@ namespace GutsCardGame
                 // Player 2 Opponent 1 Displays in * GroupBox HUD *, * FACE DOWN *
                 pbOpponent1Card1.Image = imageList1.Images[41];
                 pbOpponent1Card2.Image = imageList1.Images[41];
-
-                // Hide Preview image boxes containing starting cards
-                pbPreviewPlayer3Card1.Visible = false;
-                pbPreviewPlayer3Card2.Visible = false;
-                pbPreviewPlayer4Card1.Visible = false;
-                pbPreviewPlayer4Card2.Visible = false;
-
-                // Hide the GroupBoxes for more players
-                gbPlayer3.Visible = false;
-                gbPlayer4.Visible = false;
             }
             
         }

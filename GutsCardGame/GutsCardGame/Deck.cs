@@ -10,7 +10,6 @@ namespace GutsCardGame
     {
 
         private int cardPick;
-        private int cardPick1;
         private int cardPick2;
         private int cardPick3;
         private int cardPick4;

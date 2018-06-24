@@ -75,9 +75,6 @@ namespace GutsCardGame
 
                 // Set a default name if no name is picked (Ensure code runs) lol
                 comboBox1.Text = "Noob";
-
-                
-
             }
             catch (Exception ex)
             {
