@@ -44,7 +44,6 @@
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.areYouSureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblPlayerCardPick1 = new System.Windows.Forms.Label();
             this.lblPlayerCardPick2 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.pbPlayer1Card1 = new System.Windows.Forms.PictureBox();
@@ -55,7 +54,6 @@
             this.AntePrice = new System.Windows.Forms.DomainUpDown();
             this.pbPreviewOppCard1 = new System.Windows.Forms.PictureBox();
             this.pbPreviewOppCard2 = new System.Windows.Forms.PictureBox();
-            this.lblPlayer2Card1 = new System.Windows.Forms.Label();
             this.lblPlayer2Card2 = new System.Windows.Forms.Label();
             this.btnShuffle = new System.Windows.Forms.Button();
             this.lblWinLabel = new System.Windows.Forms.Label();
@@ -91,7 +89,7 @@
             this.pictureBoxCardStack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBoxCardStack.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxCardStack.Image = global::GutsCardGame.Properties.Resources.RedCard_stack;
-            this.pictureBoxCardStack.Location = new System.Drawing.Point(655, 558);
+            this.pictureBoxCardStack.Location = new System.Drawing.Point(644, 321);
             this.pictureBoxCardStack.Name = "pictureBoxCardStack";
             this.pictureBoxCardStack.Size = new System.Drawing.Size(72, 70);
             this.pictureBoxCardStack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -248,16 +246,6 @@
             this.areYouSureToolStripMenuItem.Text = "&Yes";
             this.areYouSureToolStripMenuItem.Click += new System.EventHandler(this.areYouSureToolStripMenuItem_Click);
             // 
-            // lblPlayerCardPick1
-            // 
-            this.lblPlayerCardPick1.AutoSize = true;
-            this.lblPlayerCardPick1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerCardPick1.Location = new System.Drawing.Point(244, 165);
-            this.lblPlayerCardPick1.Name = "lblPlayerCardPick1";
-            this.lblPlayerCardPick1.Size = new System.Drawing.Size(51, 20);
-            this.lblPlayerCardPick1.TabIndex = 12;
-            this.lblPlayerCardPick1.Text = "label1";
-            // 
             // lblPlayerCardPick2
             // 
             this.lblPlayerCardPick2.AutoSize = true;
@@ -270,17 +258,21 @@
             // 
             // pbPlayer1Card1
             // 
-            this.pbPlayer1Card1.Location = new System.Drawing.Point(235, 65);
+            this.pbPlayer1Card1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPlayer1Card1.Location = new System.Drawing.Point(221, 53);
             this.pbPlayer1Card1.Name = "pbPlayer1Card1";
-            this.pbPlayer1Card1.Size = new System.Drawing.Size(60, 79);
+            this.pbPlayer1Card1.Size = new System.Drawing.Size(75, 91);
+            this.pbPlayer1Card1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayer1Card1.TabIndex = 16;
             this.pbPlayer1Card1.TabStop = false;
             // 
             // pbPlayer1Card2
             // 
-            this.pbPlayer1Card2.Location = new System.Drawing.Point(302, 65);
+            this.pbPlayer1Card2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPlayer1Card2.Location = new System.Drawing.Point(302, 53);
             this.pbPlayer1Card2.Name = "pbPlayer1Card2";
-            this.pbPlayer1Card2.Size = new System.Drawing.Size(56, 79);
+            this.pbPlayer1Card2.Size = new System.Drawing.Size(72, 91);
+            this.pbPlayer1Card2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlayer1Card2.TabIndex = 17;
             this.pbPlayer1Card2.TabStop = false;
             // 
@@ -289,6 +281,7 @@
             this.pbOpponent1Card1.Location = new System.Drawing.Point(42, 116);
             this.pbOpponent1Card1.Name = "pbOpponent1Card1";
             this.pbOpponent1Card1.Size = new System.Drawing.Size(64, 94);
+            this.pbOpponent1Card1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbOpponent1Card1.TabIndex = 18;
             this.pbOpponent1Card1.TabStop = false;
             // 
@@ -297,6 +290,7 @@
             this.pbOpponent1Card2.Location = new System.Drawing.Point(126, 116);
             this.pbOpponent1Card2.Name = "pbOpponent1Card2";
             this.pbOpponent1Card2.Size = new System.Drawing.Size(64, 94);
+            this.pbOpponent1Card2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbOpponent1Card2.TabIndex = 19;
             this.pbOpponent1Card2.TabStop = false;
             // 
@@ -305,7 +299,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(6, 93);
+            this.label1.Location = new System.Drawing.Point(61, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 24);
             this.label1.TabIndex = 24;
@@ -343,7 +337,7 @@
             this.AntePrice.Items.Add("20");
             this.AntePrice.Items.Add("10");
             this.AntePrice.Items.Add("5");
-            this.AntePrice.Location = new System.Drawing.Point(109, 90);
+            this.AntePrice.Location = new System.Drawing.Point(46, 103);
             this.AntePrice.Name = "AntePrice";
             this.AntePrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.AntePrice.Size = new System.Drawing.Size(120, 31);
@@ -366,16 +360,6 @@
             this.pbPreviewOppCard2.TabIndex = 25;
             this.pbPreviewOppCard2.TabStop = false;
             // 
-            // lblPlayer2Card1
-            // 
-            this.lblPlayer2Card1.AutoSize = true;
-            this.lblPlayer2Card1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayer2Card1.Location = new System.Drawing.Point(219, 75);
-            this.lblPlayer2Card1.Name = "lblPlayer2Card1";
-            this.lblPlayer2Card1.Size = new System.Drawing.Size(51, 20);
-            this.lblPlayer2Card1.TabIndex = 29;
-            this.lblPlayer2Card1.Text = "label1";
-            // 
             // lblPlayer2Card2
             // 
             this.lblPlayer2Card2.AutoSize = true;
@@ -390,7 +374,7 @@
             // 
             this.btnShuffle.AutoSize = true;
             this.btnShuffle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShuffle.Location = new System.Drawing.Point(497, 575);
+            this.btnShuffle.Location = new System.Drawing.Point(486, 338);
             this.btnShuffle.Name = "btnShuffle";
             this.btnShuffle.Size = new System.Drawing.Size(137, 36);
             this.btnShuffle.TabIndex = 35;
@@ -401,21 +385,20 @@
             // lblWinLabel
             // 
             this.lblWinLabel.AutoSize = true;
-            this.lblWinLabel.Location = new System.Drawing.Point(74, 160);
+            this.lblWinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWinLabel.ForeColor = System.Drawing.Color.Gold;
+            this.lblWinLabel.Location = new System.Drawing.Point(481, 273);
             this.lblWinLabel.Name = "lblWinLabel";
-            this.lblWinLabel.Size = new System.Drawing.Size(76, 25);
+            this.lblWinLabel.Size = new System.Drawing.Size(0, 25);
             this.lblWinLabel.TabIndex = 36;
-            this.lblWinLabel.Text = "label2";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pbPlayer1Card1);
-            this.groupBox1.Controls.Add(this.lblWinLabel);
             this.groupBox1.Controls.Add(this.pbPlayer1Card2);
             this.groupBox1.Controls.Add(this.lblPlayer1);
             this.groupBox1.Controls.Add(this.AntePrice);
-            this.groupBox1.Controls.Add(this.lblPlayerCardPick1);
             this.groupBox1.Controls.Add(this.lblPlayerCardPick2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Cornsilk;
@@ -432,7 +415,6 @@
             this.groupBox3.Controls.Add(this.pbPreviewOppCard1);
             this.groupBox3.Controls.Add(this.pbPreviewOppCard2);
             this.groupBox3.Controls.Add(this.pbOpponent1Card1);
-            this.groupBox3.Controls.Add(this.lblPlayer2Card1);
             this.groupBox3.Controls.Add(this.pbOpponent1Card2);
             this.groupBox3.Controls.Add(this.lblPlayer2Card2);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -475,6 +457,7 @@
             this.ClientSize = new System.Drawing.Size(1085, 697);
             this.Controls.Add(this.btnAnteUp);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.lblWinLabel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnShuffle);
             this.Controls.Add(this.pictureBoxCardStack);
@@ -511,7 +494,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Label lblPlayerCardPick1;
         private System.Windows.Forms.Label lblPlayerCardPick2;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.PictureBox pbPlayer1Card1;
@@ -529,7 +511,6 @@
         private System.Windows.Forms.DomainUpDown AntePrice;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem howToPlayToolStripMenuItem;
-        private System.Windows.Forms.Label lblPlayer2Card1;
         private System.Windows.Forms.Label lblPlayer2Card2;
         private System.Windows.Forms.Button btnShuffle;
         private System.Windows.Forms.ToolStripMenuItem playerPickerToolStripMenuItem;

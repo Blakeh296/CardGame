@@ -93,15 +93,9 @@ namespace GutsCardGame
                 if (OpponentCardValues[1] == "J") { OpponentCardValues[1] = "11"; }
                 if (OpponentCardValues[1] == "K") { OpponentCardValues[1] = "12"; }
                 if (OpponentCardValues[1] == "Q") { OpponentCardValues[1] = "13"; }
-
-                // DISPLAY PLAYER CARDS
-                lblPlayerCardPick1.Text = PlayerCardValues[0].ToString();
-                lblPlayerCardPick2.Text = PlayerCardValues[1].ToString();
                 
 
                 // DISPLAY PLAYER 2 : OPPONENT 1 CARDS
-                lblPlayer2Card1.Text = OpponentCardValues[0].ToString();
-                lblPlayer2Card2.Text = OpponentCardValues[1].ToString();
                 pbOpponent1Card1.Image = imageList1.Images[deckClass.CardPick3];
                 pbOpponent1Card2.Image = imageList1.Images[deckClass.CardPick4];
             }
@@ -114,7 +108,19 @@ namespace GutsCardGame
 
                 thePlayer.BankAmount = thePlayer.BankAmount + gains;
 
-                lblWinLabel.Text = "You won $" + gains + " that round!";
+                lblWinLabel.Text = "You WON $" + gains + " that round!";
+
+                lblPlayer1.Text = thePlayer.PlayerName + " " + thePlayer.BankAmount.ToString("c");
+            } 
+            else
+            {
+                losses = bet * 2;
+
+                thePlayer.BankAmount = thePlayer.BankAmount - losses;
+
+                lblWinLabel.Text = "You LOST $" + losses + " that round!";
+
+                lblPlayer1.Text = thePlayer.PlayerName + " " + thePlayer.BankAmount.ToString("c");
             }
         }
 
@@ -152,7 +158,7 @@ namespace GutsCardGame
             lblPlayer1.Text = thePlayer.PlayerName + " : " + thePlayer.BankAmount.ToString("c");
 
             if (aI == 1)  // IF a 2 player game
-                lblPlayer2.Text = "Computer 1" + thePlayer.BankAmount.ToString("c");
+                lblPlayer2.Text = "Computer 1";
         }
 
 
@@ -160,6 +166,8 @@ namespace GutsCardGame
         // TODO: Force Crashes at times, gets stuck in infinate loop
         private void btnShuffle_Click(object sender, EventArgs e)
         {
+            lblWinLabel.Text = " ";
+
             if (aI == 1)  // IF a 2 player game
             {
 
@@ -167,43 +175,48 @@ namespace GutsCardGame
                 //Create a random number between 0 and the number of cards in the deck
                 Random rand = new Random(DateTime.Now.Millisecond);
                 deckClass.CardPick = rand.Next(0, imageList1.Images.Count);
+                Random rand2 = new Random(DateTime.Now.Millisecond);
+                deckClass.CardPick2 = rand.Next(0, imageList1.Images.Count);
+                Random rand3 = new Random(DateTime.Now.Millisecond);
+                deckClass.CardPick3 = rand.Next(0, imageList1.Images.Count);
+                Random rand4 = new Random(DateTime.Now.Millisecond);
+                deckClass.CardPick4 = rand.Next(0, imageList1.Images.Count);
 
+                // Player 1 Card 1 
                 // Rules out the potential of a backwards card, or displaying the card stack image
                 while (deckClass.CardPick == 40 || deckClass.CardPick == 41 || deckClass.CardPick == 56)
                 {
                     deckClass.CardPick = rand.Next(0, imageList1.Images.Count);
                 }
 
-                // PLAYER 1 CARD 2
-                Random rand2 = new Random(DateTime.Now.Millisecond);
-                deckClass.CardPick2 = rand.Next(0, imageList1.Images.Count);
-
-                // Makes sure a valid card is being played, and makes sure previous CardPicks DO NOT MATCH
-                while (deckClass.CardPick2 == 40 || deckClass.CardPick2 == 41 || deckClass.CardPick2 == 56
-                    || deckClass.CardPick2 == deckClass.CardPick)
-                {
-                    // Pick a new random
-                    deckClass.CardPick2 = rand.Next(0, imageList1.Images.Count);
-                }
-
                 // CARD PICK 1 FOR OPPONENT 1
                 //Create a random number between 0 and the number of cards in the deck
-                Random rand3 = new Random(DateTime.Now.Millisecond);
-                deckClass.CardPick3 = rand.Next(0, imageList1.Images.Count);
+                
 
                 // Rules out the potential of a backwards card, or displaying the card stack image
                 // Also ensures the opponent card doesnt match player cards
                 while (deckClass.CardPick3 == 40 || deckClass.CardPick3 == 41 || deckClass.CardPick3 == 56 
-                    || deckClass.CardPick3 == deckClass.CardPick || deckClass.CardPick3 == deckClass.CardPick2)
+                    || deckClass.CardPick3 == deckClass.CardPick)
                 {
                     // Pick a new random
                     deckClass.CardPick3 = rand.Next(0, imageList1.Images.Count);
                 }
 
+
+                // PLAYER 1 CARD 2
+
+                // Makes sure a valid card is being played, and makes sure previous CardPicks DO NOT MATCH
+                while (deckClass.CardPick2 == 40 || deckClass.CardPick2 == 41 || deckClass.CardPick2 == 56
+                    || deckClass.CardPick2 == deckClass.CardPick || deckClass.CardPick2 == deckClass.CardPick3)
+                {
+                    // Pick a new random
+                    deckClass.CardPick2 = rand.Next(0, imageList1.Images.Count);
+                }
+
+
                 // CARD PICK 2 FOR OPPONENT 1
                 //Create a random number between 0 and the number of cards in the deck
-                Random rand4 = new Random(DateTime.Now.Millisecond);
-                deckClass.CardPick4 = rand.Next(0, imageList1.Images.Count);
+
 
                 while (deckClass.CardPick4 == 40 || deckClass.CardPick4 == 41 || deckClass.CardPick4 == 56 
                     || deckClass.CardPick4 == deckClass.CardPick3 || deckClass.CardPick4 == deckClass.CardPick2 
