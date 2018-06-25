@@ -34,6 +34,9 @@ namespace GutsCardGame
         public string player1 = "", player2, player3, player4, player5, player6, player7, player8, player9, player10;
 
         public int roundcount = 1;
+
+        
+
         // Create a new instance of the deck class to use throughout this form, declared at class level
         Deck deckClass = new Deck();
 
@@ -171,11 +174,25 @@ namespace GutsCardGame
             }
 
             lblRoundCounter.Text = "Round " + roundcount + "/10";
+
+            if (btnPass.Enabled == true)
+            btnPass.Visible = false;
         }
 
-   
 
 
+        private void btnPass_Click(object sender, EventArgs e)
+        {
+
+
+            roundcount++;
+            lblRoundCounter.Text = "Round " + roundcount + "/10";
+
+            btnPass.Enabled = false;
+            btnAnteUp.Visible = false;
+            btnShuffle.Visible = true;
+
+        }
 
 
         private void areYouSureToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,6 +205,7 @@ namespace GutsCardGame
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
             btnAnteUp.Visible = false;
+            btnPass.Visible = false;
             AntePrice.Visible = false;
             label1.Visible = false;
 
@@ -294,6 +312,7 @@ namespace GutsCardGame
 
                 btnAnteUp.Visible = true;
                 btnShuffle.Visible = false;
+                btnPass.Visible = true;
             }
            
         }

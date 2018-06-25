@@ -58,6 +58,7 @@
             this.lblPlayer2 = new System.Windows.Forms.Label();
             this.btnAnteUp = new System.Windows.Forms.Button();
             this.lblRoundCounter = new System.Windows.Forms.Label();
+            this.btnPass = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Card1)).BeginInit();
@@ -404,12 +405,25 @@
             // 
             // lblRoundCounter
             // 
+            this.lblRoundCounter.AutoSize = true;
             this.lblRoundCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoundCounter.ForeColor = System.Drawing.Color.Gold;
             this.lblRoundCounter.Location = new System.Drawing.Point(24, 42);
             this.lblRoundCounter.Name = "lblRoundCounter";
-            this.lblRoundCounter.Size = new System.Drawing.Size(573, 35);
+            this.lblRoundCounter.Size = new System.Drawing.Size(0, 25);
             this.lblRoundCounter.TabIndex = 40;
+            // 
+            // btnPass
+            // 
+            this.btnPass.AutoSize = true;
+            this.btnPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPass.Location = new System.Drawing.Point(494, 298);
+            this.btnPass.Name = "btnPass";
+            this.btnPass.Size = new System.Drawing.Size(137, 36);
+            this.btnPass.TabIndex = 41;
+            this.btnPass.Text = "Pass";
+            this.btnPass.UseVisualStyleBackColor = true;
+            this.btnPass.Click += new System.EventHandler(this.btnPass_Click);
             // 
             // GutsMainForm
             // 
@@ -418,6 +432,7 @@
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(846, 436);
+            this.Controls.Add(this.btnPass);
             this.Controls.Add(this.lblRoundCounter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAnteUp);
@@ -481,5 +496,6 @@
         private System.Windows.Forms.Label lblPlayer2;
         private System.Windows.Forms.Button btnAnteUp;
         private System.Windows.Forms.Label lblRoundCounter;
+        private System.Windows.Forms.Button btnPass;
     }
 }
