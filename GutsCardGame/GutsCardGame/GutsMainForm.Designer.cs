@@ -40,7 +40,6 @@
             this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yesRestartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keepPlayingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.howToPlayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.areYouSureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -185,8 +184,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.restartToolStripMenuItem,
-            this.howToPlayToolStripMenuItem});
+            this.restartToolStripMenuItem});
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.exitToolStripMenuItem.Text = "&Game Options";
@@ -197,27 +195,21 @@
             this.yesRestartToolStripMenuItem,
             this.keepPlayingToolStripMenuItem});
             this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            this.restartToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.restartToolStripMenuItem.Text = "&Restart";
             // 
             // yesRestartToolStripMenuItem
             // 
             this.yesRestartToolStripMenuItem.Name = "yesRestartToolStripMenuItem";
-            this.yesRestartToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.yesRestartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.yesRestartToolStripMenuItem.Text = "&Confirm";
             this.yesRestartToolStripMenuItem.Click += new System.EventHandler(this.yesRestartToolStripMenuItem_Click);
             // 
             // keepPlayingToolStripMenuItem
             // 
             this.keepPlayingToolStripMenuItem.Name = "keepPlayingToolStripMenuItem";
-            this.keepPlayingToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.keepPlayingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.keepPlayingToolStripMenuItem.Text = "&Keep Playing";
-            // 
-            // howToPlayToolStripMenuItem
-            // 
-            this.howToPlayToolStripMenuItem.Name = "howToPlayToolStripMenuItem";
-            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.howToPlayToolStripMenuItem.Text = "&How to Play";
             // 
             // exitToolStripMenuItem1
             // 
@@ -486,7 +478,6 @@
         private System.Windows.Forms.ToolStripMenuItem areYouSureToolStripMenuItem;
         private System.Windows.Forms.DomainUpDown AntePrice;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem howToPlayToolStripMenuItem;
         private System.Windows.Forms.Button btnShuffle;
         private System.Windows.Forms.ToolStripMenuItem playerPickerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem goToolStripMenuItem;

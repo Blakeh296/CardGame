@@ -1,0 +1,24 @@
+When the game loads you will be thrown right to the card table
+
+You can click 'Deal Cards' to play immediately 
+
+or you can click 'Player Picker' from the drop down menue to select or create a player
+
+if you 'Deal Cards' You and the opponent will each get 2 cards, look at your cards and decide if you want to bet
+or pass (Remember you only get 1 pass per game 10 rounds)
+
+if you 'Ante Up' the cards will be analyzed then shown and the player with the highest pair of cards will win the round 
+and keep the other persons money
+
+if you 'Pass' the round will be skipped and the next one will begin
+
+the game is won when either you, or the other player are out of money
+
+the game is won after the 10th round
+
+if you click 'Player Picker' from the drop down menu and are a new player you will be shown an area to type in a name, 
+type in your name and click the button, pick your name from the drop down list and select play
+
+if you click 'Player Picker; from the drop down menu and are a Returning player, click the 'Returning Player' tab,
+your name will then appear in the dropdown box
+

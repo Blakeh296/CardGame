@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GutsCardGame
 {
@@ -39,6 +40,8 @@ namespace GutsCardGame
 
         // Create a new instance of the deck class to use throughout this form, declared at class level
         Deck deckClass = new Deck();
+
+ 
 
         // Declaration of the Player Class
         Player thePlayer = new Player("Guest",1000);
@@ -308,7 +311,7 @@ namespace GutsCardGame
 
                 // Player 2 Opponent, Show 1 card face up, 1 card face down
                 pbOpponent1Card1.Image = imageList1.Images[41];
-                pbOpponent1Card2.Image = imageList1.Images[deckClass.CardPick4];
+                pbOpponent1Card2.Image = imageList1.Images[41];
 
                 btnAnteUp.Visible = true;
                 btnShuffle.Visible = false;
