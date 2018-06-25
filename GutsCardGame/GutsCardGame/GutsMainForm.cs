@@ -33,13 +33,14 @@ namespace GutsCardGame
         public string player1Score;
         public string player1 = "", player2, player3, player4, player5, player6, player7, player8, player9, player10;
 
+        public int roundcount = 1;
         // Create a new instance of the deck class to use throughout this form, declared at class level
         Deck deckClass = new Deck();
 
         // Declaration of the Player Class
         Player thePlayer = new Player("Guest",1000);
-
-
+        // Declaration of the Computer Player Class
+        ComPlayer CompPlayer = new ComPlayer("Hank The Tank", 1000);
 
         /* End Variables declared at class level */
 
@@ -57,8 +58,25 @@ namespace GutsCardGame
             double bet;
             double losses;
             double gains;
+            double combet;
 
+            label1.Visible = false;
+            AntePrice.Visible = false;
+
+            // Grab the players bet
             bet = double.Parse(AntePrice.Text);
+
+            // Declare a random genorator
+            Random randComBet = new Random(DateTime.Now.Millisecond);
+
+            // Pick a random bet for the computer
+            combet = randComBet.Next(50, 1000);
+
+            // test the random againt the computers current account
+            while (combet >= CompPlayer.ComBankAmount || combet == 1000)
+            {
+                combet = randComBet.Next(50, 1000);
+            }
 
             if (aI == 1)
             {
@@ -101,27 +119,58 @@ namespace GutsCardGame
             }
             btnShuffle.Visible = true;
             btnAnteUp.Visible = false;
-
+            
             if (deckClass.CardPick + deckClass.CardPick2 > deckClass.CardPick3 + deckClass.CardPick4)
             {
-                gains = bet * 2;
+                // Subtract the losses from computer account
+                CompPlayer.ComBankAmount = CompPlayer.ComBankAmount - combet;
+                // Add the winnings to the Players account
+                thePlayer.BankAmount = thePlayer.BankAmount + combet;
+                
+                lblWinLabel.Text = "You WON $" + combet + " that round!";
 
-                thePlayer.BankAmount = thePlayer.BankAmount + gains;
-
-                lblWinLabel.Text = "You WON $" + gains + " that round!";
-
+                // Update the labels to the correct Bank Account information
                 lblPlayer1.Text = thePlayer.PlayerName + " " + thePlayer.BankAmount.ToString("c");
+                lblPlayer2.Text = CompPlayer.ComPlayerName + " " + CompPlayer.ComBankAmount.ToString("c");
             } 
             else
             {
-                losses = bet * 2;
+                // subtract losses from your account
+                thePlayer.BankAmount = thePlayer.BankAmount - bet;
+                // Add winnings to computer account
+                CompPlayer.ComBankAmount = CompPlayer.ComBankAmount + bet;
 
-                thePlayer.BankAmount = thePlayer.BankAmount - losses;
 
-                lblWinLabel.Text = "You LOST $" + losses + " that round!";
+                lblWinLabel.Text = "You LOST $" + bet + " that round!";
 
+                // Update the labels to the correct Bank Account information
                 lblPlayer1.Text = thePlayer.PlayerName + " " + thePlayer.BankAmount.ToString("c");
+                lblPlayer2.Text = CompPlayer.ComPlayerName + " " + CompPlayer.ComBankAmount.ToString("c");
             }
+
+            if (CompPlayer.ComBankAmount < 100)
+            {
+                lblWinLabel.Text = "You Won! Click Game Options-Restart to play again.";
+                btnAnteUp.Visible = false;
+                btnShuffle.Visible = false;
+            }
+
+            roundcount++;
+
+            if (roundcount == 10 && thePlayer.BankAmount > CompPlayer.ComBankAmount)
+            {
+                lblWinLabel.Text = "You Won! Click Game Options-Restart to play again.";
+                btnAnteUp.Visible = false;
+                btnShuffle.Visible = false;
+            }
+            else if (roundcount == 10 && CompPlayer.ComBankAmount > thePlayer.BankAmount)
+            {
+                lblWinLabel.Text = "You Lost! Click Game Options-Restart to play again.";
+                btnAnteUp.Visible = false;
+                btnShuffle.Visible = false;
+            }
+
+            lblRoundCounter.Text = "Round " + roundcount + "/10";
         }
 
    
@@ -139,6 +188,11 @@ namespace GutsCardGame
         private void GutsMainForm_Load(object sender, EventArgs e)
         {
             btnAnteUp.Visible = false;
+            AntePrice.Visible = false;
+            label1.Visible = false;
+
+
+            lblRoundCounter.Text = "Round " + roundcount + "/10";
 
             // Sets playerone to the player name from the array
             player1 = PlayerNames[0];
@@ -154,11 +208,11 @@ namespace GutsCardGame
             // Start money set in the player class
             thePlayer.BankAmount = 1000;
 
-            // Use the array to display the players name from the Playerclass, along with money
             lblPlayer1.Text = thePlayer.PlayerName + " : " + thePlayer.BankAmount.ToString("c");
 
-            if (aI == 1)  // IF a 2 player game
-                lblPlayer2.Text = "Computer 1";
+            lblPlayer2.Text = CompPlayer.ComPlayerName + " : " + CompPlayer.ComBankAmount.ToString("c");
+
+
         }
 
 
@@ -167,6 +221,9 @@ namespace GutsCardGame
         private void btnShuffle_Click(object sender, EventArgs e)
         {
             lblWinLabel.Text = " ";
+
+            label1.Visible = true;
+            AntePrice.Visible = true;
 
             if (aI == 1)  // IF a 2 player game
             {
@@ -241,82 +298,14 @@ namespace GutsCardGame
            
         }
 
-        // TODO: yesRestartToolStripMenuItem_Click Restarts the game, but doesnt pull player info with it or repopulate cards
-        // TODO: ENCAPSOLATE THE IF STATEMENT IN A CLASS, TAKING WAY TO MUCH SPACE
+
         private void yesRestartToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GutsMainForm NewGame = new GutsMainForm();
-            NewGame.PlayerNames[0] = lblPlayer1.Text;
-            NewGame.aI = aI;
+
             this.Hide();
             NewGame.ShowDialog();
             this.Close();
-
-            if (aI == 1)  // IF a 2 player game
-            {
-
-                // PLAYER 1 CARD 1
-                //Create a random number between 0 and the number of cards in the deck
-                Random rand = new Random(DateTime.Now.Millisecond);
-                deckClass.CardPick = rand.Next(0, imageList1.Images.Count);
-
-                // Rules out the potential of a backwards card, or displaying the card stack image
-                while (deckClass.CardPick == 40 || deckClass.CardPick == 41 || deckClass.CardPick == 56)
-                {
-                    deckClass.CardPick = rand.Next(0, imageList1.Images.Count);
-                }
-
-                // PLAYER 1 CARD 2
-                Random rand2 = new Random(DateTime.Now.Millisecond);
-                deckClass.CardPick2 = rand.Next(0, imageList1.Images.Count);
-
-                // Makes sure a valid card is being played, and makes sure previous CardPicks DO NOT MATCH
-                while (deckClass.CardPick2 == 40 || deckClass.CardPick2 == 41 || deckClass.CardPick2 == 56
-                    || deckClass.CardPick2 == deckClass.CardPick)
-                {
-                    // Pick a new random
-                    deckClass.CardPick2 = rand.Next(0, imageList1.Images.Count);
-                }
-
-                // CARD PICK 1 FOR OPPONENT 1
-                //Create a random number between 0 and the number of cards in the deck
-                Random rand3 = new Random(DateTime.Now.Millisecond);
-                deckClass.CardPick3 = rand.Next(0, imageList1.Images.Count);
-
-                // Rules out the potential of a backwards card, or displaying the card stack image
-                // Also ensures the opponent card doesnt match player cards
-                while (deckClass.CardPick3 == 40 || deckClass.CardPick3 == 41 || deckClass.CardPick3 == 56
-                    || deckClass.CardPick3 == deckClass.CardPick || deckClass.CardPick3 == deckClass.CardPick2)
-                {
-                    // Pick a new random
-                    deckClass.CardPick3 = rand.Next(0, imageList1.Images.Count);
-                }
-
-                // CARD PICK 2 FOR OPPONENT 1
-                //Create a random number between 0 and the number of cards in the deck
-                Random rand4 = new Random(DateTime.Now.Millisecond);
-                deckClass.CardPick4 = rand.Next(0, imageList1.Images.Count);
-
-                while (deckClass.CardPick4 == 40 || deckClass.CardPick4 == 41 || deckClass.CardPick4 == 56
-                    || deckClass.CardPick4 == deckClass.CardPick3 || deckClass.CardPick4 == deckClass.CardPick2
-                    || deckClass.CardPick4 == deckClass.CardPick)
-                {
-                    // Pick a new random
-                    deckClass.CardPick4 = rand.Next(0, imageList1.Images.Count);
-                }
-
-                // Display Player 1 cards * FACE UP *
-                pbPlayer1Card1.Image = imageList1.Images[deckClass.CardPick];
-                pbPlayer1Card2.Image = imageList1.Images[deckClass.CardPick2];
-
-                // Display Opponenct cards * FACE UP *
-                pbPreviewOppCard1.Image = imageList1.Images[deckClass.CardPick3];
-                pbPreviewOppCard2.Image = imageList1.Images[deckClass.CardPick4];
-
-                // Player 2 Opponent 1 Displays in * GroupBox HUD *, * FACE DOWN *
-                pbOpponent1Card1.Image = imageList1.Images[41];
-                pbOpponent1Card2.Image = imageList1.Images[41];
-            }
             
         }
     }

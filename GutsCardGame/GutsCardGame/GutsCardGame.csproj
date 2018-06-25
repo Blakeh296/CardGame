@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComPlayer.cs" />
     <Compile Include="Deck.cs" />
     <Compile Include="GutsMainForm.cs">
       <SubType>Form</SubType>
