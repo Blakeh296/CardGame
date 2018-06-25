@@ -192,7 +192,7 @@ namespace GutsCardGame
             label1.Visible = false;
 
 
-            lblRoundCounter.Text = "Round " + roundcount + "/10";
+            lblRoundCounter.Text = "Round " + roundcount + "/10 " + "Welcome to Guts Card Game!";
 
             // Sets playerone to the player name from the array
             player1 = PlayerNames[0];

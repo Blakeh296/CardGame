@@ -408,7 +408,7 @@
             this.lblRoundCounter.ForeColor = System.Drawing.Color.Gold;
             this.lblRoundCounter.Location = new System.Drawing.Point(24, 42);
             this.lblRoundCounter.Name = "lblRoundCounter";
-            this.lblRoundCounter.Size = new System.Drawing.Size(192, 35);
+            this.lblRoundCounter.Size = new System.Drawing.Size(573, 35);
             this.lblRoundCounter.TabIndex = 40;
             // 
             // GutsMainForm
