@@ -106,7 +106,7 @@ namespace GutsCardGame
                 // close file
                 outputFile.Close();
 
-                MessageBox.Show("Player Added");
+                MessageBox.Show("Player Added, Check drop box!");
 
             }
             catch (Exception ex)
@@ -168,10 +168,15 @@ namespace GutsCardGame
                 // Display help information for the user 
                 MessageBox.Show(text.ToString());
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+            }
+            }
 
-            }
-            }
+        private void yesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

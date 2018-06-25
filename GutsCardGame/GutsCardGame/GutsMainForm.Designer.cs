@@ -195,20 +195,20 @@
             this.yesRestartToolStripMenuItem,
             this.keepPlayingToolStripMenuItem});
             this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            this.restartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.restartToolStripMenuItem.Text = "&Restart";
             // 
             // yesRestartToolStripMenuItem
             // 
             this.yesRestartToolStripMenuItem.Name = "yesRestartToolStripMenuItem";
-            this.yesRestartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yesRestartToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.yesRestartToolStripMenuItem.Text = "&Confirm";
             this.yesRestartToolStripMenuItem.Click += new System.EventHandler(this.yesRestartToolStripMenuItem_Click);
             // 
             // keepPlayingToolStripMenuItem
             // 
             this.keepPlayingToolStripMenuItem.Name = "keepPlayingToolStripMenuItem";
-            this.keepPlayingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.keepPlayingToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.keepPlayingToolStripMenuItem.Text = "&Keep Playing";
             // 
             // exitToolStripMenuItem1
