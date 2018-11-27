@@ -40,9 +40,9 @@ namespace GutsCardGame
         Deck deckClass = new Deck();
 
         // Declaration of the Player Class
-        Player thePlayer = new Player("Guest",1000);
+        Player thePlayer = new Player("Guest",500);
         // Declaration of the Computer Player Class
-        ComPlayer CompPlayer = new ComPlayer("Hank The Tank", 1000);
+        ComPlayer CompPlayer = new ComPlayer("Hank The Tank", 500);
         
         /* End Variables declared at class level */
 
@@ -62,19 +62,28 @@ namespace GutsCardGame
             
         }
 
-
-
-
         private void btnPass_Click(object sender, EventArgs e)
         {
             try
             {
-                roundcount++;
-                lblRoundCounter.Text = "Round " + roundcount + "/10";
+                
+                if(MessageBox.Show("This is your only Pass.", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    roundcount++;
+                    lblRoundCounter.Text = "Round " + roundcount + "/10";
 
-                btnPass.Enabled = false;
-                btnAnteUp.Visible = false;
-                btnShuffle.Visible = true;
+                    btnPass.Enabled = false;
+                    btnPass.BackColor = Color.LightGray;
+                    btnPass.Text = "Pass Unavaliable";
+                    btnAnteUp.Visible = false;
+                    btnShuffle.Visible = true;
+
+                    int roundCountDown = roundcount - 1;
+
+                    lblWinLabel.Text = "Round increased from " + roundCountDown + " to " + roundcount;
+                    lblPass.Text = "Pass 0/1";
+                }
+                
             }
             catch (Exception ex)
             {
@@ -106,8 +115,6 @@ namespace GutsCardGame
                 // Sets playerone to the player name from the array
                 player1 = PlayerNames[0];
 
-
-
                 // Set Playername Instance of the Player class to store the player name
                 if (player1 != null)
                 { thePlayer.PlayerName = player1; }
@@ -115,7 +122,7 @@ namespace GutsCardGame
                 else { thePlayer.PlayerName = "Guest"; }
 
                 // Start money set in the player class
-                thePlayer.BankAmount = 1000;
+                thePlayer.BankAmount = 500;
 
                 lblPlayer1.Text = thePlayer.PlayerName + " : " + thePlayer.BankAmount.ToString("c");
 
@@ -160,8 +167,6 @@ namespace GutsCardGame
                     }
 
                     // CARD PICK 1 FOR OPPONENT 1
-                    //Create a random number between 0 and the number of cards in the deck
-
 
                     // Rules out the potential of a backwards card, or displaying the card stack image
                     // Also ensures the opponent card doesnt match player cards
@@ -236,7 +241,7 @@ namespace GutsCardGame
                 Random randComBet = new Random(DateTime.Now.Millisecond);
 
                 // Pick a random bet for the computer
-                combet = randComBet.Next(50, 1000);
+                combet = randComBet.Next(10, 100);
 
                 // test the random againt the computers current account
                 while (combet >= CompPlayer.ComBankAmount || combet == 1000)

@@ -58,6 +58,7 @@
             this.btnAnteUp = new System.Windows.Forms.Button();
             this.lblRoundCounter = new System.Windows.Forms.Label();
             this.btnPass = new System.Windows.Forms.Button();
+            this.lblPass = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCardStack)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Card1)).BeginInit();
@@ -230,7 +231,7 @@
             // areYouSureToolStripMenuItem
             // 
             this.areYouSureToolStripMenuItem.Name = "areYouSureToolStripMenuItem";
-            this.areYouSureToolStripMenuItem.Size = new System.Drawing.Size(91, 22);
+            this.areYouSureToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.areYouSureToolStripMenuItem.Text = "&Yes";
             this.areYouSureToolStripMenuItem.Click += new System.EventHandler(this.areYouSureToolStripMenuItem_Click);
             // 
@@ -337,6 +338,8 @@
             // 
             // lblWinLabel
             // 
+            this.lblWinLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWinLabel.AutoSize = true;
             this.lblWinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWinLabel.ForeColor = System.Drawing.Color.Gold;
@@ -417,6 +420,18 @@
             this.btnPass.UseVisualStyleBackColor = true;
             this.btnPass.Click += new System.EventHandler(this.btnPass_Click);
             // 
+            // lblPass
+            // 
+            this.lblPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPass.AutoSize = true;
+            this.lblPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPass.ForeColor = System.Drawing.Color.Gold;
+            this.lblPass.Location = new System.Drawing.Point(710, 42);
+            this.lblPass.Name = "lblPass";
+            this.lblPass.Size = new System.Drawing.Size(111, 25);
+            this.lblPass.TabIndex = 42;
+            this.lblPass.Text = "Pass: 1/1";
+            // 
             // GutsMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,6 +439,7 @@
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(846, 436);
+            this.Controls.Add(this.lblPass);
             this.Controls.Add(this.btnPass);
             this.Controls.Add(this.lblRoundCounter);
             this.Controls.Add(this.label1);
@@ -437,6 +453,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "GutsMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "";
@@ -488,5 +505,6 @@
         private System.Windows.Forms.Button btnAnteUp;
         private System.Windows.Forms.Label lblRoundCounter;
         private System.Windows.Forms.Button btnPass;
+        private System.Windows.Forms.Label lblPass;
     }
 }
